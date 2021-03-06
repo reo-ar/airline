@@ -64,7 +64,7 @@ class SignUp @Inject()(cc: ControllerComponents)(ws: WSClient) extends AbstractC
     } 
     {
       // Unbinding: Create the mapping values from an existing User value
-      user => Some(user.username, user.email, (user.password, ""), "", user.airlineName, 1)
+      user => Some(user.username, user.email, (user.password, ""), user.airlineName, 1)
     }
   )
   
@@ -104,7 +104,6 @@ class SignUp @Inject()(cc: ControllerComponents)(ws: WSClient) extends AbstractC
     signupForm.bindFromRequest.fold(
       // Form has errors, redisplay it
       errors => BadRequest(html.signup(errors)), { userInput =>
-                  // We got a valid User value, display the summary
           val user = User(userInput.username, userInput.email, Calendar.getInstance, Calendar.getInstance, UserStatus.ACTIVE, level = 0)
           UserSource.saveUser(user)
           Authentication.createUserSecret(userInput.username, userInput.password)
