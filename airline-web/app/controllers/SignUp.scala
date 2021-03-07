@@ -67,7 +67,7 @@ class SignUp @Inject()(cc: ControllerComponents)(ws: WSClient) extends AbstractC
     } 
     {
       // Unbinding: Create the mapping values from an existing User value
-      user => Some(user.username, user.email, (user.password, ""), "", user.airlineName)
+      user => Some(user.username, user.email, (user.password, ""), user.airlineName)
     }
   )
   
