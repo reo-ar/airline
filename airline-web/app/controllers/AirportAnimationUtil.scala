@@ -49,14 +49,12 @@ object AirportAnimationUtil {
       case None => List.empty
     }
   }
-  def isBlank(input: Option[String]): Boolean =
-    input.filterNot(s => s == null || s.trim.isEmpty).isEmpty
-
+  
   /**
    * find Airports that serve the same city
    */
   def findNearbyAirports() = {
-    val airportsByCity = cachedAirportsByPower.filterNot(_.city.isBlank()).groupBy(airport => (airport.city, airport.countryCode)) //might need to split since there are cities with same name within the country. o well...
+    val airportsByCity = cachedAirportsByPower.filterNot(_.city.isEmpty).groupBy(airport => (airport.city, airport.countryCode)) //might need to split since there are cities with same name within the country. o well...
     airportsByCity.filter(_._2.size > 1) //filter out loners
   }
 }
