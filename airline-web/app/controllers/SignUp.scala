@@ -52,7 +52,6 @@ class SignUp @Inject()(cc: ControllerComponents)(ws: WSClient) extends AbstractC
         // Add an additional constraint: both passwords must match
         "Passwords don't match", passwords => passwords._1 == passwords._2
       ),
-      "recaptchaToken" -> text,
       "airlineName" -> text(minLength = 1, maxLength = 50).verifying(
         "Airline name can only contain space and characters",
         airlineName => airlineName.forall(char => (char.isLetter && char <= 'z')  || char == ' ') && !"".equals(airlineName.trim())).verifying(
@@ -64,7 +63,7 @@ class SignUp @Inject()(cc: ControllerComponents)(ws: WSClient) extends AbstractC
     // so we have to define custom binding/unbinding functions
     {
       // Binding: Create a User from the mapping result (ignore the second password and the accept field)
-      (username, email, passwords, recaptureToken, airlineName) => NewUser(username.trim, passwords._1, email.trim, recaptureToken, airlineName.trim)
+      (username, email, passwords, airlineName) => NewUser(username.trim, passwords._1, email.trim, airlineName.trim)
     } 
     {
       // Unbinding: Create the mapping values from an existing User value
@@ -94,51 +93,25 @@ class SignUp @Inject()(cc: ControllerComponents)(ws: WSClient) extends AbstractC
     signupForm.bindFromRequest.fold(
       // Form has errors, redisplay it
       errors => BadRequest(html.signup(errors)), { userInput =>
-        
-        if (isValidRecaptcha(userInput.recaptchaToken)) {
-          // We got a valid User value, display the summary
-          val user = User(userInput.username, userInput.email, Calendar.getInstance, Calendar.getInstance, UserStatus.ACTIVE, level = 0)
-          UserSource.saveUser(user)
-          Authentication.createUserSecret(userInput.username, userInput.password)
-          
-          val newAirline = Airline(userInput.airlineName)
-//          newAirline.setBalance(50000000) //initial balance 50 million
-          newAirline.setMaintenanceQuality(100)
-          newAirline.setAirlineCode(newAirline.getDefaultAirlineCode())
-          AirlineSource.saveAirlines(List(newAirline))
-          UserSource.setUserAirline(user, newAirline)
+      // We got a valid User value, display the summary
+        val user = User(userInput.username, userInput.email, Calendar.getInstance, Calendar.getInstance, UserStatus.ACTIVE, level = 0)
+        UserSource.saveUser(user)
+        Authentication.createUserSecret(userInput.username, userInput.password)
 
-          SearchUtil.addAirline(newAirline)
-          
+        val newAirline = Airline(userInput.airlineName)
+//          newAirline.setBalance(50000000) //initial balance 50 million
+        newAirline.setMaintenanceQuality(100)
+        newAirline.setAirlineCode(newAirline.getDefaultAirlineCode())
+        AirlineSource.saveAirlines(List(newAirline))
+        UserSource.setUserAirline(user, newAirline)
+
+        SearchUtil.addAirline(newAirline)
+
 //          val profile = StartupProfile.profilesById(userInput.profileId)
 //          profile.initializeAirline(newAirline)
-          Redirect("/").withCookies(Cookie("sessionActive", "true", httpOnly = false)).withSession("userId" -> String.valueOf(user.id))
-        } else {
-          BadRequest("Recaptcha check failed!")
-        }
-        //Ok(html.index("User " + user.userName + " created! Please log in"))
+        Ok(html.index("User " + user.userName + " created! Please log in"))
+        Redirect("/").withCookies(Cookie("sessionActive", "true", httpOnly = false)).withSession("userId" -> String.valueOf(user.id))
       }
     )
-  }
-  
-  def isValidRecaptcha(recaptchaToken: String) : Boolean = {
-    println("checking token " + recaptchaToken)
-    val request = ws.url(recaptchaUrl).withQueryStringParameters("secret" -> recaptchaSecret, "response" -> recaptchaToken)
-    
-    val (successJs, scoreJs, actionJs, responseBody) = Await.result(request.get().map { response =>
-      ((response.json \ "success"), (response.json \ "score"), (response.json \ "action"), response.body)
-    }, Duration(10, TimeUnit.SECONDS))
-    
-    if (!successJs.as[Boolean]) {
-      println("recaptcha response with success as false")
-      return false;  
-    }
-    
-    val score = scoreJs.as[Double]
-    val action = actionJs.as[String]
-    
-    println("recaptcha score " + score + " action " + action)
-    
-    return action == recaptchaAction && score >= recaptchaScoreThreshold
   }
 }
