@@ -61,7 +61,7 @@ function loadLinkHistory(linkId) {
                 $.each(linkHistory.relatedLinks, function(step, relatedLinksOnStep) {
                     $.each(relatedLinksOnStep, function(key, relatedLink) {
                         drawLinkHistoryPath(relatedLink, false, linkId, step)
-                        if (linkInfo.fromAirportId != relatedLink.fromAirportId || linkInfo.toAirportId != relatedLink.toAirportId || linkInfo.airlineId != linkInfo.airlineId) { //transit should not count the selected link
+                        if (linkInfo.fromAirportId !== relatedLink.fromAirportId || linkInfo.toAirportId !== relatedLink.toAirportId || linkInfo.airlineId !== linkInfo.airlineId) { //transit should not count the selected link
                             airlineNamesById[relatedLink.airlineId] = relatedLink.airlineName
                             if (!forwardTransitPaxByAirlineId[relatedLink.airlineId]) {
                                 forwardTransitPaxByAirlineId[relatedLink.airlineId] = relatedLink.passenger
@@ -74,7 +74,7 @@ function loadLinkHistory(linkId) {
                 $.each(linkHistory.invertedRelatedLinks, function(step, relatedLinksOnStep) {
                     $.each(relatedLinksOnStep, function(key, relatedLink) {
                         drawLinkHistoryPath(relatedLink, true, linkId, step)
-                        if (linkInfo.fromAirportId != relatedLink.fromAirportId || linkInfo.toAirportId != relatedLink.toAirportId || linkInfo.airlineId != linkInfo.airlineId) { //transit should not count the selected link
+                        if (linkInfo.fromAirportId !== relatedLink.fromAirportId || linkInfo.toAirportId !== relatedLink.toAirportId || linkInfo.airlineId !== linkInfo.airlineId) { //transit should not count the selected link
                             airlineNamesById[relatedLink.airlineId] = relatedLink.airlineName
                             if (!backwardTransitPaxByAirlineId[relatedLink.airlineId]) {
                                 backwardTransitPaxByAirlineId[relatedLink.airlineId] = relatedLink.passenger
@@ -165,7 +165,7 @@ function drawLinkHistoryPath(link, inverted, watchedLinkId, step) {
 	    path: google.maps.SymbolPath.FORWARD_OPEN_ARROW
 	};
 
-	var isWatchedLink = link.linkId == watchedLinkId
+	var isWatchedLink = link.linkId === watchedLinkId
 
 	var relatedPath
 	if (!historyPaths[pathKey]) {
@@ -205,9 +205,9 @@ function drawLinkHistoryPath(link, inverted, watchedLinkId, step) {
 		relatedPath = historyPaths[pathKey]
 	}
 
-	if (link.airlineId == activeAirline.id) {
+	if (link.airlineId === activeAirline.id) {
 		relatedPath.shadowPath.thisAirlinePassengers += link.passenger
-	} else if (currentAirlineAllianceMembers.length > 0 && $.inArray(link.airlineId, currentAirlineAllianceMembers) != -1) {
+	} else if (currentAirlineAllianceMembers.length > 0 && $.inArray(link.airlineId, currentAirlineAllianceMembers) !== -1) {
 		relatedPath.shadowPath.thisAlliancePassengers += link.passenger
 	} else {
 		relatedPath.shadowPath.otherAirlinePassengers += link.passenger
@@ -244,7 +244,7 @@ function animateHistoryFlightMarkers(framesPerAnimation) {
             } else  {
                 marker.elapsedDuration += 1
 
-                if (marker.elapsedDuration == marker.totalDuration) { //arrived
+                if (marker.elapsedDuration === marker.totalDuration) { //arrived
                     marker.isActive = false
                     //console.log("next departure " + marker.nextDepartureFrame)
                 } else {
@@ -253,7 +253,7 @@ function animateHistoryFlightMarkers(framesPerAnimation) {
                 }
             }
   		})
-  		if (currentFrame == framesPerAnimation) {
+  		if (currentFrame === framesPerAnimation) {
       	   fadeOutMarkers(historyFlightMarkers[currentStep], animationInterval)
   		   currentStep = (++ currentStep) % historyFlightMarkers.length
            currentFrame = 0

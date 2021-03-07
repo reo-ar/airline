@@ -118,7 +118,7 @@ function updateAirportDetails(airport, cityImageUrl, airportImageUrl) {
 	    		} else {
 	    			$('#airportDetailsBaseType').text(airportBase.headquarter ? "Headquarter" : "Base")
 	    			$('#airportDetailsBaseScale').text(airportBase.scale)
-	    			if (airportBase.delegatesRequired == 0) {
+	    			if (airportBase.delegatesRequired === 0) {
 	    			    $('#airportDetailsBaseDelegatesRequired').text('None')
                     } else {
                         $('#airportDetailsBaseDelegatesRequired').empty()
@@ -139,7 +139,7 @@ function updateAirportDetails(airport, cityImageUrl, airportImageUrl) {
                         $capacitySpan.addClass('fatal')
                     }
 
-                    if (capacityInfo.currentStaffRequired != capacityInfo.futureStaffRequired) {
+                    if (capacityInfo.currentStaffRequired !== capacityInfo.futureStaffRequired) {
                         capacityText += "(future : " + capacityInfo.futureStaffRequired + ")"
                     }
                     $capacitySpan.text(capacityText)
@@ -251,7 +251,7 @@ function updateAirportChampionDetails(airport) {
 
 	    	populateNavigation($('#airportDetailsChampionList'))
 
-	    	if ($(champions).length == 0) {
+	    	if ($(champions).length === 0) {
 	    		var row = $("<div class='table-row'></div>")
 	    		row.append("<div class='cell'>-</div>")
 	    		row.append("<div class='cell'>-</div>")
@@ -449,20 +449,20 @@ function updateFacilityList(statistics) {
 		
 		var linkCount = 0;
 		$.each(statistics.linkCountByAirline, function(index, entry) {
-			if (entry.airlineId == base.airlineId) {
+			if (entry.airlineId === base.airlineId) {
 				linkCount = entry.linkCount;
 				return false; //break
 			}
 		});
 		var passengers = 0
 		$.each(statistics.airlineDeparture, function(index, entry) {
-			if (entry.airlineId == base.airlineId) {
+			if (entry.airlineId === base.airlineId) {
 				passengers += entry.passengers;
 				return false; //break
 			}
 		});
 		$.each(statistics.airlineArrival, function(index, entry) {
-			if (entry.airlineId == base.airlineId) {
+			if (entry.airlineId === base.airlineId) {
 				passengers += entry.passengers;
 				return false; //break
 			}
@@ -593,7 +593,7 @@ function addMarkers(airports) {
 
 		  marker.addListener('click', function() {
 			  infoWindow.close();
-			  if (infoWindow.marker && infoWindow.marker != this) {
+			  if (infoWindow.marker && infoWindow.marker !== this) {
 			    infoWindow.marker.setOpacity(originalOpacity)
               }
 			  
@@ -629,7 +629,7 @@ function addMarkers(airports) {
 			  if (activeAirline) {
 				  if (!activeAirline.headquarterAirport) {
 					  $("#planToAirportButton").hide()
-				  } else if (this.airport.id == activeAirline.headquarterAirport.airportId) {
+				  } else if (this.airport.id === activeAirline.headquarterAirport.airportId) {
 					  $("#planToAirportButton").hide()
 				  } else {
 					  $("#planToAirportButton").show()
@@ -644,7 +644,7 @@ function addMarkers(airports) {
                this.setOpacity(0.9)
             })
             marker.addListener('mouseout', function(event) {
-                if (infoWindow.marker != this) {
+                if (infoWindow.marker !== this) {
                     this.setOpacity(originalOpacity)
                 }
             })
@@ -766,7 +766,7 @@ function updateBaseInfo(airportId) {
 	} else {
 	  var baseAirport
 	  for (i = 0; i < activeAirline.baseAirports.length; i++) {
-		  if (activeAirline.baseAirports[i].airportId == airportId) {
+		  if (activeAirline.baseAirports[i].airportId === airportId) {
 			  baseAirport = activeAirline.baseAirports[i]
 			  break
 		  }
@@ -824,7 +824,7 @@ function refreshAirportExtendedDetails(airport) {
 	    var airlineId = activeAirline.id
         var hasMatch = false
         $.each(airport.appealList, function( key, appeal ) {
-            if (appeal.airlineId == airlineId) {
+            if (appeal.airlineId === airlineId) {
                 if (airport.bonusList[airlineId]) {
                     if (airport.bonusList[airlineId].awareness > 0) {
                         $(".airportAwarenessBonus").text("(+" + airport.bonusList[airlineId].awareness + ")")
@@ -876,13 +876,13 @@ function refreshAirportExtendedDetails(airport) {
     }
     $(".airportFeatures .feature").remove()
     $.each(airport.features, function(index, feature) {
-        $("#airportPopup .airportFeatures").append("<div class='feature' style='display:inline'><img src='assets/images/icons/airport-features/" + feature.type + ".png' title='" + feature.title + "'; style='vertical-align: bottom;'><span>" +  (feature.strength != 0 ? feature.strength : "") + "</span></div>")
+        $("#airportPopup .airportFeatures").append("<div class='feature' style='display:inline'><img src='assets/images/icons/airport-features/" + feature.type + ".png' title='" + feature.title + "'; style='vertical-align: bottom;'><span>" +  (feature.strength !== 0 ? feature.strength : "") + "</span></div>")
 
 
         var $featureDiv = $("<div class='feature'><img src='assets/images/icons/airport-features/" + feature.type + ".png'; style='margin-right: 5px;'></div>")
         $featureDiv.css({ 'display' : "flex", 'align-items' : "center", 'padding' : "2px 0" })
         var featureText = feature.title
-        if (feature.strength != 0) {
+        if (feature.strength !== 0) {
             featureText += " (strength: " + feature.strength + ")"
         }
         var $featureDescription = $('<span><span>').text(featureText)
@@ -1045,7 +1045,7 @@ function updateAirportBaseMarkers(newBaseAirports, relatedFlightPaths) {
                         if (!$(path).data("originalOpacity")) {
                             $(path).data("originalOpacity", path.strokeOpacity)
                         }
-                        if (link.fromAirportId != baseAirport.airportId || link.airlineId != baseAirport.airlineId) {
+                        if (link.fromAirportId !== baseAirport.airportId || link.airlineId !== baseAirport.airlineId) {
                             path.setOptions({ strokeOpacity : 0.1 })
                         } else {
                             path.setOptions({ strokeOpacity : 0.8 })

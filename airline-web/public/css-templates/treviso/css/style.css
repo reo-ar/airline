@@ -304,7 +304,7 @@ div.icon {
 }
 .herowrapper b {
 	background-color: rgba(255, 255, 255, 0.8);
-	padding: 0px 5px;
+	padding: 0 5px;
 }
 a.scrolldown {
 	display: block;
@@ -331,8 +331,7 @@ a.scrolldown {
 ******************************************************************/
 .widget {
 	width: 260px;
-	margin: 50px 30px;
-	margin-bottom: 0px;
+	margin: 50px 30px 0px;
 	float: left;
 }
 .widget a {
@@ -362,12 +361,12 @@ a.logo {
 	width: 120px;
 	height: 30px;
 	background-image: url(../img/logo.png);
-	margin: 27px 0px 0px 40px;
+	margin: 27px 0 0 40px;
 }
 ul.mainmenu {
 	font-family: "Open Sans", Verdana, Arial, sans-serif;
 	float: right;
-	margin: 0px 40px 0px 0px;
+	margin: 0 40px 0 0;
 	text-transform: uppercase;
 	font-weight: 300;
 }
@@ -396,33 +395,6 @@ ul.mainmenu li.active a {
 /******************************************************************
 	jCarousel
 ******************************************************************/
-.jcarousel-prev, .jcarousel-next {
-	width: 20px;
-	height: 20px;
-	background-image: url(../img/carouselcontrols.png);
-	background-repeat: no-repeat;
-	background-color: #6093e7;
-	cursor: pointer;
-	position: absolute;
-}
-.jcarousel-prev-disabled, .jcarousel-next-disabled {
-	width: 20px;
-	height: 20px;
-	background-image: url(../img/carouselcontrols.png);
-	background-repeat: no-repeat;
-	background-color: #cfcfcf;
-	cursor: pointer;
-	position: absolute;
-}
-.jcarousel-next, .jcarousel-next-disabled {
-	background-position: -20px 0px;
-	top: -25px;
-	right: 0px;
-}
-.jcarousel-prev, .jcarousel-prev-disabled {
-	top: -25px;
-	right: 22px;
-}
 
 /******************************************************************
 	Footer
@@ -432,7 +404,7 @@ ul.mainmenu li.active a {
 	Home Page
 ******************************************************************/
 div.section.full {
-	margin: 40px 0px;
+	margin: 40px 0;
 	clear: both;
 	width: 960px;
 	overflow: hidden;
@@ -461,8 +433,8 @@ div.section.block img {
 	height: 185px;
 	display: block;
 	position: absolute;
-	margin-top: 0px;
-	margin-left: 0px;
+	margin-top: 0;
+	margin-left: 0;
 	z-index: 1;
 }
 div.section.block .content {
@@ -488,7 +460,7 @@ div.section.block .hover.content {
 	background-color: rgba(96, 147, 231, 0.6);
 	z-index: 10;
 	border-bottom: 3px solid #6093e7;
-	margin-top: 0px;
+	margin-top: 0;
 }
 div.section.block .hover.content h2 {
 	padding-top: 40px;
@@ -505,7 +477,7 @@ div.section.block .hover.content h6 {
 	color: #FFF;
 }
 div.section.full li:last-child  {
-	margin-right: 0px;
+	margin-right: 0;
 }
 div.section.block.blog {
 	text-align: left;
@@ -556,7 +528,7 @@ div.person div.image {
 div.person div.info {
 	width: 520px;
 	float: right;
-	padding: 0px 30px;
+	padding: 0 30px;
 }
 div.person div.image img {
 	position: absolute;
@@ -565,8 +537,8 @@ div.quotehover {
 	cursor: pointer;
 	display: none;
 	position: relative;
-	top: 0px;
-	left: 0px;
+	top: 0;
+	left: 0;
 	width: 340px;
 	height: 250px;
 	background-image: url(../img/quotehover.png);
@@ -576,7 +548,7 @@ div.quotehover {
 div.quotehover h5, div.quotehover h6 {
 	color: #FFF;
 	text-align: center;
-	padding: 0px 20px;
+	padding: 0 20px;
 }
 div.quotehover h5 {
 	padding-top: 100px;
@@ -592,34 +564,34 @@ a.socialicon {
 	width: 30px;
 	height: 30px;
 	float: left;
-	margin: 20px 10px 0px 0px;
+	margin: 20px 10px 0 0;
 }
 a.socialicon.linkedin {
-	background-position: 0px 0px;
+	background-position: 0 0;
 }
 a.socialicon.linkedin:hover {
-	background-position: 0px -30px;
+	background-position: 0 -30px;
 }
 a.socialicon.facebook {
-	background-position: -30px 0px;
+	background-position: -30px 0;
 }
 a.socialicon.facebook:hover {
 	background-position: -30px -30px;
 }
 a.socialicon.twitter {
-	background-position: -60px 0px;
+	background-position: -60px 0;
 }
 a.socialicon.twitter:hover {
 	background-position: -60px -30px;
 }
 a.socialicon.pinterest {
-	background-position: -90px 0px;
+	background-position: -90px 0;
 }
 a.socialicon.pinterest:hover {
 	background-position: -90px -30px;
 }
 a.socialicon.dribbble {
-	background-position: -120px 0px;
+	background-position: -120px 0;
 }
 a.socialicon.dribbble:hover {
 	background-position: -120px -30px;
@@ -695,7 +667,7 @@ li.filter {
 	cursor: pointer;
 	padding: 5px 15px;
 	border-radius: 3px;
-	margin: 0px 5px;
+	margin: 0 5px;
 }
 li.filter:hover {
 	color: #6093e7;
@@ -771,7 +743,7 @@ ul.portfolio li:hover .portfoliohover h5, ul.portfolio li:hover .portfoliohover 
 ******************************************************************/
 article.post {
 	width: 600px;
-	margin: 20px 60px 0px 0px;
+	margin: 20px 60px 0 0;
 	padding-bottom: 20px;
 	border-bottom: 1px solid #e7e7e7;
 }
@@ -795,8 +767,8 @@ div.postimage img {
 div.posthover {
 	opacity: 0;
 	position: relative;
-	top: 0px;
-	left: 0px;
+	top: 0;
+	left: 0;
 	width: 430px;
 	height: 170px;
 	background-color: rgba(96, 147, 231, 0.6);
@@ -857,7 +829,7 @@ article.post p {
 	-ms-transition: opacity 0.4s;
 	-o-transition: opacity 0.4s;
 	transition: opacity 0.4s;
-	margin: 0px 20px;
+	margin: 0 20px;
 	cursor: pointer;
 }
 .logos img:hover {

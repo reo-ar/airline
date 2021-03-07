@@ -59,7 +59,7 @@ function updateLogTable(sortProperty, sortOrder) {
 	logTable.children("div.table-row").remove()
 	
 	//sort the list
-	loadedLogs.sort(sortByProperty(sortProperty, sortOrder == "ascending"))
+	loadedLogs.sort(sortByProperty(sortProperty, sortOrder === "ascending"))
 	
 	$.each(loadedLogs, function(index, log) {
 		var row = $("<div class='table-row'></div>")
@@ -72,7 +72,7 @@ function updateLogTable(sortProperty, sortOrder) {
 		logTable.append(row)
 	});
 
-	if (loadedLogs.length == 0) {
+	if (loadedLogs.length === 0) {
 	    logTable.append("<div class='table-row'><div class='cell'>-</div><div class='cell'>-</div><div class='cell'>-</div><div class='cell'>-</div><div class='cell'>-</div></div>")
 	}
 }
@@ -83,7 +83,7 @@ function updateAlertTable(sortProperty, sortOrder) {
 	alertTable.children("div.table-row").remove()
 
 	//sort the list
-	loadedAlerts.sort(sortByProperty(sortProperty, sortOrder == "ascending"))
+	loadedAlerts.sort(sortByProperty(sortProperty, sortOrder === "ascending"))
 
 	$.each(loadedAlerts, function(index, alert) {
 		var row = $("<div class='table-row clickable'  onclick=' showLinksDetails(); refreshLinkDetails(" + alert.targetId + ");'></div>")
@@ -96,13 +96,13 @@ function updateAlertTable(sortProperty, sortOrder) {
 		alertTable.append(row)
 	});
 
-    if (loadedAlerts.length == 0) {
+    if (loadedAlerts.length === 0) {
     	    alertTable.append("<div class='table-row'><div class='cell'>-</div><div class='cell'>-</div><div class='cell'>-</div><div class='cell'>-</div><div class='cell'>-</div></div>")
     }
 }
 
 function toggleTableSortOrder(sortHeader, updateTableFunction) {
-	if (sortHeader.data("sort-order") == "ascending") {
+	if (sortHeader.data("sort-order") === "ascending") {
 		sortHeader.data("sort-order", "descending")
 	} else {
 		sortHeader.data("sort-order", "ascending")

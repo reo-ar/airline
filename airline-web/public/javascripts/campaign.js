@@ -80,7 +80,7 @@ function refreshCampaignTable(sortProperty, sortOrder) {
 
 	//sort the list
 	//loadedLinks.sort(sortByProperty(sortProperty, sortOrder == "ascending"))
-	loadedCampaigns = sortPreserveOrder(loadedCampaigns, sortProperty, sortOrder == "ascending")
+	loadedCampaigns = sortPreserveOrder(loadedCampaigns, sortProperty, sortOrder === "ascending")
 
     var selectedCampaign = $('#campaignModal').data('selectedCampaign')
 	$.each(loadedCampaigns, function(index, campaign) {
@@ -93,14 +93,14 @@ function refreshCampaignTable(sortProperty, sortOrder) {
 		row.append("<div class='cell'>" + campaign.population + "</div>")
 		row.append("<div class='cell'>" + campaign.area.length + "</div>")
 
-		if (selectedCampaign && selectedCampaign.id == campaign.id) {
+		if (selectedCampaign && selectedCampaign.id === campaign.id) {
 			row.addClass("selected")
 		}
 
 		$campaignTable.append(row)
 	});
 
-	if (loadedCampaigns.length == 0) {
+	if (loadedCampaigns.length === 0) {
 	    $campaignTable.append("<div class='table-row'><div class='cell'>-</div><div class='cell'>-</div><div class='cell'>-</div><div class='cell'>-</div><div class='cell'>-</div></div>")
 
 	    $('#campaignModal .addCampaign').addClass('glow')

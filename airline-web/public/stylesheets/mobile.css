@@ -92,7 +92,7 @@ and (max-device-width : 640px) {
     }
 
     .topBarItem, #patreonDiv {
-        margin: 0px 4px;
+        margin: 0 4px;
     }
 
     #routeSearchResult {

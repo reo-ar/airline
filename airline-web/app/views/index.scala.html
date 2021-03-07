@@ -34,12 +34,12 @@
 	  <link rel="stylesheet" type="text/css" href='@routes.Assets.versioned("stylesheets/mobile.css")'> <!-- this has to be last so it overrides the CSS if mobile-->
 
 
-    
+
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js" defer></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
 			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
 			  crossorigin="anonymous"></script>
-			  
+
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
 			  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
 			  crossorigin="anonymous"></script>
@@ -56,13 +56,13 @@
 	<script type="text/javascript" src='@routes.Assets.versioned("fusioncharts/themes/fusioncharts.theme.zune.js")' defer></script>
 	<script type="text/javascript" src='@routes.Assets.versioned("fusioncharts/fusioncharts-jquery-plugin.js")' defer></script>
 	<script src='@routes.Assets.versioned("javascripts/plot-fusioncharts.js")' defer></script>
-	
+
 	<script type="text/javascript" src='@routes.Assets.versioned("tinycolorpicker/jquery.tinycolorpicker.js")' defer></script>
 	<link rel="stylesheet" href='@routes.Assets.versioned("tinycolorpicker/tinycolorpicker.css")' type="text/css" />
 
 	<script type="text/javascript" src='@routes.Assets.versioned("progress-bar/progress-bar.js")' defer></script>
 	  <link rel="stylesheet" href='@routes.Assets.versioned("progress-bar/progress-bar.css")' type="text/css" />
-	
+
 	<script type="text/javascript" src='@routes.Assets.versioned("jquery-upload-file/jquery.uploadfile.min.js")' defer></script>
 	<link rel="stylesheet" href='@routes.Assets.versioned("jquery-upload-file/uploadfile.css")' type="text/css" />
 	<script src='@routes.Assets.versioned("javascripts/lazysizes/lazysizes.min.js")' async></script>
@@ -103,7 +103,7 @@
 	<script src='@routes.Assets.versioned("javascripts/color-scheme.js")'></script>
 	<script src='@routes.Assets.versioned("javascripts/mobile.js")' defer></script>
     <script>
-    	if (window.location.hostname != 'localhost') {
+    	if (window.location.hostname !== 'localhost') {
 			window['_fs_debug'] = false;
 			window['_fs_host'] = 'fullstory.com';
 			window['_fs_org'] = 'CVSY5';
@@ -178,42 +178,42 @@
 
 	<div style="width: 100%; display: none;" class="extendedTopBarDetails">
 		<div>
-			<span class="currentTime" class="label" style="margin: 0px 10px"></span>
-			<span style="margin: 0px 10px" title="An estimation of how long until next cycle/week"><img src='@routes.Assets.versioned("images/icons/clock-moon-phase.png")' style="vertical-align: middle;"><span class="nextTickEstimation label" style="font-weight: bold;">-</span></span>
-		</div>
-		<div>
-			<span style="margin: 0px 10px">Reputation: <span class="reputation label"></span> <span class="reputationLevel label"></span></span>
-		</div>
-	</div>
-  	<div id="topBar" data-scroll="false" class="menubar">
+			<span class="currentTime" class="label" style="margin: 0 10px"></span>
+			<span style="margin: 0 10px" title="An estimation of how long until next cycle/week"><img src='@routes.Assets.versioned("images/icons/clock-moon-phase.png")' style="vertical-align: middle;"><span class="nextTickEstimation label" style="font-weight: bold;">-</span></ span, >
+			< / div, >
+			< div, >
+			< span style ="margin: 0 10px">Reputation: <span class="reputation label"></span> <span class="reputationLevel label"></span></ span, >
+			< / div, >
+			< / div, >
+			< div id ="topBar" data-scroll="false" class="menubar">
   		<div class="desktopOnly">
   			<span class="topBarDetails" style="display: none;">
 				<span style="display: flex; flex-align: center;">
-					<span class="currentTime label" style="margin: 0px 10px"></span>
-					<span style="margin: 0px 10px" title="An estimation of how long until next cycle/week"><img src='@routes.Assets.versioned("images/icons/clock-moon-phase.png")' style="vertical-align: middle;"><span class="nextTickEstimation label" style="font-weight: bold;">-</span></span>
-					<span style="margin: 0px 10px" title="Airline Balance">$<span class="balance label"></span></span>
-					<span class="currentAirline label" style="margin: 0; font-weight: bold"></span>
-					<span style="display: inline-block; margin-left: 5px;">
-						<span style="display: flex; flex-align: center;"><span class="reputationStars"></span></span>
-					</span>
-				</span>
-  			</span>
-  		</div>
-		<div style="max-width: 35%;" class="mobileOnly">
+					<span class="currentTime label" style="margin: 0 10px"></ span, >
+			< span style ="margin: 0 10px" title="An estimation of how long until next cycle/week"><img src='@routes.Assets.versioned("images/icons/clock-moon-phase.png")' style="vertical-align: middle;"><span class="nextTickEstimation label" style="font-weight: bold;">-</span></ span, >
+			< span style ="margin: 0 10px" title="Airline Balance">$<span class="balance label"></span></ span, >
+			< span class ="currentAirline label" style="margin: 0; font-weight: bold"></ span, >
+			< span style ="display: inline-block; margin-left: 5px;">
+						<span style="display: flex; flex-align: center;"><span class="reputationStars"></span></ span, >
+			< / span, >
+			< / span, >
+			< / span, >
+			< / div, >
+			< div style ="max-width: 35%;" class="mobileOnly">
 			<div class="topBarDetails">
-				<span class="currentAirline label" style="margin-left: 0px 5px; font-weight: bold"></span>
-				<span>$<span class="balance label"></span></span>
-			</div>
-		</div>
-  		<div style="display: flex; align-items: center; flex-wrap: wrap;">
+				<span class="currentAirline label" style="margin-left: 0 5px; font-weight: bold"></ span, >
+			< span > $ <span class="balance label"></span></ span, >
+			< / div, >
+			< / div, >
+			< div style ="display: flex; align-items: center; flex-wrap: wrap;">
 			<div class="switch" style="margin-right: 5px;">
 				<input type="radio" class="switch-input" name="theme" value="light" id="switchDark" onchange="switchTheme()">
-				<label for="switchDark" class="switch-label switch-label-off">Dark</label>
-				<input type="radio" class="switch-input dark" name="theme" value="dark" id="switchLight" onchange="switchTheme()">
-				<label for="switchLight" class="switch-label switch-label-on">Light</label>
-				<span class="switch-selection"></span>
-			</div>
-			<div style="display: none; display: flex; align-items: center;" id="loginDiv" class="topBarItem">
+				<label for="switchDark" class="switch-label switch-label-off">Dark</ label, >
+			< input type ="radio" class="switch-input dark" name="theme" value="dark" id="switchLight" onchange="switchTheme()">
+				<label for="switchLight" class="switch-label switch-label-on">Light</ label, >
+			< span class ="switch-selection"></ span, >
+			< / div, >
+			< div style ="display: none; display: flex; align-items: center;" id="loginDiv" class="topBarItem">
 				<input type="text" id="loginUserName" placeholder="username" tabindex=1/>
 				<a href="/forgot-id"  target="_blank" style="margin-right: 4px">
 					<img src='@routes.Assets.versioned("images/icons/question-frame.png")' title="Forgot User Name?">
@@ -240,40 +240,36 @@
 			<div class="mobileOnly topBarItem">
 				<a href="https://airlineclub.createaforum.com/" target="_blank">
 					<img src='@routes.Assets.versioned("images/icons/24px/forums.png")' style="vertical-align: middle;" title="Forums">
-				</a>
-			</div>
-			<div class="topBarItem" id="patreonDiv">
+				</ a, >
+				< / div, >
+				< div class ="topBarItem" id="patreonDiv">
 				<a href="https://www.patreon.com/bePatron?u=13283790"  target="_blank">
 					<img class="desktopOnly" src='@routes.Assets.versioned("images/buttons/become_a_patron_button.png")' style="max-height: 30px; vertical-align: middle;" title="Become a Patreon to support this project!">
 					<img class="mobileOnly" src='@routes.Assets.versioned("images/buttons/patreon_mark_coral.jpg")' style="max-height: 30px; vertical-align: middle;" title="Become a Patreon to support this project!">
-				</a>
-			</div>
+				</ a, >
+				< / div, >
 
 
 
 
-		</div>
-	</div>
-	<div id="moreTopBarTab" class="mobileOnly" onclick="showExtendedTopBarDetails()">
-		<ul class="moreRow">
-			<li>
-				<span></span>
-				<span></span>
-				<span></span>
-			</li>
-		</ul>
-	</div>
-
-
-
-<!--	<div id="console" class="marquee" style="width: 100%; position: relative;" align="center">-->
+				< / div, >
+				< / div, >
+				< div id ="moreTopBarTab" class="mobileOnly" onclick="showExtendedTopBarDetails()">
+		<ul class="moreRow" >
+				< li, >
+				< span > < / span, >
+				< span > < / span, >
+				< span > < / span, >
+				< / li, >
+				< / ul, >
+				< / div, > <!--	<div id="console" class="marquee" style="width: 100%; position: relative;" align="center">-->
 <!--		<div class="div-overlay" onclick="toggleConsoleMessage()" title="Click to toggle message"></div>-->
 <!--		<span id="consoleMessage"></span>-->
 <!--	</div>-->
 
 
-	<div style="position: relative;" id="mainContainer" > <!-- Main container for the contents + the landing masks-->
-		<div id="landing">
+	<div style="position: relative;" id="mainContainer" > <!-- Main container for the contents + the landing masks--, >
+				< div id ="landing">
 			<div id="landing-content">
 <!--				<div class="title" style="display: flex; ">-->
 <!--					<span class="text write" data-splitting="lines">-->
@@ -293,33 +289,33 @@
 <!--				</div>-->
 				<div style="width:100%; position: relative; padding-bottom: min(540px, 56.25%);">
 <!--					<iframe id="landingVideo" style="max-width : 95%;" src="https://player.vimeo.com/video/517246577?autoplay=1&muted=1&quality=720p" width="960" height="540" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen> </iframe>-->
-					<iframe id="landingVideo" style="width:100%;height:100%;position:absolute;left:50%;top:0px; max-width:960px; max-height:540px; transform:translateX(-50%);"
-							frameborder="0" width="100%" height="100%"  src="https://player.vimeo.com/video/517246577?autoplay=1&muted=1&quality=720p" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen> </iframe>
-				</div>
-				<div style="width:100%; max-width: 540px; margin:auto;">
-					<div style="margin-top:20px;"><a href="about" class="landing-link">&gt;&gt; Tell me more</a></div>
-					<div><a href="signup" class="landing-link">&gt;&gt; Sign me up</a></div>
-					<div><a href="#"  class="landing-link" onclick="closeAbout()">&gt;&gt; Check out the game world</a></div>
-					<div><a href="#"  class="landing-link" onclick="closeAbout(); showSearchCanvas();">&gt;&gt; Search for a Flight in-game</a></div>
-				</div>
+					<iframe id="landingVideo" style="width:100%;height:100%;position:absolute;left:50%;top:0; max-width:960px; max-height:540px; transform:translateX(-50%);"
+							frameborder="0" width="100%" height="100%"  src="https://player.vimeo.com/video/517246577?autoplay=1&muted=1&quality=720p" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen> </ iframe, >
+				< / div, >
+				< div style ="width:100%; max-width: 540px; margin:auto;">
+					<div style="margin-top:20px;"><a href="about" class="landing-link">&gt;&gt; Tell me more</a></ div, >
+				< div > < a href ="signup" class="landing-link">&gt;&gt; Sign me up</a></ div, >
+				< div > < a href ="#"  class="landing-link" onclick="closeAbout()">&gt;&gt; Check out the game world</a></ div, >
+				< div > < a href ="#"  class="landing-link" onclick="closeAbout(); showSearchCanvas();">&gt;&gt; Search for a Flight in-game</a></ div, >
+				< / div, >
 
-			</div>
-		</div>
-		<div id="main" style="width: 100%; position: relative;  overflow-x: auto; overflow-y: scroll;" >
+				< / div, >
+				< / div, >
+				< div id ="main" style="width: 100%; position: relative;  overflow-x: auto; overflow-y: scroll;" >
 			<!-- Chat Window -->
 			<div id="live-chat" class="user-specific-tab">
 				<div ng-app="ChatApp">
 					<div ng-controller="ChatController as chat">
-						<header class="clearfix">
-							<span>
-							 <i></i>
-							<h4>
-								<ul class="ctabs">
-									<li class="tab-link current" data-tab="chatBox-1" data-room-id="0">General</li>
-									<li class="tab-link" data-tab="chatBox-2" id="allianceChatTab"></li>
-								</ul>
-							</h4>
-							<div class="chatOption"><img class="clickable" src='@routes.Assets.versioned("images/icons/arrow-stop-270.png")' title="Scroll to bottom" onclick="adjustScroll()"></div>
+						<header class="clearfix" >
+				< span, >
+				< i > < / i, >
+				< h4, >
+				< ul class ="ctabs">
+									<li class="tab-link current" data-tab="chatBox-1" data-room-id="0">General</ li, >
+				< li class ="tab-link" data-tab="chatBox-2" id="allianceChatTab"></ li, >
+				< / ul, >
+				< / h4, >
+				< div class ="chatOption"><img class="clickable" src='@routes.Assets.versioned("images/icons/arrow-stop-270.png")' title="Scroll to bottom" onclick="adjustScroll()"></div>
 							</span>
 							<span class="notify-bubble">0</span>
 						</header>
@@ -351,7 +347,7 @@
 				</div>
 			</div>
 			<!-- end live-chat -->
-            <div style="position: fixed; top: 0px; width: 15px; height: 100%; z-index: 2; background-color: transparent;" id="tabGroupCue">
+            <div style="position: fixed; top: 0; width: 15px; height: 100%; z-index: 2; background-color: transparent;" id="tabGroupCue">
             </div>
 
 			<div style="position: fixed; z-index: 1; top: 40px; display: none; height: calc(100% - 40px); overflow-y: scroll;" id="tabGroup">
@@ -362,19 +358,18 @@
                       <div style="display:flex; align-items: center;">
                           <div class="tab-icon" data-link="/" onclick="showWorldMap();">
                             <img src='@routes.Assets.versioned("images/icons/globe-green.png")' style="margin: auto;">
-                          </div>
-                          <span class="label floatLabel">World Map</span>
-                      </div>
-                  </li>
-				  <li class="button left-tab user-specific-tab linksCanvasTab">
+                          </ div, >
+						  < span class ="label floatLabel">World Map</ span, >
+						  < / div, >
+						  < / li, >
+						  < li class ="button left-tab user-specific-tab linksCanvasTab">
                       <div style="display:flex; align-items: center;">
                           <div class="tab-icon" data-link="link" onclick="showLinksDetails();">
                               <img src='@routes.Assets.versioned("images/icons/arrow-step-over.png")' style="margin: auto;">
-                          </div>
-                          <span class="label floatLabel">Flights</span>
-                      </div>
-                  </li>
-<!--	&lt;!&ndash; 			  <li class="button left-tab" id="airportCanvasTab" onclick="showAirportDetails();"><span>Airport</span></li> &ndash;&gt;-->
+                          </ div, >
+						  < span class ="label floatLabel">Flights</ span, >
+						  < / div, >
+						  < / li, > <!--	&lt;!&ndash; 			  <li class="button left-tab" id="airportCanvasTab" onclick="showAirportDetails();"><span>Airport</span></li> &ndash;&gt;-->
 
                     <li class="button left-tab user-specific-tab countryCanvasTab">
                         <div style="display:flex; align-items: center;">
@@ -388,88 +383,86 @@
                         <div style="display:flex; align-items: center;">
                             <div class="tab-icon" data-link="airplane" onclick="showAirplaneCanvas();">
                                 <img src='@routes.Assets.versioned("images/icons/airplane-gear.png")' style="margin: auto;">
-                            </div>
-                            <span class="label floatLabel">Airplane</span>
-                        </div>
-                    </li>
-                    <li class="button left-tab user-specific-tab officeCanvasTab">
+                            </ div, >
+							< span class ="label floatLabel">Airplane</ span, >
+							< / div, >
+							< / li, >
+							< li class ="button left-tab user-specific-tab officeCanvasTab">
                         <div style="display:flex; align-items: center;">
                             <div class="tab-icon" data-link="office" onclick="showOfficeCanvas();">
                                 <img src='@routes.Assets.versioned("images/icons/building-hedge.png")' style="margin: auto;">
-                            </div>
-                            <span class="label floatLabel">Office</span>
-                        </div>
-                    </li>
-                    <li class="button left-tab user-specific-tab bankCanvasTab">
+                            </ div, >
+							< span class ="label floatLabel">Office</ span, >
+							< / div, >
+							< / li, >
+							< li class ="button left-tab user-specific-tab bankCanvasTab">
                         <div style="display:flex; align-items: center;">
                             <div class="tab-icon" data-link="bank" onclick="showBankCanvas();">
                                 <img src='@routes.Assets.versioned("images/icons/bank.png")' style="margin: auto;">
-                            </div>
-                            <span class="label floatLabel">Bank</span>
-                        </div>
-                    </li>
-                    <li class="button left-tab user-specific-tab oilCanvasTab">
+                            </ div, >
+							< span class ="label floatLabel">Bank</ span, >
+							< / div, >
+							< / li, >
+							< li class ="button left-tab user-specific-tab oilCanvasTab">
                         <div style="display:flex; align-items: center;">
                             <div class="tab-icon" data-link="oil" onclick="showOilCanvas();">
                                 <img src='@routes.Assets.versioned("images/icons/oil-barrel.png")' style="margin: auto;">
-                            </div>
-                            <span class="label floatLabel">Oil</span>
-                        </div>
-                    </li>
-                    <li class="button left-tab user-specific-tab rivalsCanvasTab">
+                            </ div, >
+							< span class ="label floatLabel">Oil</ span, >
+							< / div, >
+							< / li, >
+							< li class ="button left-tab user-specific-tab rivalsCanvasTab">
                         <div style="display:flex; align-items: center;">
                             <div class="tab-icon" data-link="rival" onclick="showRivalsCanvas();">
                                 <img src='@routes.Assets.versioned("images/icons/user-silhouette-question.png")' style="margin: auto;">
-                            </div>
-                            <span class="label floatLabel">Rivals</span>
-                        </div>
-                    </li>
-                    <li class="button left-tab rankingCanvasTab">
+                            </ div, >
+							< span class ="label floatLabel">Rivals</ span, >
+							< / div, >
+							< / li, >
+							< li class ="button left-tab rankingCanvasTab">
                         <div style="display:flex; align-items: center;">
                             <div class="tab-icon" data-link="ranking" onclick="showRankingCanvas();">
                                 <img src='@routes.Assets.versioned("images/icons/trophy.png")' style="margin: auto;">
-                            </div>
-                            <span class="label floatLabel">Ranking</span>
-                        </div>
-                    </li>
-                    <li class="button left-tab allianceCanvasTab">
+                            </ div, >
+							< span class ="label floatLabel">Ranking</ span, >
+							< / div, >
+							< / li, >
+							< li class ="button left-tab allianceCanvasTab">
                         <div style="display:flex; align-items: center;">
                             <div class="tab-icon" data-link="alliance" onclick="showAllianceCanvas();">
                                 <img src='@routes.Assets.versioned("images/icons/puzzle.png")' style="margin: auto;">
-                            </div>
-                            <span class="label floatLabel">Alliance</span>
-                        </div>
-                    </li>
-                    <li class="button left-tab user-specific-tab logCanvasTab">
+                            </ div, >
+							< span class ="label floatLabel">Alliance</ span, >
+							< / div, >
+							< / li, >
+							< li class ="button left-tab user-specific-tab logCanvasTab">
                         <div style="display:flex; align-items: center;">
                             <div class="tab-icon" data-link="log" onclick="showLogCanvas();">
                                 <img src='@routes.Assets.versioned("images/icons/book-open-text.png")' style="margin: auto;">
-                            </div>
-                            <span class="label floatLabel">Log</span>
-                        </div>
-                    </li>
-                    <li class="button left-tab user-specific-tab eventCanvasTab">
+                            </ div, >
+							< span class ="label floatLabel">Log</ span, >
+							< / div, >
+							< / li, >
+							< li class ="button left-tab user-specific-tab eventCanvasTab">
                         <div style="display:flex; align-items: center;">
                             <div class="tab-icon" data-link="event" onclick="showEventCanvas();">
                                 <img src='@routes.Assets.versioned("images/icons/olympics-medal.png")' style="margin: auto;">
-                            </div>
-                            <span class="label floatLabel">Event</span>
-                        </div>
-                    </li>
-                    <li class="button left-tab searchCanvasTab">
+                            </ div, >
+							< span class ="label floatLabel">Event</ span, >
+							< / div, >
+							< / li, >
+							< li class ="button left-tab searchCanvasTab">
                         <div style="display:flex; align-items: center;">
                             <div class="tab-icon" data-link="search" onclick="showSearchCanvas();">
                                 <img src='@routes.Assets.versioned("images/icons/magnifier.png")' style="margin: auto;">
-                            </div>
-                            <span class="label floatLabel">Search</span>
-                        </div>
-                    </li>
-				</ul>
-			</div>
-
-		<!-- main canvas start -->
+                            </ div, >
+							< span class ="label floatLabel">Search</ span, >
+							< / div, >
+							< / li, >
+							< / ul, >
+							< / div, > <!-- main canvas start -->
 			<div id="canvas" style="float: left;" >
-				<div id="worldMapCanvas" class="canvas" style="height: 100%; padding-left: 0px">
+				<div id="worldMapCanvas" class="canvas" style="height: 100%; padding-left: 0">
 					<div id="map" class="mainPanel" style="float:left"
 						 data-headquarter-marker='@routes.Assets.versioned("images/markers/headquarter.png")'
 						 data-base-marker='@routes.Assets.versioned("images/markers/base.png")'
@@ -626,43 +619,43 @@
 										<span>Direct Competitions</span>
 										<img src='@routes.Assets.versioned("images/icons/chart-up.png")' class="clickable" title="View Rival History"onclick="showLinkRivalHistory($('#actionLinkId').val())" style="vertical-align: text-bottom">
 										<img src='@routes.Assets.versioned("images/icons/magnifier.png")' class="clickable" title="View Rival Details"onclick="showLinkRivalDetails($('#actionLinkId').val())" style="vertical-align: text-bottom">
-									</h4>
-									<div class="table data" id="linkCompetitons" style="width: 100%">
+									</ h4, >
+									< div class ="table data" id="linkCompetitons" style="width: 100%">
 										<div class='table-header'>
-											<div class="cell" style="width: 30%;"><h5>Airline</h5></div>
-											<div class="cell" style="width: 24%;"><h5>Price</h5></div>
-											<div class="cell" style="width: 20%;"><h5>Capacity</h5></div>
-                                            <div class="cell" style="width: 13%;"><h5>Quality</h5></div>
-                                            <div class="cell" style="width: 13%;"><h5>Freq.</h5></div>
-										</div>
-									</div>
-									<div id=linkCompetitionsPie align="center"></div>
-								</div>
-								<div style="width: 50%; float: left;">
+											<div class="cell" style="width: 30%;"><h5>Airline</h5></ div, >
+									< div class ="cell" style="width: 24%;"><h5>Price</h5></ div, >
+									< div class ="cell" style="width: 20%;"><h5>Capacity</h5></ div, >
+									< div class ="cell" style="width: 13%;"><h5>Quality</h5></ div, >
+									< div class ="cell" style="width: 13%;"><h5>Freq.</h5></ div, >
+									< / div, >
+									< / div, >
+									< div id =linkCompetitionsPie align="center"></ div, >
+									< / div, >
+									< div style ="width: 50%; float: left;">
 									<div class="switch" style="float: right;">
 										<input type="radio" class="switch-input" name="view" value="month" id="switchMonth" onchange="refreshLinkCharts()">
-										<label for="switchMonth" class="switch-label switch-label-off">Month</label>
-										<input type="radio" class="switch-input" name="view" value="quarter" id="switchQuarter" onchange="refreshLinkCharts()" checked>
-										<label for="switchQuarter" class="switch-label switch-label-on">Qtr</label>
-										<span class="switch-selection"></span>
-									</div>
-									<div style="clear: both;"></div>
-								</div>
-								<div id="linkProfitChart" style="width: 50%; float: left; height: 170px;"></div>
-								<div id="linkRidershipChart" style="width: 50%; float: left; height: 250px;"></div>
-								<div id="linkRevenueChart" style="width: 50%; float: left; height: 250px;"></div>
-								<div id="linkPriceChart" style="width: 50%; float: left; height: 250px;"></div>
-							</div>
-							<div id="planLinkDetails" style="width: 100%; display: none;">
-								<h4>Plan Route Details</h4>
-								<div class="table" style="width: 100%">
+										<label for="switchMonth" class="switch-label switch-label-off">Month</ label, >
+									< input type ="radio" class="switch-input" name="view" value="quarter" id="switchQuarter" onchange="refreshLinkCharts()" checked, >
+									< label for ="switchQuarter" class="switch-label switch-label-on">Qtr</ label, >
+									< span class ="switch-selection"></ span, >
+									< / div, >
+									< div style ="clear: both;"></ div, >
+									< / div, >
+									< div id ="linkProfitChart" style="width: 50%; float: left; height: 170px;"></ div, >
+									< div id ="linkRidershipChart" style="width: 50%; float: left; height: 250px;"></ div, >
+									< div id ="linkRevenueChart" style="width: 50%; float: left; height: 250px;"></ div, >
+									< div id ="linkPriceChart" style="width: 50%; float: left; height: 250px;"></ div, >
+									< / div, >
+									< div id ="planLinkDetails" style="width: 100%; display: none;">
+								<h4>Plan Route Details</ h4, >
+									< div class ="table" style="width: 100%">
 									<input type="hidden" id="planLinkFromAirportId"/>
 									<input type="hidden" id="planLinkToAirportId"/>
 									<div class="table-row">
-										<div class="label"><h5>From:</h5></div>
-										<div class="value">
-											<span id="planLinkFromAirportName" class="clickable"></span>
-											<img class="clickable" src='@routes.Assets.versioned("images/icons/star-info.png")' title="Flight Quality Expectation" onclick="showLinkExpectedQualityModal(true)">
+										<div class="label"><h5>From:</h5></ div, >
+									< div class ="value">
+											<span id="planLinkFromAirportName" class="clickable"></ span, >
+									< img class ="clickable" src='@routes.Assets.versioned("images/icons/star-info.png")' title="Flight Quality Expectation" onclick="showLinkExpectedQualityModal(true)">
 											<img id="planLinkFromAirportEditIcon" src='@routes.Assets.versioned("images/icons/gear.png")' class='clickable' onclick="$('#planLinkFromAirportSelect').show()"  title="Change From Airport">
 
 											<div class="value"><select class="select-css" id="planLinkFromAirportSelect" onchange="planLink($(this).val(), $('#planLinkToAirportId').val())"></select></div>
@@ -689,55 +682,55 @@
 										<div class="value" id="planLinkToCountryRelationship" style="display: flex; align-items: center;">
 											<span class="total"></span>
 											<img src='@routes.Assets.versioned("images/icons/gear.png")' title='Manage Relationship' class="clickable detailsIcon titleCue" onclick="showRelationshipDetailsModal($(this).data('relationship'), $(this).data('title'), $(this).data('countryCode'))" style="vertical-align: middle;">
-										</div>
-									</div>
-									<div class="table-row">
-										<div class="label"><h5>Title with Destination Country:</h5></div>
-										<div class="value" id="planLinkToCountryTitle" style="display: flex; align-items: center;"><img class="airlineTitleIcon" style='display : none; vertical-align: middle;'>&nbsp;<span class="airlineTitle titleCue"></span></div>
-									</div>
-									<div class="table-row">
-										<div class="label"><h5>Distance:</h5></div>
-										<div class="value" id="planLinkDistance"></div>
-									</div>
-									<div class="table-row">
-										<div class="label"><h5>Direct Demand (Y/J/F):</h5></div>
-										<div class="value" id="planLinkDirectDemand"></div>
-									</div>
-									<div class="table-row">
-										<div class="label"><h5>Direct Competitions:</h5></div>
-										<div class="value">
+										</ div, >
+										< / div, >
+										< div class ="table-row">
+										<div class="label"><h5>Title with Destination Country:</h5></ div, >
+										< div class ="value" id="planLinkToCountryTitle" style="display: flex; align-items: center;"><img class="airlineTitleIcon" style='display : none; vertical-align: middle;'>&nbsp;<span class="airlineTitle titleCue"></span></ div, >
+										< / div, >
+										< div class ="table-row">
+										<div class="label"><h5>Distance:</h5></ div, >
+										< div class ="value" id="planLinkDistance"></ div, >
+										< / div, >
+										< div class ="table-row">
+										<div class="label"><h5>Direct Demand (Y/J/F):</h5></ div, >
+										< div class ="value" id="planLinkDirectDemand"></ div, >
+										< / div, >
+										< div class ="table-row">
+										<div class="label"><h5>Direct Competitions:</h5></ div, >
+										< div class ="value">
 											<div class="table data" id="planLinkCompetitons" style="width: 100%">
 												<div class='table-header'>
-													<div class="cell" style="width: 30%;"><h5>Airline</h5></div>
-													<div class="cell" style="width: 30%;"><h5>Price</h5></div>
-													<div class="cell" style="width: 25%;"><h5>Capacity</h5></div>
-													<div class="cell" style="width: 8%;"><h5>Quality</h5></div>
-                                                    <div class="cell" style="width: 7%;"><h5>Freq.</h5></div>
-												</div>
-											</div>
-										</div>
-									</div>
+													<div class="cell" style="width: 30%;"><h5>Airline</h5></ div, >
+										< div class ="cell" style="width: 30%;"><h5>Price</h5></ div, >
+										< div class ="cell" style="width: 25%;"><h5>Capacity</h5></ div, >
+										< div class ="cell" style="width: 8%;"><h5>Quality</h5></ div, >
+										< div class ="cell" style="width: 7%;"><h5>Freq.</h5></ div, >
+										< / div, >
+										< / div, >
+										< / div, >
+										< / div, >
+										< div class ="table-row">
+										<div class="label"><h5>Setup Cost:</h5></ div, >
+										< div class ="value" id="planLinkCost"></ div, >
+										< / div, >
+										< div class ="table-row">
+										<div class="label"><h5>Estimated Difficulty:</h5></ div, >
+										< div class ="value" id="planLinkEstimatedDifficulty"></ div, >
+										< / div, >
+										< div class ="table-row" id="planLinkModelRow">
+										<div class="label"><h5>Airplane Model (available):</h5></ div, >
+										< div class ="value"><select class="select-css" id="planLinkModelSelect" onchange="updatePlanLinkInfoWithModelSelected($(this).val()); updateModelInfo($(this).val())"></select></ div, >
+										< / div, >
+										< / div, >
+										< div class ="table" style="width: 100%" id="planLinkExtendedDetails">
 									<div class="table-row">
-										<div class="label"><h5>Setup Cost:</h5></div>
-										<div class="value" id="planLinkCost"></div>
-									</div>
-									<div class="table-row">
-										<div class="label"><h5>Estimated Difficulty:</h5></div>
-										<div class="value" id="planLinkEstimatedDifficulty"></div>
-									</div>
-									<div class="table-row" id="planLinkModelRow">
-										<div class="label"><h5>Airplane Model (available):</h5></div>
-										<div class="value"><select class="select-css" id="planLinkModelSelect" onchange="updatePlanLinkInfoWithModelSelected($(this).val()); updateModelInfo($(this).val())"></select></div>
-									</div>
-								</div>
-								<div class="table" style="width: 100%" id="planLinkExtendedDetails">
-									<div class="table-row">
-										<div class="label"><h5>Flight Duration:</h5></div>
-										<div class="value" id="planLinkDuration"></div>
-									</div>
-									<div class="table-row">
-										<div class="label"><h5>Price (Y/J/F):</h5></div>
-										<div class="value">
+										<div class="label"><h5>Flight Duration:</h5></ div, >
+										< div class ="value" id="planLinkDuration"></ div, >
+										< / div, >
+										< div class ="table-row">
+										<div class="label"><h5>Price (Y/J/F):</h5></ div, >
+										< div class ="value">
 											<input type="text" id="planLinkEconomyPrice" data-class="economy" class="planLinkPrice"/>
 											<input type="text" id="planLinkBusinessPrice" data-class="business" class="planLinkPrice"/>
 											<input type="text" id="planLinkFirstPrice" data-class="first" class="planLinkPrice"/>
@@ -987,45 +980,43 @@
 						<div class="section" style="height: 95% ; width : 98%; float: left;">
 							<div style="height: 20px; padding-left: 20px;">
 								<img src='@routes.Assets.versioned("images/icons/clock-frame.png")' class="button" title="Sort by last updated" onclick="toggleLinksTableSortOrder($('#hiddenLinkSortBy'))" style="vertical-align: text-bottom">
-							</div>
-							<div style="width: 100%; height: 100%; overflow:auto;">
+							</ div, >
+							< div style ="width: 100%; height: 100%; overflow:auto;">
 								<div class="table data" style="height: 20px; width: 100%; min-width: 600px;">
 									<div class="table-header" id="linksTableSortHeader">
-										<div class="cell clickable selected" style="width: 16%" data-sort-property="fromAirportCode" data-sort-order="descending" onclick="toggleLinksTableSortOrder($(this))">From Airport</div>
-										<div class="cell clickable" style="width: 0%" data-sort-property="lastUpdate" data-sort-order="ascending" id="hiddenLinkSortBy"></div> <!--hidden column for last update (cannot be first otherwise the left round corner would not work -->
-										<div class="cell clickable" style="width: 16%" data-sort-property="toAirportCode" data-sort-order="descending" onclick="toggleLinksTableSortOrder($(this))">To Airport</div>
-										<div class="cell clickable" style="width: 15%" data-sort-property="model" data-sort-order="ascending" onclick="toggleLinksTableSortOrder($(this))">Model</div>
-										<div class="cell clickable" style="width: 8%" align="right" data-sort-property="distance" data-sort-order="ascending" onclick="toggleLinksTableSortOrder($(this))">Distance</div>
-										<div class="cell clickable" style="width: 8%" align="right" data-sort-property="totalCapacity" data-sort-order="ascending" onclick="toggleLinksTableSortOrder($(this))">Capacity (Freq.)</div>
-										<div class="cell clickable" style="width: 5%" align="right" data-sort-property="totalPassengers" data-sort-order="ascending" onclick="toggleLinksTableSortOrder($(this))">Pax</div>
-										<div class="cell clickable" style="width: 5%" align="right" data-sort-property="totalLoadFactor" data-sort-order="ascending" onclick="toggleLinksTableSortOrder($(this))" title="Load Factor">LF</div>
-                                        <div class="cell clickable" style="width: 5%" align="right" data-sort-property="satisfaction" data-sort-order="ascending" onclick="toggleLinksTableSortOrder($(this))" title="Satisfaction Factor">SF</div>
-										<div class="cell clickable" style="width: 11%" align="right" data-sort-property="revenue" data-sort-order="ascending" onclick="toggleLinksTableSortOrder($(this))">Revenue</div>
-										<div class="cell clickable" style="width: 11%" align="right" data-sort-property="profit" data-sort-order="ascending" onclick="toggleLinksTableSortOrder($(this))">Profit</div>
-									</div>
-								</div>
-								<div style="height: calc(100% - 40px); width: 100%; overflow-y:auto; min-width: 600px;">
+										<div class="cell clickable selected" style="width: 16%" data-sort-property="fromAirportCode" data-sort-order="descending" onclick="toggleLinksTableSortOrder($(this))">From Airport</ div, >
+							< div class ="cell clickable" style="width: 0" data-sort-property="lastUpdate" data-sort-order="ascending" id="hiddenLinkSortBy"></div> <!--hidden column for last update (cannot be first otherwise the left round corner would not work -->
+										<div class="cell clickable" style="width: 16%" data-sort-property="toAirportCode" data-sort-order="descending" onclick="toggleLinksTableSortOrder($(this))">To Airport</ div, >
+							< div class ="cell clickable" style="width: 15%" data-sort-property="model" data-sort-order="ascending" onclick="toggleLinksTableSortOrder($(this))">Model</ div, >
+							< div class ="cell clickable" style="width: 8%" align="right" data-sort-property="distance" data-sort-order="ascending" onclick="toggleLinksTableSortOrder($(this))">Distance</ div, >
+							< div class ="cell clickable" style="width: 8%" align="right" data-sort-property="totalCapacity" data-sort-order="ascending" onclick="toggleLinksTableSortOrder($(this))">Capacity (Freq.)</ div, >
+							< div class ="cell clickable" style="width: 5%" align="right" data-sort-property="totalPassengers" data-sort-order="ascending" onclick="toggleLinksTableSortOrder($(this))">Pax</ div, >
+							< div class ="cell clickable" style="width: 5%" align="right" data-sort-property="totalLoadFactor" data-sort-order="ascending" onclick="toggleLinksTableSortOrder($(this))" title="Load Factor">LF</ div, >
+							< div class ="cell clickable" style="width: 5%" align="right" data-sort-property="satisfaction" data-sort-order="ascending" onclick="toggleLinksTableSortOrder($(this))" title="Satisfaction Factor">SF</ div, >
+							< div class ="cell clickable" style="width: 11%" align="right" data-sort-property="revenue" data-sort-order="ascending" onclick="toggleLinksTableSortOrder($(this))">Revenue</ div, >
+							< div class ="cell clickable" style="width: 11%" align="right" data-sort-property="profit" data-sort-order="ascending" onclick="toggleLinksTableSortOrder($(this))">Profit</ div, >
+							< / div, >
+							< / div, >
+							< div style ="height: calc(100% - 40px); width: 100%; overflow-y:auto; min-width: 600px;">
 									<div class="table data" id="linksTable" style="max-height: 100%; width: 100%">
 										<div class="table-header">
-											<div class="cell" style="width: 16%; border-bottom: none;"></div>
-											<div class="cell" style="width: 16%; border-bottom: none;"></div>
-											<div class="cell" style="width: 15%; border-bottom: none;"></div>
-											<div class="cell" style="width: 8%; border-bottom: none;"></div>
-											<div class="cell" style="width: 8%; border-bottom: none;"></div>
-											<div class="cell" style="width: 5%; border-bottom: none;"></div>
-											<div class="cell" style="width: 5%; border-bottom: none;"></div>
-                                            <div class="cell" style="width: 5%; border-bottom: none;"></div>
-											<div class="cell" style="width: 11%; border-bottom: none;"></div>
-											<div class="cell" style="width: 11%; border-bottom: none;"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!--  Link details here -->
-				</div>
-	<!--  end links canvas -->
+											<div class="cell" style="width: 16%; border-bottom: none;"></ div, >
+							< div class ="cell" style="width: 16%; border-bottom: none;"></ div, >
+							< div class ="cell" style="width: 15%; border-bottom: none;"></ div, >
+							< div class ="cell" style="width: 8%; border-bottom: none;"></ div, >
+							< div class ="cell" style="width: 8%; border-bottom: none;"></ div, >
+							< div class ="cell" style="width: 5%; border-bottom: none;"></ div, >
+							< div class ="cell" style="width: 5%; border-bottom: none;"></ div, >
+							< div class ="cell" style="width: 5%; border-bottom: none;"></ div, >
+							< div class ="cell" style="width: 11%; border-bottom: none;"></ div, >
+							< div class ="cell" style="width: 11%; border-bottom: none;"></ div, >
+							< / div, >
+							< / div, >
+							< / div, >
+							< / div, >
+							< / div, >
+							< / div, > <!--  Link details here -->
+				</ div, > <!--  end links canvas -->
 
 				<div id="airportCanvas" class="canvas" style="display: none; min-width: 700px;">
 					<!-- left panel -->
@@ -1033,54 +1024,54 @@
 						<div style="box-sizing:border-box; width: 100%; display: flex;">
 							<div style="box-sizing:border-box; width: 35%; float:left;">
 								<div class="section" style="box-sizing:border-box; size: 100%; margin-left: 0;">
-									<h4>Airport Rating</h4>
-									<div class="table" style="width: 100%">
+									<h4>Airport Rating</ h4, >
+							< div class ="table" style="width: 100%">
 										<div class="table-row">
-											<div class="label" style="width: 25%"><h5>Airport:</h5></div>
-											<div class="value economicRating rating" style="width: 75%"></div>
-										</div>
+											<div class="label" style="width: 25%"><h5>Airport:</h5></ div, >
+							< div class ="value economicRating rating" style="width: 75%"></ div, >
+							< / div, >
+							< div class ="table-row">
+											<div class="label" style="width: 25%"><h5>Country:</h5></ div, >
+							< div class ="value countryRating rating" style="width: 75%"></ div, >
+							< / div, >
+							< div class ="table-row">
+											<div class="label" style="width: 25%"><h5>Competition:</h5></ div, >
+							< div class ="value competitionRating rating" style="width: 75%"></ div, >
+							< / div, >
+							< div class ="table-row">
+											<div class="label" style="width: 25%"><h5>Charms:</h5></ div, >
+							< div class ="value airportFeatures" style="width: 75%"></ div, >
+							< / div, >
+							< div class ="table-row">
+											<div class="label" style="width: 25%"><h5>Difficulty:</h5></ div, >
+							< div class ="value difficulty rating" style="width: 75%"></ div, >
+							< / div, >
+							< / div, >
+							< / div, >
+							< div id ="airportBaseDetails" class="section" style="box-sizing:border-box; size: 100%; margin-left: 0;">
+									<h4>Your Airline Headquarters/Base</ h4, >
+							< div class ="table" style="width: 100%">
 										<div class="table-row">
-											<div class="label" style="width: 25%"><h5>Country:</h5></div>
-											<div class="value countryRating rating" style="width: 75%"></div>
-										</div>
-										<div class="table-row">
-											<div class="label" style="width: 25%"><h5>Competition:</h5></div>
-											<div class="value competitionRating rating" style="width: 75%"></div>
-										</div>
-										<div class="table-row">
-											<div class="label" style="width: 25%"><h5>Charms:</h5></div>
-											<div class="value airportFeatures" style="width: 75%"></div>
-										</div>
-										<div class="table-row">
-											<div class="label" style="width: 25%"><h5>Difficulty:</h5></div>
-											<div class="value difficulty rating" style="width: 75%"></div>
-										</div>
-									</div>
-								</div>
-								<div id="airportBaseDetails" class="section" style="box-sizing:border-box; size: 100%; margin-left: 0;">
-									<h4>Your Airline Headquarters/Base</h4>
-									<div class="table" style="width: 100%">
-										<div class="table-row">
-											<div class="label" style="width: 60%"><h5>Base Type:</h5></div>
-											<div class="value" id="airportDetailsBaseType" style="width: 40%"></div>
-										</div>
-										<div class="table-row">
-											<div class="label"><h5>Base Scale:</h5></div>
-											<div class="value" id="airportDetailsBaseScale"></div>
-										</div>
-										<div class="table-row">
-											<div class="label"><h5>Base Upkeep:</h5></div>
-											<div class="value" id="airportDetailsBaseUpkeep"></div>
-										</div>
-										<div class="table-row">
-											<div class="label"><h5>Country Delegates Required:</h5></div>
-											<div class="value" id="airportDetailsBaseDelegatesRequired"></div>
-										</div>
-										<div class="table-row">
-											<div class="label"><h5>Office Staff: (req/cap)</h5></div>
-											<div class="value" style="display: flex; align-items: center;">
-												<span id="airportDetailsStaff"></span>
-												<img src='@routes.Assets.versioned("images/icons/information.png")' onmouseover="showBaseDetailsModal()">
+											<div class="label" style="width: 60%"><h5>Base Type:</h5></ div, >
+							< div class ="value" id="airportDetailsBaseType" style="width: 40%"></ div, >
+							< / div, >
+							< div class ="table-row">
+											<div class="label"><h5>Base Scale:</h5></ div, >
+							< div class ="value" id="airportDetailsBaseScale"></ div, >
+							< / div, >
+							< div class ="table-row">
+											<div class="label"><h5>Base Upkeep:</h5></ div, >
+							< div class ="value" id="airportDetailsBaseUpkeep"></ div, >
+							< / div, >
+							< div class ="table-row">
+											<div class="label"><h5>Country Delegates Required:</h5></ div, >
+							< div class ="value" id="airportDetailsBaseDelegatesRequired"></ div, >
+							< / div, >
+							< div class ="table-row">
+											<div class="label"><h5>Office Staff: (req/cap)</h5></ div, >
+							< div class ="value" style="display: flex; align-items: center;">
+												<span id="airportDetailsStaff"></ span, >
+							< img src ='@routes.Assets.versioned("images/icons/information.png")' onmouseover="showBaseDetailsModal()">
 											</div>
 										</div>
 
@@ -1234,54 +1225,53 @@
 									<div class="value countryRelationship" style="display: flex; align-items: center;">
 										<span class="total"></span>
 										<img src='@routes.Assets.versioned("images/icons/gear.png")' title='Manage Relationship' class="clickable detailsIcon titleCue" onclick="showRelationshipDetailsModal($(this).data('relationship'), $(this).data('title'), $(this).data('countryCode'), function(){ showAirportDetails(activeAirportId) })" style="vertical-align: middle;">
-									</div>
-								</div>
-								<div class="table-row">
-									<div class="label"><h5>Your Title:</h5></div>
-									<div class="value countryTitle" style="display: flex; align-items: center;"><img class="airlineTitleIcon" style='display : none; vertical-align: middle;'>&nbsp;<span class="airlineTitle titleCue"></span></div>
-								</div>
-								<div class="table-row">
-									<div class="label"><h5>Weekly Passengers:</h5></div>
-									<div class="value" id="airportDetailsPassengerCount"></div>
-								</div>
-								<div class="table-row">
-									<div class="label"><h5>Total Flight Routes:</h5></div>
-									<div class="value" id="airportDetailsLinkCount"></div>
-								</div>
-								<div class="table-row">
-									<div class="label"><h5>Weekly Flight Movements:</h5></div>
-									<div class="value" id="airportDetailsFlightFrequency"></div>
-								</div>
-								<div class="table-row">
-									<div class="label"><h5>Connected Airports:</h5></div>
-									<div class="value" id="airportDetailsConnectedAirportCount"></div>
-								</div>
-								<div class="table-row">
-									<div class="label"><h5>Connected Countries:</h5></div>
-									<div class="value" id="airportDetailsConnectedCountryCount"></div>
-								</div>
-								<div class="table-row">
-									<div class="label"><h5>Served By Airlines:</h5></div>
-									<div class="value" id="airportDetailsAirlineCount"></div>
-								</div>
-							</div>
-							<div id="airportStatistics" style="width: 100%; float: left;">
+									</ div, >
+									< / div, >
+									< div class ="table-row">
+									<div class="label"><h5>Your Title:</h5></ div, >
+									< div class ="value countryTitle" style="display: flex; align-items: center;"><img class="airlineTitleIcon" style='display : none; vertical-align: middle;'>&nbsp;<span class="airlineTitle titleCue"></span></ div, >
+									< / div, >
+									< div class ="table-row">
+									<div class="label"><h5>Weekly Passengers:</h5></ div, >
+									< div class ="value" id="airportDetailsPassengerCount"></ div, >
+									< / div, >
+									< div class ="table-row">
+									<div class="label"><h5>Total Flight Routes:</h5></ div, >
+									< div class ="value" id="airportDetailsLinkCount"></ div, >
+									< / div, >
+									< div class ="table-row">
+									<div class="label"><h5>Weekly Flight Movements:</h5></ div, >
+									< div class ="value" id="airportDetailsFlightFrequency"></ div, >
+									< / div, >
+									< div class ="table-row">
+									<div class="label"><h5>Connected Airports:</h5></ div, >
+									< div class ="value" id="airportDetailsConnectedAirportCount"></ div, >
+									< / div, >
+									< div class ="table-row">
+									<div class="label"><h5>Connected Countries:</h5></ div, >
+									< div class ="value" id="airportDetailsConnectedCountryCount"></ div, >
+									< / div, >
+									< div class ="table-row">
+									<div class="label"><h5>Served By Airlines:</h5></ div, >
+									< div class ="value" id="airportDetailsAirlineCount"></ div, >
+									< / div, >
+									< / div, >
+									< div id ="airportStatistics" style="width: 100%; float: left;">
 								<div style="float: left;">
-									<h5 align="center">Airline share (as Departure)</h5>
-									<div id="airlineDeparturePie" style="height: 160px; width: 250px;" align="center"></div>
-								</div>
-								<div style="float: left;">
-									<h5 align="center">Airline share (as Arrival)</h5>
-									<div id="airlineArrivalPie" style="height: 160px; width: 250px;" align="center"></div>
-								</div>
-								<div style="float: left;">
-									<h5 align="center">Passenger Transit Type</h5>
-									<div id="transitTypePie" style="height: 160px; width: 250px;" align="center"></div>
-								</div>
-							</div>
-						</div>
-						<div style="clear: both;"></div>
-	<!-- 		    		end main details -->
+									<h5 align="center">Airline share (as Departure)</ h5, >
+									< div id ="airlineDeparturePie" style="height: 160px; width: 250px;" align="center"></ div, >
+									< / div, >
+									< div style ="float: left;">
+									<h5 align="center">Airline share (as Arrival)</ h5, >
+									< div id ="airlineArrivalPie" style="height: 160px; width: 250px;" align="center"></ div, >
+									< / div, >
+									< div style ="float: left;">
+									<h5 align="center">Passenger Transit Type</ h5, >
+									< div id ="transitTypePie" style="height: 160px; width: 250px;" align="center"></ div, >
+									< / div, >
+									< / div, >
+									< / div, >
+									< div style ="clear: both;"></ div, > <!-- 		    		end main details -->
 						<div style="display: flex;">
 							<div class="section" style="box-sizing:border-box; width: 30%; min-width: 300px; margin-left: 0;">
 								<div style="float: left;"><img src='@routes.Assets.versioned("images/icons/crown.png")'></div><div style="float: left;"><h4>Rankings</h4></div>
@@ -1566,7 +1556,7 @@
 							<div class="section" style="width: 95%;">
 								<div class="modelIllustration" style="width:100%; position: relative; max-width: 500px;">
 									<img src='#' style="width: 100%;">
-									<div class="label" style="right: 0px; bottom: 0px; position: absolute; font-style: italic;"><a href='#' target="_blank">Illustration courtesy of Norebbo</a></div>
+									<div class="label" style="right: 0; bottom: 0; position: absolute; font-style: italic;"><a href='#' target="_blank">Illustration courtesy of Norebbo</a></div>
 								</div>
 
 								<div class="table" style="width: 100%;">
@@ -2958,122 +2948,122 @@
 				  <div style="width : 90%; max-width: 800px; height: 95%; display: flex; flex-flow: column;" class="section mainSection">
 					  <div style="width: 100%; min-height: 80px;" class="titlesContainer">
 						  <div class="titleNavigation">
-							  <div style="float:left;" class="left" onclick="titleNavigate($(this), -1)"><img class='button' src='@routes.Assets.versioned("images/icons/24px/arrow-180.png")' style="opacity: 0.8"></div>
+							  <div style="float:left;" class="left" onclick="titleNavigate($(this), -1)"><img class='button' src='@routes.Assets.versioned("images/icons/24px/arrow-180.png")' style="opacity: 0.8"></ div, >
 
-							  <div style="float:right;" class="right" onclick="titleNavigate($(this), 1)"><img class='button' src='@routes.Assets.versioned("images/icons/24px/arrow.png")' style="opacity: 0.8"></div>
-						  </div>
-					    <div class="titleSelection selected" data-search-type="route">Tickets</div>
-					    <div class="titleSelection" data-search-type="history">History</div>
-					  </div>
-					  <div class="routeSearch searchContainer" style="display: flex; flex-flow: column; flex-grow : 1;">
+							  < div style ="float:right;" class="right" onclick="titleNavigate($(this), 1)"><img class='button' src='@routes.Assets.versioned("images/icons/24px/arrow.png")' style="opacity: 0.8"></ div, >
+							  < / div, >
+							  < div class ="titleSelection selected" data-search-type="route">Tickets</ div, >
+							  < div class ="titleSelection" data-search-type="history">History</ div, >
+							  < / div, >
+							  < div class ="routeSearch searchContainer" style="display: flex; flex-flow: column; flex-grow : 1;">
 						  <div style="margin-top: 10px">
-							  <div style="padding: 10px; margin: 10px 0px;"> <!--from and to box-->
-								  <div style="float: left; width : 50%; position: relative;">
+							  <div style="padding: 10px; margin: 10px 0;"> <!-- from and to box--, >
+							  < div style ="float: left; width : 50%; position: relative;">
 									  <div class="searchInput" data-search-type="airport">
 										  <input type="text" style="width: 80%" tabindex="101" class="fromAirport" placeholder="From" oninput="searchChange($(this))" onfocus="$(this).select();" onfocusout="searchFocusOut($(this))" onkeyup="searchKeyUp(event, $('div.routeSearch input.fromAirport'))" onkeydown="searchKeyDown(event, $('div.routeSearch input.fromAirport'))">
-										  <span class="spinner" style="display: none;"><img src='https://i.stack.imgur.com/FhHRx.gif' style="height: 16px"></span>
-									  </div>
-									  <div class="searchResult"></div>
-								  </div>
-								  <div style="float: left; width : 50%; position: relative;">
+										  <span class="spinner" style="display: none;"><img src='https://i.stack.imgur.com/FhHRx.gif' style="height: 16px"></ span, >
+							  < / div, >
+							  < div class ="searchResult"></ div, >
+							  < / div, >
+							  < div style ="float: left; width : 50%; position: relative;">
 									  <div class="searchInput" data-search-type="airport">
 										  <input type="text" style="width: 80%" tabindex="102" class="toAirport" placeholder="To" oninput="searchChange($(this))" onfocus="$(this).select();" onfocusout="searchFocusOut($(this))" onkeyup="searchKeyUp(event, $('div.routeSearch input.toAirport'))" onkeydown="searchKeyDown(event, $('div.routeSearch input.toAirport'))">
-										  <span class="spinner" style="display: none;"><img src='https://i.stack.imgur.com/FhHRx.gif' style="height: 16px"></span>
-									  </div>
-									  <div class="searchResult"></div>
-								  </div>
-								  <div style="clear: both;"></div>
-							  </div>
+										  <span class="spinner" style="display: none;"><img src='https://i.stack.imgur.com/FhHRx.gif' style="height: 16px"></ span, >
+							  < / div, >
+							  < div class ="searchResult"></ div, >
+							  < / div, >
+							  < div style ="clear: both;"></ div, >
+							  < / div, >
 
-							  <div class="button search" tabindex="103" onkeypress="searchButtonKeyPress(event, $(this))" onclick="searchFlight($('div.routeSearch input.fromAirport').data('selectedId'), $('div.routeSearch input.toAirport').data('selectedId'))">Search</div>
-						  </div>
+							  < div class ="button search" tabindex="103" onkeypress="searchButtonKeyPress(event, $(this))" onclick="searchFlight($('div.routeSearch input.fromAirport').data('selectedId'), $('div.routeSearch input.toAirport').data('selectedId'))">Search</ div, >
+							  < / div, >
 
-						  <div id="routeSearchResult" style="overflow-y: auto; flex-grow: 1; padding: 10px; height: 0px;"></div> <!-- need height otherwise the scroll would not work -->
-				  	  </div>
-					  <div class="historySearch searchContainer" style="flex-grow: 1; display: flex; flex-flow: column; ">
+							  < div id ="routeSearchResult" style="overflow-y: auto; flex-grow: 1; padding: 10px; height: 0;"></div> <!-- need height otherwise the scroll would not work -->
+				  	  </ div, >
+							  < div class ="historySearch searchContainer" style="flex-grow: 1; display: flex; flex-flow: column; ">
 					  	 <div style="margin-top: 10px">
 							<div class="locationCriteria" style="float: left; width : 50%; position: relative; box-sizing: border-box;">
 							  <div class="searchCriterion"> <!-- Airport -->
 								  <div style="float: left; width : 50%; position: relative;">
 									  <div class="searchInput" data-search-type="airport">
 										  <input type="text" style="width: 80%" tabindex="101" class="fromAirport" data-search-group="fromDestination" placeholder="From Airport (Any)" autocomplete="no" oninput="searchChange($(this))" onfocus="$(this).select();" onfocusout="searchFocusOut($(this))" onkeyup="searchKeyUp(event, $('div.historySearch input.fromAirport'))" onkeydown="searchKeyDown(event, $('div.historySearch input.fromAirport'))">
-										  <span class="spinner" style="display: none;"><img src='https://i.stack.imgur.com/FhHRx.gif' style="height: 16px"></span>
-									  </div>
-									  <div class="searchResult"></div>
-								  </div>
-								  <div style="float: left; width : 50%; position: relative;">
+										  <span class="spinner" style="display: none;"><img src='https://i.stack.imgur.com/FhHRx.gif' style="height: 16px"></ span, >
+							  < / div, >
+							  < div class ="searchResult"></ div, >
+							  < / div, >
+							  < div style ="float: left; width : 50%; position: relative;">
 									  <div class="searchInput" data-search-type="airport">
 										  <input type="text" style="width: 80%" tabindex="102" class="toAirport" data-search-group="toDestination" placeholder="To Airport (Any)" autocomplete="no" oninput="searchChange($(this))" onfocus="$(this).select();" onfocusout="searchFocusOut($(this))" onkeyup="searchKeyUp(event, $('div.historySearch input.toAirport'))" onkeydown="searchKeyDown(event, $('div.historySearch input.toAirport'))">
-										  <span class="spinner" style="display: none;"><img src='https://i.stack.imgur.com/FhHRx.gif' style="height: 16px"></span>
-									  </div>
-									  <div class="searchResult"></div>
-								  </div>
-								  <div style="clear: both;"></div>
-							  </div>
-							  <div class="searchCriterion"> <!-- Country -->
+										  <span class="spinner" style="display: none;"><img src='https://i.stack.imgur.com/FhHRx.gif' style="height: 16px"></ span, >
+							  < / div, >
+							  < div class ="searchResult"></ div, >
+							  < / div, >
+							  < div style ="clear: both;"></ div, >
+							  < / div, >
+							  < div class ="searchCriterion"> <!-- Country -->
 								  <div style="float: left; width : 50%; position: relative;">
 									  <div class="searchInput" data-search-type="country">
 										  <input type="text" style="width: 80%" tabindex="103" class="fromCountry" data-search-group="fromDestination" placeholder="From Country (Any)" autocomplete="no" oninput="searchChange($(this))" onfocus="$(this).select();" onfocusout="searchFocusOut($(this))" onkeyup="searchKeyUp(event, $('div.historySearch input.fromCountry'))" onkeydown="searchKeyDown(event, $('div.historySearch input.fromCountry'))">
-										  <span class="spinner" style="display: none;"><img src='https://i.stack.imgur.com/FhHRx.gif' style="height: 16px"></span>
-									  </div>
-									  <div class="searchResult"></div>
-								  </div>
-								  <div style="float: left; width : 50%; position: relative;">
+										  <span class="spinner" style="display: none;"><img src='https://i.stack.imgur.com/FhHRx.gif' style="height: 16px"></ span, >
+							  < / div, >
+							  < div class ="searchResult"></ div, >
+							  < / div, >
+							  < div style ="float: left; width : 50%; position: relative;">
 									  <div class="searchInput" data-search-type="country">
 										  <input type="text" style="width: 80%" tabindex="104" class="toCountry" data-search-group="toDestination" placeholder="To Country (Any)" autocomplete="no" oninput="searchChange($(this))" onfocus="$(this).select();" onfocusout="searchFocusOut($(this))" onkeyup="searchKeyUp(event, $('div.historySearch input.toCountry'))" onkeydown="searchKeyDown(event, $('div.historySearch input.toCountry'))">
-										  <span class="spinner" style="display: none;"><img src='https://i.stack.imgur.com/FhHRx.gif' style="height: 16px"></span>
-									  </div>
-									  <div class="searchResult"></div>
-								  </div>
-								  <div style="clear: both;"></div>
-							  </div>
-							  <div class="searchCriterion"> <!-- Country -->
+										  <span class="spinner" style="display: none;"><img src='https://i.stack.imgur.com/FhHRx.gif' style="height: 16px"></ span, >
+							  < / div, >
+							  < div class ="searchResult"></ div, >
+							  < / div, >
+							  < div style ="clear: both;"></ div, >
+							  < / div, >
+							  < div class ="searchCriterion"> <!-- Country -->
 								  <div style="float: left; width : 50%; position: relative;">
 									  <div class="searchInput" data-search-type="zone">
 										  <input type="text" style="width: 80%" tabindex="105" class="fromZone" data-search-group="fromDestination" placeholder="From Zone (Any)" autocomplete="no" oninput="searchChange($(this))" onfocus="$(this).select();" onfocusout="searchFocusOut($(this))" onkeyup="searchKeyUp(event, $('div.historySearch input.fromZone'))" onkeydown="searchKeyDown(event, $('div.historySearch input.fromZone'))">
-										  <span class="spinner" style="display: none;"><img src='https://i.stack.imgur.com/FhHRx.gif' style="height: 16px"></span>
-									  </div>
-									  <div class="searchResult"></div>
-								  </div>
-								  <div style="float: left; width : 50%; position: relative;">
+										  <span class="spinner" style="display: none;"><img src='https://i.stack.imgur.com/FhHRx.gif' style="height: 16px"></ span, >
+							  < / div, >
+							  < div class ="searchResult"></ div, >
+							  < / div, >
+							  < div style ="float: left; width : 50%; position: relative;">
 									  <div class="searchInput" data-search-type="zone">
 										  <input type="text" style="width: 80%" tabindex="106" class="toZone" data-search-group="toDestination" placeholder="To Zone (Any)" autocomplete="no"  oninput="searchChange($(this))" onfocus="$(this).select();" onfocusout="searchFocusOut($(this))" onkeyup="searchKeyUp(event, $('div.historySearch input.toZone'))" onkeydown="searchKeyDown(event, $('div.historySearch input.toZone'))">
-										  <span class="spinner" style="display: none;"><img src='https://i.stack.imgur.com/FhHRx.gif' style="height: 16px"></span>
-									  </div>
-									  <div class="searchResult"></div>
-								  </div>
-								  <div style="clear: both;"></div>
-							  </div>
-							</div>
-							<div class="otherCriteria" style="float: right; width : 50%; position: relative; box-sizing: border-box;">
+										  <span class="spinner" style="display: none;"><img src='https://i.stack.imgur.com/FhHRx.gif' style="height: 16px"></ span, >
+							  < / div, >
+							  < div class ="searchResult"></ div, >
+							  < / div, >
+							  < div style ="clear: both;"></ div, >
+							  < / div, >
+							  < / div, >
+							  < div class ="otherCriteria" style="float: right; width : 50%; position: relative; box-sizing: border-box;">
 								<div style="float: left; width : 50%; position: relative;">
 									<div class = "searchCriterion">
 										<div class="searchInput" data-search-type="airline">
 											<input type="text" style="width: 80%" tabindex="107" class="airline" data-search-group="entity" placeholder="Airline (Any)" autocomplete="no" oninput="searchChange($(this))" onfocus="$(this).select();" onfocusout="searchFocusOut($(this))" onkeyup="searchKeyUp(event, $('div.historySearch input.airline'))" onkeydown="searchKeyDown(event, $('div.historySearch input.airline'))">
-											<span class="spinner" style="display: none;"><img src='https://i.stack.imgur.com/FhHRx.gif' style="height: 16px"></span>
-										</div>
-										<div class="searchResult"></div>
-									</div>
-									<div class = "searchCriterion">
+											<span class="spinner" style="display: none;"><img src='https://i.stack.imgur.com/FhHRx.gif' style="height: 16px"></ span, >
+							  < / div, >
+							  < div class ="searchResult"></ div, >
+							  < / div, >
+							  < div class = "searchCriterion">
 										<div class="searchInput" data-search-type="alliance">
 											<input type="text" style="width: 80%" tabindex="108" class="alliance" data-search-group="entity" placeholder="Alliance (Any)" autocomplete="no"  oninput="searchChange($(this))" onfocus="$(this).select();" onfocusout="searchFocusOut($(this))" onkeyup="searchKeyUp(event, $('div.historySearch input.alliance'))" onkeydown="searchKeyDown(event, $('div.historySearch input.alliance'))">
-											<span class="spinner" style="display: none;"><img src='https://i.stack.imgur.com/FhHRx.gif' style="height: 16px"></span>
-										</div>
-										<div class="searchResult"></div>
-									</div>
-								</div>
-								<div style="float: left; width : 50%; position: relative;">
+											<span class="spinner" style="display: none;"><img src='https://i.stack.imgur.com/FhHRx.gif' style="height: 16px"></ span, >
+							  < / div, >
+							  < div class ="searchResult"></ div, >
+							  < / div, >
+							  < / div, >
+							  < div style ="float: left; width : 50%; position: relative;">
 									<div class="table">
 										<div class="table-row searchCriterion">
-											<div class="label" style="width : 70%">Capacity >=</div>
-											<div class="data"><input type="text"  tabindex="109" class="capacity" size="6" placeholder="Any" onfocusout="numberInputFocusOut($(this))"></div>
-										</div>
-										<div class="table-row searchCriterion">
-											<div class="label" style="width : 70%">Capacity Change >=</div>
-											<div class="data"><input type="text"  tabindex="109" class="capacityDelta" size="6" placeholder="Any" onfocusout="numberInputFocusOut($(this))"></div>
-										</div>
-									</div>
-									<img class="clickable" onclick="resetSearchInput($(this))" src='@routes.Assets.versioned("images/icons/24px/arrow-circle-135.png")' title="reset">
+											<div class="label" style="width : 70%">Capacity >=</ div, >
+							  < div class ="data"><input type="text"  tabindex="109" class="capacity" size="6" placeholder="Any" onfocusout="numberInputFocusOut($(this))"></ div, >
+							  < / div, >
+							  < div class ="table-row searchCriterion">
+											<div class="label" style="width : 70%">Capacity Change >=</ div, >
+							  < div class ="data"><input type="text"  tabindex="109" class="capacityDelta" size="6" placeholder="Any" onfocusout="numberInputFocusOut($(this))"></ div, >
+							  < / div, >
+							  < / div, >
+							  < img class ="clickable" onclick="resetSearchInput($(this))" src='@routes.Assets.versioned("images/icons/24px/arrow-circle-135.png")' title="reset">
 								</div>
 
 							</div>
@@ -3122,7 +3112,7 @@
 		</div> <!-- end container for main canvas and the landing blur -->
 		<div style="clear: both;"></div>
     </div>
-    
+
     <!-- popups and overlay buttons below. Hidden by default -->
     <div style="display: none; width: 100%; white-space: normal;" id="airportPopup" class="mapPopup">
     	<input type="hidden" id="airportPopupId">
@@ -3139,29 +3129,28 @@
 				<span style="min-width: 100px; flex: 1; display: inline-flex; align-items: center;">
 					<img title="Population coverage (Income Level)" src='@routes.Assets.versioned("images/icons/users.png")' style="margin-right: 5px;">
 					<span id="airportPopupPopulation"></span>&nbsp;(<span id="airportPopupIncomeLevel"></span>)
-				</span>
-<!--				<span style="min-width: 100px; flex: 1; display: inline-flex; align-items: center;">-->
+				</ span, > <!--				<span style="min-width: 100px; flex: 1; display: inline-flex; align-items: center;">-->
 <!--					<img title="Income Level" src='@routes.Assets.versioned("images/icons/moneys.png")' style="margin-right: 5px;">-->
 <!--					<span id="airportPopupIncomeLevel"></span>-->
 <!--				</span>-->
 				<span style="min-width: 100px; flex: 1; display: inline-flex; align-items: center;">
 					<img title="Airport Scale (Max Runway Length)" src='@routes.Assets.versioned("images/icons/star.png")' style="margin-right: 5px;">
 					<span id="airportPopupSize"></span>&nbsp;(<span id="airportPopupMaxRunwayLength"></span>)
-				</span>
-			</div>
+				</ span, >
+					< / div, >
 
-			<div style="display: flex; flex-wrap: wrap; width: 100%">
+					< div style ="display: flex; flex-wrap: wrap; width: 100%">
 				<span style="min-width: 100px; flex: 1; display: inline-flex; align-items: center;">
 					<img title="Awareness" src='@routes.Assets.versioned("images/icons/tick-circle.png")' style="margin-right: 5px;">
-					<span class="airportAwareness" id="airportPopupAwareness"></span>
-					<span class="airportAwarenessBonus"></span>
-					<img src='@routes.Assets.versioned("images/icons/information.png")' class="clickable airportAwarenessBonusTrigger" style="vertical-align:bottom" onmouseover="showAppealBreakdown($(this), $('#appealBonusDetailsTooltip').data('awarenessBreakdown'))" onmouseout="hideAppealBreakdown()">
+					<span class="airportAwareness" id="airportPopupAwareness"></ span, >
+					< span class ="airportAwarenessBonus"></ span, >
+					< img src ='@routes.Assets.versioned("images/icons/information.png")' class="clickable airportAwarenessBonusTrigger" style="vertical-align:bottom" onmouseover="showAppealBreakdown($(this), $('#appealBonusDetailsTooltip').data('awarenessBreakdown'))" onmouseout="hideAppealBreakdown()">
 				</span>
 				<span style="min-width: 100px; flex: 1; display: inline-flex; align-items: center;">
 					<img title="Loyalty" src='@routes.Assets.versioned("images/icons/heart.png")' style="margin-right: 5px;">
-					<span class="airportLoyalty" id="airportPopupLoyalty"></span>
-					<span class="airportLoyaltyBonus"></span>
-					<img src='@routes.Assets.versioned("images/icons/information.png")' class="clickable airportLoyaltyBonusTrigger" style="vertical-align:bottom" onmouseover="showAppealBreakdown($(this), $('#appealBonusDetailsTooltip').data('loyaltyBreakdown'))" onmouseout="hideAppealBreakdown()">
+					<span class="airportLoyalty" id="airportPopupLoyalty"></ span, >
+					< span class ="airportLoyaltyBonus"></ span, >
+					< img src ='@routes.Assets.versioned("images/icons/information.png")' class="clickable airportLoyaltyBonusTrigger" style="vertical-align:bottom" onmouseover="showAppealBreakdown($(this), $('#appealBonusDetailsTooltip').data('loyaltyBreakdown'))" onmouseout="hideAppealBreakdown()">
 				</span>
 			</div>
 		</div>
@@ -3241,7 +3230,7 @@
 
 		<div id="cityPie" style="height: 200px; width: 350px;"></div>
     </div>
-    
+
     <div style="display: none; width: 350px;" id="linkHistoryPopup" class="mapPopup">
     	<input type="hidden" id="linkHistoryPopupId">
     	<div class="table" style="width: 100%">
@@ -3267,7 +3256,7 @@
    			</div>
 		</div>
     </div>
-    
+
     <div style="display: none; width: 350px;" id="airportLinkPopup" class="mapPopup">
     	<input type="hidden" id="airportLinkPopupId">
     	<div class="table" style="width: 100%">
@@ -3295,7 +3284,7 @@
 	  </div>
 
 
-    
+
     <div style="display: none; width: 100%;" id="linkPopup" class="mapPopup">
     	<input type="hidden" id="airportLinkPopupId">
     	<div class="table" style="width: 100%">
@@ -3342,7 +3331,7 @@
 			  </div>
 		  </div>
 	  </div>
-    
+
     <!-- The Annoucement Modal -->
 	<div id="announcementModal" class="modal">
 	  <div class="modal-content" style="width: 500px;">
@@ -3368,9 +3357,9 @@
 	    <div class="button" onclick="closeModal($('#confirmationModal'))">Cancel</div>
 	  </div>
 	</div>
-	
+
 	<!-- Logo Modal -->
-	
+
 	<div id="logoModal" class="modal">
 	  <div class="modal-content"  style="width : 400px;">
 	    <span class="close" onclick="closeModal($('#logoModal'))">&times;</span>
@@ -3392,12 +3381,12 @@
 	    <h4>Preview</h4>
 	    <div id="logoPreview" style="height: 30px">
 	    </div>
-	    
+
 	    <div class="button confirmationButton" onclick="closeModal($('#logoModal')); setAirlineLogo();">Confirm</div>
 	    <div class="button" onclick="closeModal($('#logoModal'))">Cancel</div>
 	  </div>
 	</div>
-	
+
 	<div id="uploadLogoModal" class="modal">
 		<div class="modal-content"  style="width : 400px;">
 			<span class="close" onclick="closeModal($('#uploadLogoModal'))">&times;</span>
@@ -3415,7 +3404,7 @@
 		    </div>
 	    </div>
 	</div>
-	
+
 	<!-- airport facility modal -->
 	<div id="facilityModal" class="modal">
 	  <div class="modal-content"  style="width : 400px;">
@@ -3429,9 +3418,9 @@
 			    			</div>
 			<div class="table-row facitilyNameWarningDiv" style="display: none;">
 			    				<div class="warning"></div>
-			    				
+
 			    			</div>
-			    			
+
 							<div class="table-row">
 			    				<div class="label" style="width: 50%"><h5>Level:</h5></div>
 			    				<div class="value facilityLevel" style="width: 50%"></div>
@@ -3545,7 +3534,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- airport passenger quality expectation model -->
 	<div id="expectedQualityModal" class="modal">
 		<div class="modal-content"  style="width : 500px;">
@@ -3576,10 +3565,10 @@
 				<li class="label" style="padding: 5px;">- Service level per route</li>
 				<li class="label" style="padding: 5px;">- Company wide level Service Quality (by Service Funding in Office View)</li>
 			</ul>
-			
+
 	    </div>
 	</div>
-	
+
 	<!-- link passenger composition modal -->
     <div id="linkCompositionModal" class="modal">
         <div class="modal-content"  style="width : 800px">
@@ -4079,7 +4068,7 @@
 			<h4 style="margin-bottom: 10px;">Confirm Purchase of <span class="modelName"></span></h4>
 			<div class="modelIllustration" style="width:100%; position: relative; max-width: 500px;">
 				<img src='#' style="width: 100%;">
-				<div class="label" style="right: 0px; bottom: 0px; position: absolute; font-style: italic;"><a href='#' target="_blank">Illustration courtesy of Norebbo</a></div>
+				<div class="label" style="right: 0; bottom: 0; position: absolute; font-style: italic;"><a href='#' target="_blank">Illustration courtesy of Norebbo</a></div>
 			</div>
 
 			<div class="table" style="width: 100%;">
@@ -4131,7 +4120,7 @@
 			<div id="ownedAirplaneDetail" style="width: 100%;">
 				<div class="modelIllustration" style="width:100%; position: relative; max-width: 500px;">
 					<img src='#' style="width: 100%;">
-					<div class="label" style="right: 0px; bottom: 0px; position: absolute; font-style: italic;"><a href='#' target="_blank">Illustration courtesy of Norebbo</a></div>
+					<div class="label" style="right: 0; bottom: 0; position: absolute; font-style: italic;"><a href='#' target="_blank">Illustration courtesy of Norebbo</a></div>
 				</div>
 				<div class="table" style="width: 100%">
 					<div class="table-header">
@@ -4218,7 +4207,7 @@
 			  <h4 style="margin-bottom: 10px;">Set <span class="modelName" style="font-weight: bold;"></span> as Favorite</h4>
 			  <div class="modelIllustration" style="width:100%; position: relative; max-width: 500px;">
 				  <img src='#' style="width: 100%;">
-				  <div class="label" style="right: 0px; bottom: 0px; position: absolute; font-style: italic;"><a href='#' target="_blank">Illustration courtesy of Norebbo</a></div>
+				  <div class="label" style="right: 0; bottom: 0; position: absolute; font-style: italic;"><a href='#' target="_blank">Illustration courtesy of Norebbo</a></div>
 			  </div>
 
 			  <div class="table" style="width: 100%;">
@@ -4608,13 +4597,13 @@
 
 	<!-- Modal for loading -->
 	<div class="loadingSpinner"><!-- Place at bottom of page --></div>
-	
+
 	<audio id="christmasMusic" preload="none" loop>
 <!--	    <source src='@routes.Assets.versioned("music/silent-night.mp3")' type="audio/mp3" />-->
 		<source src='@routes.Assets.versioned("music/joy-to-the-world.mp3")' type="audio/mp3" />
 	</audio>
 
-    <script src="@routes.Assets.versioned("javascripts/chat-popup.js")"></script>	
+    <script src="@routes.Assets.versioned("javascripts/chat-popup.js")"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5XQhzy2XrM95AyfW8f5BeWJiqr-LGXxU&libraries=geometry,drawing,visualization&callback=initMap">
 	</script>
 <!-- 	<script src="https://apis.google.com/js/platform.js"></script> -->
@@ -4622,6 +4611,6 @@
   <script src='/assets/firework/stage.js'></script>
   <script src='/assets/firework/my-math.js'></script>
   <script src="/assets/firework/firework.js"></script>
-	 
+
   </body>
 </html>

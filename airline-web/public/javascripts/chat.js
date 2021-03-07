@@ -55,7 +55,7 @@ RateLimit.prototype = {
         this.lasttick = now;
         var index = now % this.ticklog.length;
         var entry = (this.ticklog[index] &&
-                     this.ticklog[index][0] == now)
+                     this.ticklog[index][0] === now)
             ? this.ticklog[index]
             : this.ticklog[index] = [now, {}];
         var timestamp = entry[0],
@@ -118,7 +118,7 @@ angular.module("ChatApp", []).controller("ChatController", function($scope, $tim
     var limit = new RateLimit(60)
 	var wsProtocol
 
-	if (window.location.protocol == "https:"){
+	if (window.location.protocol === "https:"){
 		wsProtocol = "wss:"
 		if (!port) {
 			port = 443
@@ -195,7 +195,7 @@ angular.module("ChatApp", []).controller("ChatController", function($scope, $tim
    
   // what to do when we receive message from the webserver
   ws.onmessage = function(msg) {
-    if (msg.data == "ping") {
+    if (msg.data === "ping") {
         console.debug("ping from server")
         return
      //ok
@@ -227,7 +227,7 @@ angular.module("ChatApp", []).controller("ChatController", function($scope, $tim
 
             prependMessage(message)
         }
-        if (r_msg.messages.length == 0) {
+        if (r_msg.messages.length === 0) {
             $activeHistory.find('ul').prepend('<li class="message"><b>No more previous messages</b></li>')
             $activeHistory.data("historyExhausted", true)
         }
@@ -284,7 +284,7 @@ angular.module("ChatApp", []).controller("ChatController", function($scope, $tim
 
 function handleScrollChatTop() {
   var $activeHistory = $("#chat-box .chat-history.current")
-  if ($activeHistory.data('historyExhausted') == true) { //exhausted all previous messages
+  if ($activeHistory.data('historyExhausted') === true) { //exhausted all previous messages
     return;
   }
 
@@ -297,7 +297,7 @@ function handleScrollChatTop() {
      $chatTab.prepend($loadingDiv)
      //scrolled to top
      var activeRoomId = parseInt($('#live-chat .tab-link.current').data('roomId'))
-     var firstMessageId = (activeRoomId == 0) ? firstGeneralMessageId : firstAllianceMessageId
+     var firstMessageId = (activeRoomId === 0) ? firstGeneralMessageId : firstAllianceMessageId
 
      var text = { airlineId: activeAirline.id, firstMessageId : firstMessageId, type: "previous", roomId : activeRoomId};
                // send it to the server through websockets
@@ -342,14 +342,14 @@ function prependMessage(r_msg) {
         if (r_msg.id < firstGeneralMessageId) { //prevent duplicate calls
             $('#chat-box #chatBox-1 ul').prepend('<li class="message">' + prefix + r_msg.text + '</li>')
 
-            if (firstGeneralMessageId == -1 || r_msg.id < firstGeneralMessageId) {
+            if (firstGeneralMessageId === -1 || r_msg.id < firstGeneralMessageId) {
                 firstGeneralMessageId = r_msg.id
             }
         }
     } else {
         if (r_msg.id < firstAllianceMessageId) { //prevent duplicate calls
             $('#chat-box #chatBox-2 ul').prepend('<li class="message">' + prefix + r_msg.text + '</li>')
-            if (firstAllianceMessageId == -1 || r_msg.id < firstAllianceMessageId) {
+            if (firstAllianceMessageId === -1 || r_msg.id < firstAllianceMessageId) {
                 firstAllianceMessageId = r_msg.id
             }
         }
@@ -375,12 +375,12 @@ function pushMessage(r_msg) {
     var prefix = buildPrefix(r_msg)
     if (!r_msg.allianceRoomId) {
         $('#chat-box #chatBox-1 ul').append('<li class="message">' + prefix + r_msg.text + '</li>')
-        if (firstGeneralMessageId == -1 || r_msg.id < firstGeneralMessageId) {
+        if (firstGeneralMessageId === -1 || r_msg.id < firstGeneralMessageId) {
             firstGeneralMessageId = r_msg.id
         }
     } else {
         $('#chat-box #chatBox-2 ul').append('<li class="message">' + prefix + r_msg.text + '</li>')
-        if (firstAllianceMessageId == -1 || r_msg.id < firstAllianceMessageId) {
+        if (firstAllianceMessageId === -1 || r_msg.id < firstAllianceMessageId) {
             firstAllianceMessageId = r_msg.id
         }
     }

@@ -63,7 +63,7 @@ function updateCountryTable(sortProperty, sortOrder, selectedCountry) {
 	countryTable.children("div.table-row").remove()
 	
 	//sort the list
-	loadedCountries.sort(sortByProperty(sortProperty, sortOrder == "ascending"))
+	loadedCountries.sort(sortByProperty(sortProperty, sortOrder === "ascending"))
 
 	var selectedRow
 	$.each(loadedCountries, function(index, country) {
@@ -83,7 +83,7 @@ function updateCountryTable(sortProperty, sortOrder, selectedCountry) {
         var delegatesCount = country.delegatesCount ? country.delegatesCount : "-"
         row.append("<div class='cell' align='right'>" + delegatesCount + "</div>")
 		
-		if (selectedCountry == country.countryCode) {
+		if (selectedCountry === country.countryCode) {
 		    row.addClass("selected")
 		    selectedRow = row
 		}
@@ -97,7 +97,7 @@ function updateCountryTable(sortProperty, sortOrder, selectedCountry) {
 }
 
 function toggleCountryTableSortOrder(sortHeader) {
-	if (sortHeader.data("sort-order") == "ascending") {
+	if (sortHeader.data("sort-order") === "ascending") {
 		sortHeader.data("sort-order", "descending")
 	} else {
 		sortHeader.data("sort-order", "ascending")
@@ -188,7 +188,7 @@ function loadCountryDetails(countryCode) {
 	    	$("#countryDetailsOpenness").html(getOpennessSpan(country.openness))
 
 	    	var loadedCountry = loadedCountries.filter(function(obj) {
-	    		  return obj.countryCode == countryCode;
+	    		  return obj.countryCode === countryCode;
 	    	})[0];
 
             if (activeAirline) {
@@ -254,21 +254,21 @@ function getCountryRelationshipDescription(value) {
 	var description;
 	if (value >= 5) {
 		description = "Home Country"
-    } else if (value == 4) {
+    } else if (value === 4) {
 		description = "Alliance"
-	} else if (value == 3) {
+	} else if (value === 3) {
 		description = "Close"
-	} else if (value == 2) {
+	} else if (value === 2) {
 		description = "Friendly"
-	} else if (value == 1) { 
+	} else if (value === 1) {
 		description = "Warm"
-	} else if (value == 0) {
+	} else if (value === 0) {
 		description = "Neutral"
-	} else if (value == -1) {
+	} else if (value === -1) {
 		description = "Cold"
-	} else if (value == -2) {
+	} else if (value === -2) {
 		description = "Hostile"
-	} else if (value == -3) {
+	} else if (value === -3) {
 		description = "In Conflict"
 	} else if (value <= -4) {
 		description = "War"
@@ -338,7 +338,7 @@ function updateTitleProgressionInfo(currentAirlineTitle, countryCode) {
                     var $titleSpan = $('<span class="title tooltip progressionItem">')
                     $titleSpan.text(titleInfo.description)
                     $titleSpan.data(titleInfo.title)
-                    if (titleInfo.title == currentAirlineTitle.title) {
+                    if (titleInfo.title === currentAirlineTitle.title) {
                       $titleSpan.addClass("selected")
                     }
                     var $descriptionSpan = $('<span class="tooltiptext below" style="width: 400px;">')

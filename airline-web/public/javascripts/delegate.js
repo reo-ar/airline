@@ -15,7 +15,7 @@ function changeTaskDelegateCount($delegateSection, delta, callback) {
         }
     }
 
-    if (newLength != -1) {
+    if (newLength !== -1) {
         $delegateSection.data('availableDelegates', availableDelegates - delta)
         $delegateSection.data('assignedDelegateCount', newLength)
         refreshAssignedDelegates($delegateSection)
@@ -32,7 +32,7 @@ function refreshAssignedDelegates($delegateSection) {
     var originalDelegates = $delegateSection.data('originalDelegates')
     var assignedDelegateCount = $delegateSection.data('assignedDelegateCount')
 
-    if (assignedDelegateCount == 0) {
+    if (assignedDelegateCount === 0) {
        $delegateIcons.append("<span>None</span>")
     }
 

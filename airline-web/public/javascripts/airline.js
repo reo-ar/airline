@@ -324,7 +324,7 @@ function drawFlightPath(link, linkColor) {
 function refreshFlightPath(link, forceRedraw) {
 	if (flightPaths[link.id]) {
 		var path = flightPaths[link.id].path
-		if (forceRedraw || path.frequency != link.frequency || path.modelId != link.modelId) { //require marker change
+		if (forceRedraw || path.frequency !== link.frequency || path.modelId !== link.modelId) { //require marker change
 			path.frequency = link.frequency
 			path.modelId = link.modelId
 			
@@ -375,9 +375,9 @@ function getLinkColor(profit, revenue) {
 
 	   
 	   var redHexString = parseInt(redHex).toString(16)
-	   if (redHexString.length == 1) { redHexString = "0" + redHexString }
+	   if (redHexString.length === 1) { redHexString = "0" + redHexString }
 	   var greenHexString = parseInt(greenHex).toString(16)
-	   if (greenHexString.length == 1) { greenHexString = "0" + greenHexString }
+	   if (greenHexString.length === 1) { greenHexString = "0" + greenHexString }
 	   return colorHex = "#" + redHexString + greenHexString + "20"
    } else  { //no history yet
 	   return "#DCDC20"
@@ -515,7 +515,7 @@ function drawFlightMarker(line, link) {
 		var count = 0;
 		var animation = window.setInterval(function() {
 			$.each(markersOfThisLink, function(key, marker) { 
-				if (count == marker.nextDepartureFrame) {
+				if (count === marker.nextDepartureFrame) {
 					if (christmasMarker) {
 						marker.icon = {
 						        url: randomFlightMarker(),
@@ -662,14 +662,14 @@ function refreshLinkDetails(linkId) {
                                   		    	    				+ "</div><div style='display: table-cell; text-align: right;'>" + linkConsumption.quality
                                   		    	    				+ "</div><div style='display: table-cell; text-align: right;'>" + linkConsumption.frequency + "</div></div>")
 
-                        if (linkConsumption.airlineId == airlineId) {
+                        if (linkConsumption.airlineId === airlineId) {
                             $("#linkCompetitons .table-header").after(row) //self is always on top
                         } else {
                             $("#linkCompetitons").append(row)
                         }
 
 	    	    	})
-	    	    	if ($("#linkCompetitons .data-row").length == 0) {
+	    	    	if ($("#linkCompetitons .data-row").length === 0) {
 	    	    		$("#linkCompetitons").append("<div class='table-row data-row'><div style='display: table-cell;'>-</div><div style='display: table-cell;'>-</div><div style='display: table-cell;'>-</div><div style='display: table-cell;'>-</div><div style='display: table-cell;'>-</div></div>")
 	    	    	}
 	    	    	$("#linkCompetitons").show()
@@ -744,7 +744,7 @@ function refreshLinkDetails(linkId) {
 		    	$("#linkLoungeCost").text("$" + commaSeparateNumber(linkConsumption.loungeCost))
 		    	$("#linkServiceSupplies").text("$" + commaSeparateNumber(linkConsumption.inflightCost))
 		    	$("#linkMaintenance").text("$" + commaSeparateNumber(linkConsumption.maintenanceCost))
-		    	if (linkConsumption.minorDelayCount == 0 && linkConsumption.majorDelayCount == 0) {
+		    	if (linkConsumption.minorDelayCount === 0 && linkConsumption.majorDelayCount === 0) {
 		    		$("#linkDelays").removeClass("warning")
 		    		$("#linkDelays").text("-")
 		    	} else {
@@ -752,7 +752,7 @@ function refreshLinkDetails(linkId) {
 		    		$("#linkDelays").text(linkConsumption.minorDelayCount + " minor " + linkConsumption.majorDelayCount + " major")
 		    	}
 	    		
-	    		if (linkConsumption.cancellationCount == 0) {
+	    		if (linkConsumption.cancellationCount === 0) {
 		    		$("#linkCancellations").removeClass("warning")
 		    		$("#linkCancellations").text("-")
 		    	} else {
@@ -901,7 +901,7 @@ function updatePlanLinkInfo(linkInfo) {
 			var airportCode = base.airportCode
 			var option = $("<option></option>").attr("value", airportId).text(getAirportText(cityName, airportCode))
 			
-			if ($('#planLinkFromAirportId').val() == airportId) {
+			if ($('#planLinkFromAirportId').val() === airportId) {
 				option.prop("selected", true)
 			}
 			option.appendTo($("#planLinkFromAirportSelect"))
@@ -937,7 +937,7 @@ function updatePlanLinkInfo(linkInfo) {
 	
 	$("#planLinkCompetitons .data-row").remove()
 	$.each(linkInfo.otherLinks, function(index, linkConsumption) {
-		if (linkConsumption.airlineId != activeAirline.id) {
+		if (linkConsumption.airlineId !== activeAirline.id) {
 			$("#planLinkCompetitons").append("<div class='table-row data-row'><div style='display: table-cell;'>" + linkConsumption.airlineName
 				    	    			   + "</div><div style='display: table-cell;'>" + toLinkClassValueString(linkConsumption.price, "$")
 				    	    			   + "</div><div style='display: table-cell; text-align:right;'>" + toLinkClassValueString(linkConsumption.capacity)
@@ -945,7 +945,7 @@ function updatePlanLinkInfo(linkInfo) {
 				    	    			   + "</div><div style='display: table-cell; text-align:right;'>" + linkConsumption.frequency + "</div></div>")
 		}			
 	})
-	if ($("#planLinkCompetitons .data-row").length == 0) {
+	if ($("#planLinkCompetitons .data-row").length === 0) {
 		$("#planLinkCompetitons").append("<div class='table-row data-row'><div style='display: table-cell;'>-</div><div style='display: table-cell;'>-</div><div style='display: table-cell;'>-</div><div style='display: table-cell;'>-</div><div style='display: table-cell;'>-</div></div>")
 	}
 	
@@ -1113,7 +1113,7 @@ function updatePlanLinkInfo(linkInfo) {
 		var option = $("<option></option>").attr("value", modelId).text(modelname + " (" + modelPlanLinkInfo.airplanes.length + ")")
 		option.appendTo($("#planLinkModelSelect"))
 		
-		if (selectedModelId == modelId) {
+		if (selectedModelId === modelId) {
 			option.prop("selected", true)
 			updateModelInfo(modelId)
 		}
@@ -1121,7 +1121,7 @@ function updatePlanLinkInfo(linkInfo) {
 		planLinkInfoByModel[modelId] = modelPlanLinkInfo
 	});
 	
-	if (linkInfo.modelPlanLinkInfo.length == 0) {
+	if (linkInfo.modelPlanLinkInfo.length === 0) {
 		$("#planLinkModelSelect").next($(".warning")).remove()
 		$("#planLinkModelSelect").after("<span class='label warning'>No airplane model can fly to this destination</span>")
 		$("#planLinkModelSelect").hide()
@@ -1171,7 +1171,7 @@ function updatePrice(percentage) {
 function updateFrequencyBar(frequencyBar, valueContainer, airplane, currentFrequency) {
     var availableFrequency = Math.floor(airplane.availableFlightMinutes / planLinkInfoByModel[airplane.modelId].flightMinutesRequired)
     var maxFrequency = availableFrequency + currentFrequency
-    if (currentFrequency == 0) { //set 1 as min
+    if (currentFrequency === 0) { //set 1 as min
         valueContainer.val(1)
     }
     generateImageBar(frequencyBar.data("emptyIcon"), frequencyBar.data("fillIcon"), maxFrequency, frequencyBar, valueContainer, null, null, updateTotalValues)
@@ -1191,8 +1191,8 @@ function updatePlanLinkInfoWithModelSelected(newModelId, assignedModelId) {
 
 		thisModelPlanLinkInfo.airplanes.sort(function(a, b) {
 		    var result = b.frequency - a.frequency
-		    if (result != 0) {
-		        if (b.frequency == 0 || a.frequency == 0) { //if either one is not assigned to this route at all, then return result ie also higher precedence to compare if airplane is assigned
+		    if (result !== 0) {
+		        if (b.frequency === 0 || a.frequency === 0) { //if either one is not assigned to this route at all, then return result ie also higher precedence to compare if airplane is assigned
 		            return result
 		        }
 		    }
@@ -1212,7 +1212,7 @@ function updatePlanLinkInfoWithModelSelected(newModelId, assignedModelId) {
 
 			$('#planLinkAirplaneSelect').append(div)
 		})
-		if (thisModelPlanLinkInfo.airplanes.length == 0) {
+		if (thisModelPlanLinkInfo.airplanes.length === 0) {
 		    $('#planLinkDetails .noAirplaneHelp').show()
 		} else {
 		    $('#planLinkDetails .noAirplaneHelp').hide()
@@ -1306,7 +1306,7 @@ function addAirplaneRow(container, airplane, frequency) {
 
     var sharedLinkCount = 0
     $.each(airplane.linkAssignments, function(linkId, frequency) {
-        if (linkId != selectedLink) {
+        if (linkId !== selectedLink) {
             sharedLinkCount ++
         }
     })
@@ -1346,11 +1346,11 @@ function addAirplaneToLink(airplane, frequency) {
 
 function removeAirplaneFromLink(airplaneId) {
     $("#planLinkDetails .frequencyDetail .airplaneRow").each(function(index, row){
-        if ($(row).data("airplane").id == airplaneId) {
+        if ($(row).data("airplane").id === airplaneId) {
             $(row).remove()
         }
     })
-    if ($("#planLinkDetails .frequencyDetail .airplaneRow").length == 0) {
+    if ($("#planLinkDetails .frequencyDetail .airplaneRow").length === 0) {
         $("#planLinkDetails .frequencyDetail").append("<div class='table-row empty'><div class='cell'></div><div class='cell'>-</div><div class='cell'>-</div></div>")
     }
 
@@ -1359,7 +1359,7 @@ function removeAirplaneFromLink(airplaneId) {
     //update the available airplane list
     $('#planLinkAirplaneSelect .airplaneButton').each(function(index, airplaneIcon){
       var airplane = $(airplaneIcon).data('airplane')
-      if (airplane.id == airplaneId) {
+      if (airplane.id === airplaneId) {
         airplane.isAssigned = false
         $(airplaneIcon).find('img').replaceWith(getAssignedAirplaneImg(airplane))
       }
@@ -1421,11 +1421,11 @@ function updateTotalValues() {
 
     $('#planLinkAirplaneSelect').removeClass('glow')
     $('.noAirplaneHelp').removeClass('glow')
-    if (futureFrequency == 0) {
+    if (futureFrequency === 0) {
         disableButton($("#planLinkDetails .modifyLink"), "Must assign airplanes and frequency")
 
         var thisModelPlanLinkInfo = planLinkInfoByModel[selectedModelId]
-        if (thisModelPlanLinkInfo.airplanes.length == 0) {
+        if (thisModelPlanLinkInfo.airplanes.length === 0) {
             $('.noAirplaneHelp').addClass('glow')
         } else {
             $('#planLinkAirplaneSelect').addClass('glow')
@@ -1587,10 +1587,10 @@ function getLinkStaffingInfo() {
             $('#linkStaffBreakdownTooltip .frequency').text(frequencyStaff)
             var capacityStaff = result.staffBreakdown.capacity.toFixed(1)
             $('#linkStaffBreakdownTooltip .capacity').text(capacityStaff)
-            $('#linkStaffBreakdownTooltip .modifier').text(result.staffBreakdown.modifier == 1 ? "-" : result.staffBreakdown.modifier)
+            $('#linkStaffBreakdownTooltip .modifier').text(result.staffBreakdown.modifier === 1 ? "-" : result.staffBreakdown.modifier)
 
             var totalText = result.staffBreakdown.basic + " + " + frequencyStaff + " + " + capacityStaff
-            if (result.staffBreakdown.modifier != 1) {
+            if (result.staffBreakdown.modifier !== 1) {
                 totalText = "(" + totalText + ") * " + result.staffBreakdown.modifier
             }
             totalText += " = " + result.staffBreakdown.total
@@ -1666,7 +1666,7 @@ function loadLinksTable() {
 }
 
 function toggleLinksTableSortOrder(sortHeader) {
-	if (sortHeader.data("sort-order") == "ascending") {
+	if (sortHeader.data("sort-order") === "ascending") {
 		sortHeader.data("sort-order", "descending")
 	} else {
 		sortHeader.data("sort-order", "ascending")
@@ -1684,7 +1684,7 @@ function updateLinksTable(sortProperty, sortOrder) {
 	
 	//sort the list
 	//loadedLinks.sort(sortByProperty(sortProperty, sortOrder == "ascending"))
-	loadedLinks = sortPreserveOrder(loadedLinks, sortProperty, sortOrder == "ascending")
+	loadedLinks = sortPreserveOrder(loadedLinks, sortProperty, sortOrder === "ascending")
 	
 	$.each(loadedLinks, function(index, link) {
 		var row = $("<div class='table-row clickable' onclick='selectLinkFromTable($(this), " + link.id + ")'></div>")
@@ -1700,7 +1700,7 @@ function updateLinksTable(sortProperty, sortOrder) {
 		row.append("<div class='cell' align='right'>" + '$' + commaSeparateNumber(link.revenue) + "</div>")
 		row.append("<div class='cell' align='right'>" + '$' + commaSeparateNumber(link.profit) + "</div>")
 		
-		if (selectedLink == link.id) {
+		if (selectedLink === link.id) {
 			row.addClass("selected")
 		}
 		
@@ -1980,9 +1980,9 @@ function getCapacityImageBar(imageSrc, value, linkClass) {
     var containerDiv = $("<div>")
 	containerDiv.prop("title", value)
 
-    if (linkClass == "business") {
+    if (linkClass === "business") {
         value *= 5
-    } else if (linkClass == "first") {
+    } else if (linkClass === "first") {
         value *= 20
     }
     var count;
@@ -2066,7 +2066,7 @@ function updateSatisfaction(result) {
     var topNegativeComments = result.topNegativeComments
     $.each(topPositiveComments, function(index, entry) {
             var percentage = Math.round(entry[1] * 100)
-            if (percentage == 0) {
+            if (percentage === 0) {
                 percentage = "< 1"
             }
             $row = $("<div class='table-row data-row'><div class='cell'>" + entry[0].comment + "</div><div class='cell'>" + percentage + "%</div></div>")
@@ -2074,7 +2074,7 @@ function updateSatisfaction(result) {
         })
     $.each(topNegativeComments, function(index, entry) {
             var percentage = Math.round(entry[1] * 100)
-            if (percentage == 0) {
+            if (percentage === 0) {
                 percentage = "< 1"
             }
             $row = $("<div class='table-row data-row'><div class='cell'>" + entry[0].comment + "</div><div class='cell'>" + percentage + "%</div></div>")
@@ -2120,19 +2120,19 @@ function showSatisfactionBreakdown($icon, positiveComments, negativeComments, sa
     $('#satisfactionDetailsTooltip .table .table-row').remove()
     $.each(positiveComments, function(index, entry) {
         var percentage = Math.round(entry[1] * 100)
-        if (percentage == 0) {
+        if (percentage === 0) {
             percentage = "< 1"
         }
-        var $row = $('<div class="table-row" style="font-size: 15px; text-shadow: 0px 0px 3px rgba(0,0,0,0.5);"><div class="cell">' + entry[0].comment + '</div><div class="cell">' + percentage + '%</div></div>')
+        var $row = $('<div class="table-row" style="font-size: 15px; text-shadow: 0 0 3px rgba(0,0,0,0.5);"><div class="cell">' + entry[0].comment + '</div><div class="cell">' + percentage + '%</div></div>')
         $row.css('color', '#9ACD32')
         $('#satisfactionDetailsTooltip .table').append($row)
     })
     $.each(negativeComments, function(index, entry) {
         var percentage = Math.round(entry[1] * 100)
-        if (percentage == 0) {
+        if (percentage === 0) {
             percentage = "< 1"
         }
-        var $row = $('<div class="table-row"  style="font-size: 15px; text-shadow: 0px 0px 3px rgba(0,0,0,0.5);"><div class="cell">' + entry[0].comment + '</div><div class="cell">' + percentage + '%</div></div>')
+        var $row = $('<div class="table-row"  style="font-size: 15px; text-shadow: 0 0 3px rgba(0,0,0,0.5);"><div class="cell">' + entry[0].comment + '</div><div class="cell">' + percentage + '%</div></div>')
         $row.css('color', '#F08080')
         $('#satisfactionDetailsTooltip .table').append($row)
     })
@@ -2261,7 +2261,7 @@ function linkConfirmation() {
 			var image = $("<img>")
 			image.attr("src", $(".frequencyBar").data("fillIcon"))
 			$('#linkConfirmationModal div.existing.frequency').append(image)
-			if ((i + 1) % 10 == 0) {
+			if ((i + 1) % 10 === 0) {
 				$('#linkConfirmationModal div.existing.frequency').append("<br/>")
 			}
 		}
@@ -2300,7 +2300,7 @@ function linkConfirmation() {
 		var image = $("<img>")
 		image.attr("src", $(".frequencyBar").data("fillIcon"))
 		$('#linkConfirmationModal div.updating.frequency').append(image)
-		if ((i + 1) % 10 == 0) {
+		if ((i + 1) % 10 === 0) {
 			$('#linkConfirmationModal div.updating.frequency').append("<br/>")
 		}
 	}
@@ -2375,7 +2375,7 @@ function changeAssignedDelegateCount(delta) {
 function updateAssignedDelegateCount(delegateCount) {
     assignedDelegates = delegateCount
     $('#linkConfirmationModal div.assignedDelegatesIcons').empty()
-    if (assignedDelegates == 0) {
+    if (assignedDelegates === 0) {
         $('#linkConfirmationModal div.assignedDelegatesIcons').append("<span>None</span>")
     }
     for (i = 0 ; i < assignedDelegates; i ++) {
@@ -2444,7 +2444,7 @@ function getLinkNegotiation() {
                     currentRow = $('<div class="table-row requirement"><div class="cell">' + requirement.description + '</div><div class="cell">' + sign + requirement.value.toFixed(2) + '</div></div>').insertAfter(currentRow)
                     fromAirportRequirementValue += requirement.value
                 })
-                if (negotiationInfo.fromAirportRequirements.length == 0) {
+                if (negotiationInfo.fromAirportRequirements.length === 0) {
                     $('<div class="table-row requirement"><div class="cell">-</div><div class="cell">-</div></div>').insertAfter(currentRow)
                 }
 
@@ -2457,7 +2457,7 @@ function getLinkNegotiation() {
                     currentRow = $('<div class="table-row requirement"><div class="cell">' + requirement.description + '</div><div class="cell">' + sign + requirement.value.toFixed(2) + '</div></div>').insertAfter(currentRow)
                     toAirportRequirementValue += requirement.value
                 })
-                if (negotiationInfo.toAirportRequirements.length == 0) {
+                if (negotiationInfo.toAirportRequirements.length === 0) {
                     $('<div class="table-row requirement"><div class="cell">-</div><div class="cell">-</div></div>').insertAfter(currentRow)
                 }
 
@@ -2475,7 +2475,7 @@ function getLinkNegotiation() {
                     }
                 })
 
-                if (negotiationInfo.fromAirportDiscounts.length == 0) {
+                if (negotiationInfo.fromAirportDiscounts.length === 0) {
                     $('<div class="table-row discount"><div class="cell">-</div><div class="cell">-</div></div>').insertAfter(currentRow)
                 }
 
@@ -2489,7 +2489,7 @@ function getLinkNegotiation() {
                     }
                 })
 
-                if (negotiationInfo.toAirportDiscounts.length == 0) {
+                if (negotiationInfo.toAirportDiscounts.length === 0) {
                     $('<div class="table-row discount"><div class="cell">-</div><div class="cell">-</div></div>').insertAfter(currentRow)
                 }
 
@@ -2668,7 +2668,7 @@ function negotiationAnimation(savedLink, callback, callbackParam) {
         var percentage = gaugeValue / negotiationResult.passingScore * 100
 
         var callback
-        if (index == negotiationResult.sessions.length) {
+        if (index === negotiationResult.sessions.length) {
             callback = function() {
                            var result
                            if (negotiationResult.isGreatSuccess) {
@@ -2697,7 +2697,7 @@ function negotiationAnimation(savedLink, callback, callbackParam) {
         }
         animateProgressBar($('#negotiationAnimation .negotiationBar'), percentage, 500, callback)
 
-        if (index == negotiationResult.sessions.length) {
+        if (index === negotiationResult.sessions.length) {
             clearInterval(animationInterval);
         }
 	}, 750)

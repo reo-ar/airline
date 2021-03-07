@@ -37,33 +37,33 @@ function loadRanking() {
 function updateRankingTable(rankingType, rankings) {
 	//locate which table
 	var rankingTable;
-	if (rankingType == "PASSENGER") {
+	if (rankingType === "PASSENGER") {
 		rankingTable = $('#passengerRank')
-	} else if (rankingType == "PASSENGER_MILE") {
+	} else if (rankingType === "PASSENGER_MILE") {
 		rankingTable = $('#passengerMileRank')
-	} else if (rankingType == "REPUTATION") {
+	} else if (rankingType === "REPUTATION") {
 		rankingTable = $('#reputationRank')
-	} else if (rankingType == "SERVICE_QUALITY") {
+	} else if (rankingType === "SERVICE_QUALITY") {
 		rankingTable = $('#serviceQualityRank')
-	} else if (rankingType == "LINK_COUNT") {
+	} else if (rankingType === "LINK_COUNT") {
 		rankingTable = $('#linkCountRank')
-	} else if (rankingType == "LINK_PROFIT") {
+	} else if (rankingType === "LINK_PROFIT") {
 		rankingTable = $('#linkProfitRank')
-	} else if (rankingType == "LOUNGE") {
+	} else if (rankingType === "LOUNGE") {
 		rankingTable = $('#loungeRank')
-	} else if (rankingType == "AIRPORT") {
+	} else if (rankingType === "AIRPORT") {
 		rankingTable = $('#airportRank')
-	} else if (rankingType == "PASSENGER_AS") {
+	} else if (rankingType === "PASSENGER_AS") {
 		rankingTable = $('#passengerRankAs')
-	} else if (rankingType == "PASSENGER_AF") {
+	} else if (rankingType === "PASSENGER_AF") {
 		rankingTable = $('#passengerRankAf')
-	} else if (rankingType == "PASSENGER_OC") {
+	} else if (rankingType === "PASSENGER_OC") {
 		rankingTable = $('#passengerRankOc')
-	} else if (rankingType == "PASSENGER_EU") {
+	} else if (rankingType === "PASSENGER_EU") {
 		rankingTable = $('#passengerRankEu')
-	} else if (rankingType == "PASSENGER_NA") {
+	} else if (rankingType === "PASSENGER_NA") {
 		rankingTable = $('#passengerRankNa')
-	} else if (rankingType == "PASSENGER_SA") {
+	} else if (rankingType === "PASSENGER_SA") {
 		rankingTable = $('#passengerRankSa')
 	} else {
 		console.log("Unknown ranking type " + rankingType)
@@ -77,7 +77,7 @@ function updateRankingTable(rankingType, rankings) {
 			if (index < maxEntry) {
 				rankingTable.append(getRankingRow(ranking))
 			}
-			if (activeAirline && !currentAirlineRanking && ranking.airlineId == activeAirline.id) {
+			if (activeAirline && !currentAirlineRanking && ranking.airlineId === activeAirline.id) {
 				currentAirlineRanking = ranking
 			}
 		})
@@ -122,7 +122,7 @@ function getDividerRow() {
 
 
 function getMovementLabel(movement) {
-	if (movement == 0) {
+	if (movement === 0) {
 		return '-'
 	} else if (movement < 0) { //going up in ranking
 		return "<img src='assets/images/icons/12px/arrow-090.png'/>" + movement * -1

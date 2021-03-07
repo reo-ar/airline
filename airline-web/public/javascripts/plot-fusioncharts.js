@@ -204,7 +204,7 @@ function plotSeatConfigurationGauge(container, configuration, maxSeats, spaceMul
 	function updateDataSource(configuration) {
 		var businessPosition = configuration.economy / maxSeats * 100
 		var firstPosition
-		 if (configuration.business == 0) {
+		 if (configuration.business === 0) {
 		    firstPosition = businessPosition
 		 } else {
 		    firstPosition = (maxSeats - configuration.first * spaceMultipliers.first) / maxSeats * 100
@@ -653,7 +653,7 @@ function plotPie(dataSource, currentKey, container, keyName, valueName) {
 			entry.color = dataEntry.color
 		}
 		
-		if (currentKey && dataEntry[keyName] == currentKey) {
+		if (currentKey && dataEntry[keyName] === currentKey) {
 			entry.issliced = "1"
 		}
 		
@@ -955,7 +955,7 @@ function plotRivalHistoryChart(allRivalLinkConsumptions, priceContainer, linkCla
     var minValue = 99999
     if (!jQuery.isEmptyObject(allRivalLinkConsumptions)) { //link consumptions is array (by each rival link) of array (by cycle),
 	    $.each(allRivalLinkConsumptions, function(key, linkConsumptions) {
-            if (linkConsumptions.length == 0) {
+            if (linkConsumptions.length === 0) {
                 return; //no consumptions yet
             }
             var newCategory = []
@@ -967,7 +967,7 @@ function plotRivalHistoryChart(allRivalLinkConsumptions, priceContainer, linkCla
             var airlineName = linkConsumptions[0].airlineName
             var linkId = linkConsumptions[0].linkId
             priceHistory = []
-            var lineColor = linkConsumptions[0].airlineId == currentAirlineId ? "#d84f4f" : "#f6bf1b"
+            var lineColor = linkConsumptions[0].airlineId === currentAirlineId ? "#d84f4f" : "#f6bf1b"
             $.each(linkConsumptions.reverse(), function(key, linkConsumption) {
                 var currentValue = linkConsumption[field][linkClass]
                 if (currentValue > maxValue) {

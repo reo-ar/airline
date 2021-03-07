@@ -42,7 +42,7 @@ function createProfileDiv(profile, profileId) {
     }
     $profileDiv.append($list)
 
-	if ($('#profileId').val() == profileId) {
+	if ($('#profileId').val() === profileId) {
 		selectProfile(profileId, $profileDiv)
 	}
 

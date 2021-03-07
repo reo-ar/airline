@@ -139,7 +139,7 @@
 				// BUILD TRANSITION AND PERSPECTIVE OBJECTS
 				
 				for(var i = 0; i<2; i++){
-					var a = i==0 ? a = config.prefix : '';
+					var a = i===0 ? a = config.prefix : '';
 					config.transition[a+'transition'] = 'all '+config.transitionSpeed+'ms ease-in-out';
 					config.perspective[a+'perspective'] = config.perspectiveDistance+'px';
 					config.perspective[a+'perspective-origin'] = config.perspectiveOrigin;
@@ -148,13 +148,13 @@
 				// BUILD TRANSITION CLEANER
 				
 				for(var i = 0; i<2; i++){
-					var a = i==0 ? a = config.prefix : '';
+					var a = i===0 ? a = config.prefix : '';
 					config.clean[a+'transition'] = 'none';
 				};
 	
 				// CHOOSE GRID OR LIST
 	
-				if(config.layoutMode == 'list'){
+				if(config.layoutMode === 'list'){
 					$cont.addClass(config.listClass);
 					config.origDisplay = config.targetDisplayList;
 				} else {
@@ -176,7 +176,7 @@
 				// RENAME "ALL" CATEGORY TO "MIX_ALL"
 	
 				$cont.find(config.targetSelector).addClass('mix_all');
-				if(showOnLoadArray[0]  == 'all'){
+				if(showOnLoadArray[0]  === 'all'){
 					showOnLoadArray[0] = 'mix_all',
 					config.showOnLoad = 'mix_all';
 				};
@@ -190,7 +190,7 @@
 				
 				$showOnLoad.each(function(){
 					var $t = $(this);
-					if(config.layoutMode == 'list'){
+					if(config.layoutMode === 'list'){
 						$t.css('display',config.targetDisplayList);
 					} else {
 						$t.css('display',config.targetDisplayGrid);
@@ -209,7 +209,7 @@
 					// CLEAN UP
 					
 					var reset = setTimeout(function(){
-						if(config.layoutMode == 'list'){
+						if(config.layoutMode === 'list'){
 							$showOnLoad.removeStyle(config.prefix+'transition, transition').css({
 								display: config.targetDisplayList,
 								opacity: 1
@@ -256,7 +256,7 @@
 							$(config.sortSelector).removeClass('active');
 							$t.addClass('active');
 						} else {
-							if(sortby != 'random')return false;
+							if(sortby !== 'random')return false;
 						};
 						
 						$cont.find(config.targetSelector).each(function(){
@@ -279,7 +279,7 @@
 						
 						// PARSE FILTER ARGUMENTS FROM BUTTON CLASSES
 		
-						if(config.multiFilter == false){
+						if(config.multiFilter === false){
 							
 							// SINGLE ACTIVE BUTTON
 							
@@ -329,7 +329,7 @@
 		toGrid: function(){
 			return this.each(function(){
 				var config = this.config;
-				if(config.layoutMode != 'grid'){
+				if(config.layoutMode !== 'grid'){
 					config.layoutMode = 'grid';
 					goMix(config.filter, null, null, $(this), config);
 				};
@@ -341,7 +341,7 @@
 		toList: function(){
 			return this.each(function(){
 				var config = this.config;
-				if(config.layoutMode != 'list'){
+				if(config.layoutMode !== 'list'){
 					config.layoutMode = 'list';
 					goMix(config.filter, null, null, $(this), config);
 				};
@@ -475,7 +475,7 @@
 		// REBUILD TRANSITION AND PERSPECTIVE OBJECTS
 		
 		for(var i = 0; i<2; i++){
-			var a = i==0 ? a = config.prefix : '';
+			var a = i===0 ? a = config.prefix : '';
 			config.transition[a+'transition'] = 'all '+speed+'ms linear';
 			config.transition[a+'transform'] = a+'translate3d(0,0,0)';
 			config.perspective[a+'perspective'] = config.perspectiveDistance+'px';
@@ -504,20 +504,20 @@
 		// SETUP EASING
 
 		config.easingFallback = 'ease-in-out';
-		if(config.easing == 'smooth')config.easing = 'cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-		if(config.easing == 'snap')config.easing = 'cubic-bezier(0.77, 0, 0.175, 1)';
-		if(config.easing == 'windback'){
+		if(config.easing === 'smooth')config.easing = 'cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+		if(config.easing === 'snap')config.easing = 'cubic-bezier(0.77, 0, 0.175, 1)';
+		if(config.easing === 'windback'){
 			config.easing = 'cubic-bezier(0.175, 0.885, 0.320, 1.275)',
 			config.easingFallback = 'cubic-bezier(0.175, 0.885, 0.320, 1)'; // Fall-back for old webkit, with no values > 1 or < 1
 		};
-		if(config.easing == 'windup'){
+		if(config.easing === 'windup'){
 			config.easing = 'cubic-bezier(0.6, -0.28, 0.735, 0.045)',
 			config.easingFallback = 'cubic-bezier(0.6, 0.28, 0.735, 0.045)';
 		};
 		
 		// USE LIST SPECIFIC EFFECTS IF DECLARED
 		
-		var effectsOut = config.layoutMode == 'list' && config.listEffects != null ? config.listEffects : config.effects;
+		var effectsOut = config.layoutMode === 'list' && config.listEffects != null ? config.listEffects : config.effects;
 	
 		// BUILD EFFECTS STRINGS & SKIP IF IE8
 	
@@ -559,9 +559,9 @@
 
 		// "OR" LOGIC (DEFAULT)
 		
-		if(config.filterLogic == 'or'){
+		if(config.filterLogic === 'or'){
 			
-			if(filterArray[0] == '') filterArray.shift(); // IF FIRST ITEM IN ARRAY IS AN EMPTY SPACE, DELETE
+			if(filterArray[0] === '') filterArray.shift(); // IF FIRST ITEM IN ARRAY IS AN EMPTY SPACE, DELETE
 			
 			// IF NO ELEMENTS ARE DESIRED THEN HIDE ALL VISIBLE ELEMENTS
 		
@@ -598,7 +598,7 @@
 							};
 						});
 						// IF PASSES ALL DIMENSIONS, SHOW
-						if(pass == filterArray.length){
+						if(pass === filterArray.length){
 							$show = $show.add($t);
 						// ELSE HIDE
 						} else {
@@ -637,7 +637,7 @@
 		
 		$hide.each(function(){
 			var $t = $(this);
-			if($t.css('display') != 'none'){
+			if($t.css('display') !== 'none'){
 				$tohide = $tohide.add($t);
 				$pre = $pre.add($t);
 			};
@@ -645,9 +645,9 @@
 		
 		// IF ALL ELEMENTS ARE ALREADY SHOWN AND THERE IS NOTHING TO HIDE, AND NOT PERFORMING A LAYOUT CHANGE OR SORT:
 		
-		if($show.filter(':visible').length == total && !$tohide.length && !sortby){
+		if($show.filter(':visible').length === total && !$tohide.length && !sortby){
 			
-			if(config.origLayout == config.layoutMode){
+			if(config.origLayout === config.layoutMode){
 				
 				// THEN CLEAN UP AND GO HOME
 
@@ -657,9 +657,9 @@
 				
 				// IF ONLY ONE ITEM AND CHANGING FORM GRID TO LIST, MOST LIKELY POSITION WILL NOT CHANGE SO WE'RE DONE
 			
-				if($show.length == 1){ 
+				if($show.length === 1){
 					
-					if(config.layoutMode == 'list'){ 
+					if(config.layoutMode === 'list'){
 						$cont.addClass(config.listClass);
 						$cont.removeClass(config.gridClass);
 						$pre.css('display',config.targetDisplayList);
@@ -695,7 +695,7 @@
 
 			$show.each(function(){ 
 				var $t = $(this);
-				if($t.css('display') == 'none'){
+				if($t.css('display') === 'none'){
 					$toshow = $toshow.add($t)
 				} else {
 					$pre = $pre.add($t);
@@ -704,11 +704,11 @@
 	
 			// IF NON-ANIMATED LAYOUT MODE TRANSITION:
 		
-			if((config.origLayout != config.layoutMode) && config.animateGridList == false){ 
+			if((config.origLayout !== config.layoutMode) && config.animateGridList === false){
 			
 				// ADD NEW DISPLAY TYPES, CLEAN UP AND GO HOME
 				
-				if(config.layoutMode == 'list'){ 
+				if(config.layoutMode === 'list'){
 					$cont.addClass(config.listClass);
 					$cont.removeClass(config.gridClass);
 					$pre.css('display',config.targetDisplayList);
@@ -742,7 +742,7 @@
 			// TEMPORARILY SHOW ALL ELEMENTS TO SHOW (THAT ARE NOT ALREADY SHOWN), WITHOUT HIDING ELEMENTS TO HIDE
 			// AND ADD/REMOVE GRID AND LIST CLASSES FROM CONTAINER
 	
-			if(config.layoutMode == 'list'){
+			if(config.layoutMode === 'list'){
 				$cont.addClass(config.listClass);
 				$cont.removeClass(config.gridClass);
 				$toshow.css('display',config.targetDisplayList);
@@ -773,7 +773,7 @@
 			
 			// SET DISPLAY PROPERTY OF PRE-EXISTING ELEMENTS INCASE WE ARE CHANGING LAYOUT MODE
 	
-			if(config.layoutMode == 'list'){
+			if(config.layoutMode === 'list'){
 				$pre.css('display',config.targetDisplayList);
 			} else {
 				$pre.css('display',config.targetDisplayGrid);
@@ -833,7 +833,7 @@
 			
 			// ADD/REMOVE GRID AND LIST CLASSES FROM CONTAINER
 	
-			if(config.origDisplay == 'block'){
+			if(config.origDisplay === 'block'){
 				$cont.addClass(config.listClass);
 				$toshow.css('display', config.targetDisplayList);
 			} else {
@@ -850,7 +850,7 @@
 			var toShowCSS = {};
 			
 			for(var i = 0; i<2; i++){
-				var a = i==0 ? a = config.prefix : '';
+				var a = i===0 ? a = config.prefix : '';
 				toShowCSS[a+'transform'] = config.scale+' '+config.rotateX+' '+config.rotateY+' '+config.rotateZ;
 				toShowCSS[a+'filter'] = config.blur+' '+config.grayscale;
 			};
@@ -873,7 +873,7 @@
 				};
 				var preCSS = {};
 				for(var i = 0; i<2; i++){
-					var a = i==0 ? a = config.prefix : '';
+					var a = i===0 ? a = config.prefix : '';
 					preCSS[a+'transform'] = 'translate('+data.preTX+'px,'+data.preTY+'px)';
 				};
 				
@@ -882,7 +882,7 @@
 			
 			// ADD/REMOVE GRID AND LIST CLASSES FROM CONTAINER
 	
-			if(config.layoutMode == 'list'){
+			if(config.layoutMode === 'list'){
 				$cont.addClass(config.listClass);
 				$cont.removeClass(config.gridClass);
 			} else {
@@ -899,7 +899,7 @@
 				if(config.resizeContainer){
 					var containerCSS = {};
 					for(var i = 0; i<2; i++){
-						var a = i==0 ? a = config.prefix : '';
+						var a = i===0 ? a = config.prefix : '';
 						containerCSS[a+'transition'] = 'all '+speed+'ms ease-in-out';
 						containerCSS['height'] = config.newHeight+'px';
 					};
@@ -921,7 +921,7 @@
 					
 					var toShowCSS = {};
 					for(var i = 0; i<2; i++){
-						var a = i==0 ? a = config.prefix : '';
+						var a = i===0 ? a = config.prefix : '';
 						toShowCSS[a+'transition-property'] = a+'transform, '+a+'filter, opacity';
 						toShowCSS[a+'transition-timing-function'] = config.easing+', linear, linear';
 						toShowCSS[a+'transition-duration'] = speed+'ms';
@@ -939,12 +939,12 @@
 				
 				$pre.each(function(){
 					var data = this.data
-					data.tX = data.finalPrePos.left != 0 ? data.finalPrePos.left - data.preInterPos.left : 0;
-					data.tY = data.finalPrePos.left != 0 ? data.finalPrePos.top - data.preInterPos.top : 0;
+					data.tX = data.finalPrePos.left !== 0 ? data.finalPrePos.left - data.preInterPos.left : 0;
+					data.tY = data.finalPrePos.left !== 0 ? data.finalPrePos.top - data.preInterPos.top : 0;
 					
 					var preCSS = {};
 					for(var i = 0; i<2; i++){
-						var a = i==0 ? a = config.prefix : '';
+						var a = i===0 ? a = config.prefix : '';
 						preCSS[a+'transition'] = 'all '+speed+'ms '+config.easing;
 						preCSS[a+'transform'] = 'translate('+data.tX+'px,'+data.tY+'px)';
 					};
@@ -956,7 +956,7 @@
 				
 				var toHideCSS = {};
 				for(var i = 0; i<2; i++){
-					var a = i==0 ? a = config.prefix : '';
+					var a = i===0 ? a = config.prefix : '';
 					toHideCSS[a+'transition'] = 'all '+speed+'ms '+config.easing+', '+a+'filter '+speed+'ms linear, opacity '+speed+'ms linear';
 					toHideCSS[a+'transform'] = config.scale+' '+config.rotateX+' '+config.rotateY+' '+config.rotateZ;
 					toHideCSS[a+'filter'] = config.blur+' '+config.grayscale;
@@ -1034,7 +1034,7 @@
 				if(config.resizeContainer){
 					var containerCSS = {};
 					for(var i = 0; i<2; i++){
-						var a = i==0 ? a = config.prefix : '';
+						var a = i===0 ? a = config.prefix : '';
 						containerCSS[a+'transition'] = 'height '+speed+'ms ease-in-out';
 						containerCSS['height'] = config.minHeight+'px';
 					};
@@ -1057,7 +1057,7 @@
 
 					var toHideCSS = {};
 					for(var i = 0; i<2; i++){
-						var a = i==0 ? a = config.prefix : '';
+						var a = i===0 ? a = config.prefix : '';
 						toHideCSS[a+'transform'] = config.scale+' '+config.rotateX+' '+config.rotateY+' '+config.rotateZ;
 						toHideCSS[a+'filter'] = config.blur+' '+config.grayscale;
 						toHideCSS['opacity'] = config.fade;
@@ -1130,7 +1130,7 @@
 			// ADD FINAL DISPLAY PROPERTIES AND OPACITY TO ALL SHOWN ELEMENTS
 			// CACHE CURRENT LAYOUT MODE & SORT FOR NEXT MIX
 			
-			if(config.layoutMode == 'list'){
+			if(config.layoutMode === 'list'){
 				$show.css({display:config.targetDisplayList, opacity:'1'});
 				config.origDisplay = config.targetDisplayList;
 			} else {
@@ -1181,7 +1181,7 @@
 		// REBUILD DOM
 
 		function rebuild(element){
-			if(order == 'asc'){
+			if(order === 'asc'){
 				$sortWrapper.prepend(element).prepend(' ');
 			} else {
 				$sortWrapper.append(element).append(' ');
@@ -1221,22 +1221,22 @@
 		
 		$sortWrapper.empty();
 		
-		if(sortby == 'reset'){
+		if(sortby === 'reset'){
 			$.each(config.startOrder,function(){
 				$sortWrapper.append(this).append(' ');
 			});
-		} else if(sortby == 'default'){
+		} else if(sortby === 'default'){
 			$.each(config.origOrder,function(){
 				rebuild(this);
 			});
-		} else if(sortby == 'random'){
+		} else if(sortby === 'random'){
 			if(!config.newOrder.length){
 				config.newOrder = arrayShuffle(config.startOrder);
 			};
 			$.each(config.newOrder,function(){
 				$sortWrapper.append(this).append(' ');
 			});	
-		} else if(sortby == 'custom'){
+		} else if(sortby === 'custom'){
 			$.each(order, function(){
 				rebuild(this);
 			});
@@ -1262,7 +1262,7 @@
 		config.checkSort = [];
 		$sortWrapper.find(config.targetSelector+':visible').each(function(i){
 			var $t = $(this);
-			if(i == 0){
+			if(i === 0){
 				
 				// PREVENT COMPARE RETURNING FALSE POSITIVES ON ELEMENTS WITH NO CLASS/ATTRIBUTES
 				
@@ -1308,7 +1308,7 @@
 	// COMPARE ARRAYS 
 	
 	function compareArr(a,b){
-	    if (a.length != b.length) return false;
+	    if (a.length !== b.length) return false;
 	    for (var i = 0; i < b.length; i++){
 	        if (a[i].compare) { 
 	            if (!a[i].compare(b[i])) return false;
@@ -1327,9 +1327,9 @@
 		var arr = str.split(' ');
 		// IF ALL, REPLACE WITH MIX_ALL
 		$.each(arr,function(i){
-			if(this == 'all')arr[i] = 'mix_all';
+			if(this === 'all')arr[i] = 'mix_all';
 		});
-		if(arr[0] == "")arr.shift(); 
+		if(arr[0] === "")arr.shift();
 		return arr;
 	};
 

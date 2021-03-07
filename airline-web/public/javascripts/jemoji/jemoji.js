@@ -141,7 +141,7 @@ if (typeof(jQuery) === 'undefined') {
             $input.focus(function(e) {
               clearInterval(checkInterval);
               checkInterval = setInterval(function() {
-                if ($input.val() != currentVal) {
+                if ($input.val() !== currentVal) {
                   var event = jQuery.Event(eventType);
                   currentVal = $input.val();
                   event.which = event.keyCode = (currentVal && currentVal.length > 0) ? currentVal.charCodeAt(currentVal.length - 1) : '';
@@ -340,7 +340,7 @@ if (typeof(jQuery) === 'undefined') {
             return;
         }
 
-        if ((event.which == 32 || event.which === 13)) { //space or enter
+        if ((event.which === 32 || event.which === 13)) { //space or enter
             explicitDisable = false //reset explicit disable
         }
 
@@ -391,7 +391,7 @@ if (typeof(jQuery) === 'undefined') {
           }
 
           // Type selected emoji on Enter if menu is opened
-          if ((event.which == 9 || event.which === 13)) { //tab or enter
+          if ((event.which === 9 || event.which === 13)) { //tab or enter
              replaceEmojiToken()
              closeMenu()
              isFromEmoji = true; //so that chat.js would not send the message out
@@ -452,7 +452,7 @@ if (typeof(jQuery) === 'undefined') {
                 suffix = ": "
             }
             var prefix
-            if (tokenInfo.start == 0 || currentVal.charAt(tokenInfo.start - 1) === ' ') { //already has a leading space or at the beginning
+            if (tokenInfo.start === 0 || currentVal.charAt(tokenInfo.start - 1) === ' ') { //already has a leading space or at the beginning
                 prefix = ":"
             } else {
                 prefix = " :"
@@ -476,7 +476,7 @@ if (typeof(jQuery) === 'undefined') {
     function getTokenAtCursor() {
         var currentVal = $el.val();
         var cursorPosition = getCursorPosition()
-        if (currentVal.length == 0
+        if (currentVal.length === 0
         || currentVal.charAt(cursorPosition - 1) === ':') { //then it is either AT the starting colon, ending colon, not in any token, anyway, this is NOT a token at cursor
           return null
         } else {
@@ -489,7 +489,7 @@ if (typeof(jQuery) === 'undefined') {
                  walker += 1 //now scan forward until hitting a space or ':'
                  while (walker < cursorPosition) {
                     if (currentVal.charAt(walker) === ':') { //this could potentially a trailing colon, but can as well be a leading colon for another token
-                        if (currentVal.charAt(walker) + 1 == cursorPosition || currentVal.charAt(walker + 1) === ' ') { //then this is indeed a trailing colon for current token
+                        if (currentVal.charAt(walker) + 1 === cursorPosition || currentVal.charAt(walker + 1) === ' ') { //then this is indeed a trailing colon for current token
                             return { "start" : tokenStart, "end" : walker + 1, "complete" : true} //include the colon
                         } else { //it's a leading colon for another token
                             return { "start" : tokenStart, "end" : walker, "complete" : false}

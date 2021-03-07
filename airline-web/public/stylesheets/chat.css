@@ -42,8 +42,8 @@
 }
 
 #live-chat h4 ul.ctabs{
-			margin: 0px;
-			padding: 0px;
+			margin: 0;
+			padding: 0;
 			list-style: none;
 			display: inline;
 		}
@@ -56,7 +56,7 @@
 			border-left: var(--input-border-color) solid 1px;
 			border-right: var(--input-border-color) solid 1px;
 			border-top: var(--input-border-color) solid 1px;
-			border-radius: 3px 3px 0px 0px;
+			border-radius: 3px 3px 0 0;
 		}
 
 #live-chat h4 ul.ctabs li.current{
@@ -64,7 +64,7 @@
 			border-left: var(--input-border-color) solid 1px;
 			border-right: var(--input-border-color) solid 1px;
 			border-top: var(--input-border-color) solid 1px;
-			border-radius: 3px 3px 0px 0px;
+			border-radius: 3px 3px 0 0;
 			box-shadow: var(--chat-shadow);
             font-weight: bolder;
 			

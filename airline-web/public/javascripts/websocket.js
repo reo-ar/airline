@@ -2,7 +2,7 @@ var port = window.location.port
 
 var wsProtocol
 
-if (window.location.protocol == "https:"){
+if (window.location.protocol === "https:"){
 	wsProtocol = "wss:"
 	if (!port) {
 		port = 443
@@ -50,21 +50,21 @@ function onMessage(evt) { //right now the message is just the cycle #, so refres
     }
 	console.log("websocket received message : " + evt.data)
 	
-	if (json.messageType == "cycleInfo") { //update time
+	if (json.messageType === "cycleInfo") { //update time
 		updateTime(json.cycle, json.fraction, json.cycleDurationEstimation)
 //	} else if (json.messageType == "cycleStart") { //update time
 //		updateTime(json.cycle, 0)
-	} else if (json.messageType == "cycleCompleted") {
+	} else if (json.messageType === "cycleCompleted") {
 		if (selectedAirlineId) {
 			refreshPanels(selectedAirlineId)
 		}
-	} else if (json.messageType == "broadcastMessage") {
+	} else if (json.messageType === "broadcastMessage") {
         queuePrompt("broadcastMessagePopup", json.message)
-    } else if (json.messageType == "airlineMessage") {
+    } else if (json.messageType === "airlineMessage") {
         queuePrompt("airlineMessagePopup", json.message)
-    } else if (json.messageType == "notice") {
+    } else if (json.messageType === "notice") {
         queueNotice(json)
-    } else if (json.messageType == "tutorial") {
+    } else if (json.messageType === "tutorial") {
         queueTutorialByJson(json)
     } else {
 		console.warn("unknown message type " + evt.data)

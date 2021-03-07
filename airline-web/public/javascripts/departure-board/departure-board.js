@@ -145,7 +145,7 @@ DepartureBoard.Letter.prototype.setValue = function (value) {
 	this._stopAt = DepartureBoard.LETTERS.indexOf (value);
 
 	if (this._stopAt < 0) this._stopAt = 0;
-	if (!this._interval && this._index != this._stopAt) this.spin (false);
+	if (!this._interval && this._index !== this._stopAt) this.spin (false);
 };
 
 

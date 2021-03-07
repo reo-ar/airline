@@ -23,7 +23,7 @@ function initStyles() {
 
 function getMapStyles() {
 	console.log("getting " + currentStyles)
-	if (currentStyles == 'light') {
+	if (currentStyles === 'light') {
 		return lightStyles
 	} else {
 		return darkStyles
@@ -31,7 +31,7 @@ function getMapStyles() {
 }
 
 function toggleMapLight() {
-	if (currentStyles == 'dark') {
+	if (currentStyles === 'dark') {
 		currentStyles = 'light'
 	} else {
 		currentStyles = 'dark'

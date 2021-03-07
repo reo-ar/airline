@@ -1,7 +1,5 @@
 body {
-    background: linear-gradient(to bottom, rgba(40, 49, 77, 0.8) 30%, rgba(29, 35, 71, 0.8) 50%, rgba(19, 25, 28, 0.8) 80%, rgba(15, 14, 14, .8) 100%), url(../images/background/pixel_city.gif);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: linear-gradient(to bottom, rgba(40, 49, 77, 0.8) 30%, rgba(29, 35, 71, 0.8) 50%, rgba(19, 25, 28, 0.8) 80%, rgba(15, 14, 14, .8) 100%) url(../images/background/pixel_city.gif) no-repeat fixed;
     background-size: cover;
 }
 
@@ -10,7 +8,7 @@ body {
     position: absolute; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
-    top: 0px;
+    top: 0;
     width: 100%; /* Full width */
     /*height: calc(100% - 70px);*/
     height: 100%;
@@ -25,10 +23,9 @@ body {
 }
 
 a.landing-link:hover {
-   border-radius: 0px;
-   background-color: transparent ;
-   text-shadow: 0 0 0.5em #0ff, 0 -1px 0 #000;
-   background: none;
+   border-radius: 0;
+    text-shadow: 0 0 0.5em #0ff, 0 -1px 0 #000;
+    background: transparent none;
 }
 
 
@@ -63,7 +60,7 @@ a.landing-link, #about-canvas a {
 }
 
 #landingVideo {
-    box-shadow : 0 0 10px 3px rgb(255 255 255 / 30%);
+    box-shadow : 0 0 10px 3px rgba(255, 255, 255, 0.3);
 }
 
 .title .laser {
@@ -184,8 +181,8 @@ a.landing-link, #about-canvas a {
     font-size: 1.7em;
     margin-block-start: 0.67em;
     margin-block-end: 0.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
     font-weight: bold;
 }
 

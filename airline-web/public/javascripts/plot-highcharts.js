@@ -5,7 +5,7 @@ function plotAirportShares(airportShares, currentAirportId, container) {
 			name : airportShare.airportName,
 			y : airportShare.share
 		}
-		if (currentAirportId == airportShare.airportId) {
+		if (currentAirportId === airportShare.airportId) {
 			entry["sliced"] = true
 			entry["selected"] = true
 		}

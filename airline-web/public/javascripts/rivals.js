@@ -61,7 +61,7 @@ function updateRivalsTable(sortProperty, sortOrder, selectedAirline) {
     }
 
 	//sort the list
-	displayRivals.sort(sortByProperty(sortProperty, sortOrder == "ascending"))
+	displayRivals.sort(sortByProperty(sortProperty, sortOrder === "ascending"))
 	
 	var selectedRow
 	$.each(displayRivals, function(index, airline) {
@@ -82,7 +82,7 @@ function updateRivalsTable(sortProperty, sortOrder, selectedAirline) {
 		row.append("<div class='cell' align='right'>" + airline.reputation + "</div>")
 		row.append("<div class='cell' align='right'>" + airline.baseCount + "</div>")
 		
-		if (selectedAirline == airline.id) {
+		if (selectedAirline === airline.id) {
 			row.addClass("selected")
 			selectedRow = row
 		}
@@ -97,11 +97,11 @@ function updateRivalsTable(sortProperty, sortOrder, selectedAirline) {
 }
 
 function getStatusLogo(status) {
-    if (status == 0) {
+    if (status === 0) {
       return "assets/images/icons/12px/status-green.png"
-    } else if (status == 1) {
+    } else if (status === 1) {
       return "assets/images/icons/12px/status-yellow.png"
-    } else if (status == 2) {
+    } else if (status === 2) {
       return "assets/images/icons/12px/status-orange.png"
     } else {
       return "assets/images/icons/12px/status-grey.png"
@@ -109,11 +109,11 @@ function getStatusLogo(status) {
 }
 
 function getStatusTitle(status) {
-    if (status == 0) {
+    if (status === 0) {
       return "Online"
-    } else if (status == 1) {
+    } else if (status === 1) {
       return "Active within last 7 days"
-    } else if (status == 2) {
+    } else if (status === 2) {
       return "Active within last 30 days"
     } else {
       return "Inactive"
@@ -122,7 +122,7 @@ function getStatusTitle(status) {
 
 
 function toggleRivalsTableSortOrder(sortHeader) {
-	if (sortHeader.data("sort-order") == "ascending") {
+	if (sortHeader.data("sort-order") === "ascending") {
 		sortHeader.data("sort-order", "descending")
 	} else {
 		sortHeader.data("sort-order", "ascending")
@@ -182,7 +182,7 @@ function updateRivalLinksTable(sortProperty, sortOrder) {
 	rivalLinksTable.children("div.table-row").remove()
 	
 	//sort the list
-	loadedRivalLinks.sort(sortByProperty(sortProperty, sortOrder == "ascending"))
+	loadedRivalLinks.sort(sortByProperty(sortProperty, sortOrder === "ascending"))
 	
 	$.each(loadedRivalLinks, function(index, link) {
 		var row = $("<div class='table-row'></div>")
@@ -197,7 +197,7 @@ function updateRivalLinksTable(sortProperty, sortOrder) {
 }
 
 function toggleRivalLinksTableSortOrder(sortHeader) {
-	if (sortHeader.data("sort-order") == "ascending") {
+	if (sortHeader.data("sort-order") === "ascending") {
 		sortHeader.data("sort-order", "descending")
 	} else {
 		sortHeader.data("sort-order", "ascending")
@@ -275,7 +275,7 @@ function updateRivalCountriesAirlineTitles(airlineId) {
 	    		$('#rivalsCanvas .nationalAirlineCountryList').append(row)
 	    	})
 
-	    	if (titles.nationalAirlines.length == 0) {
+	    	if (titles.nationalAirlines.length === 0) {
 	    		$('#rivalsCanvas .nationalAirlineCountryList').append($("<div class='table-row'><div class='cell'>-</div><div class='cell'>-</div></div>"))
 	    	}
 
@@ -287,7 +287,7 @@ function updateRivalCountriesAirlineTitles(airlineId) {
                 $('#rivalsCanvas .partneredAirlineCountryList').append(row)
             })
 
-            if (titles.partneredAirlines.length == 0) {
+            if (titles.partneredAirlines.length === 0) {
 	    		$('#rivalsCanvas .partneredAirlineCountryList').append($("<div class='table-row'><div class='cell'>-</div><div class='cell'>-</div></div>"))
 	    	}
 	    },

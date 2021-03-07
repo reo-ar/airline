@@ -75,7 +75,7 @@
 
         // Only set if not explicitly passed as option
         if (!o || o.rtl === undefined) {
-            this.options.rtl = ($(e).attr('dir') || $('html').attr('dir') || '').toLowerCase() == 'rtl';
+            this.options.rtl = ($(e).attr('dir') || $('html').attr('dir') || '').toLowerCase() === 'rtl';
         }
 
         this.wh = !this.options.vertical ? 'width' : 'height';
@@ -85,14 +85,14 @@
         var skin = '', split = e.className.split(' ');
 
         for (var i = 0; i < split.length; i++) {
-            if (split[i].indexOf('jcarousel-skin') != -1) {
+            if (split[i].indexOf('jcarousel-skin') !== -1) {
                 $(e).removeClass(split[i]);
                 skin = split[i];
                 break;
             }
         }
 
-        if (e.nodeName.toUpperCase() == 'UL' || e.nodeName.toUpperCase() == 'OL') {
+        if (e.nodeName.toUpperCase() === 'UL' || e.nodeName.toUpperCase() === 'OL') {
             this.list      = $(e);
             this.clip      = this.list.parents('.jcarousel-clip');
             this.container = this.list.parents('.jcarousel-container');
@@ -110,7 +110,7 @@
             this.container = this.clip.wrap('<div></div>').parent();
         }
 
-        if (skin !== '' && this.container.parent()[0].className.indexOf('jcarousel-skin') == -1) {
+        if (skin !== '' && this.container.parent()[0].className.indexOf('jcarousel-skin') === -1) {
             this.container.wrap('<div class=" '+ skin + '"></div>');
         }
 
@@ -405,7 +405,7 @@
                 old = this.dimension(e);
             }
 
-            if (n.get(0).nodeName.toUpperCase() == 'LI') {
+            if (n.get(0).nodeName.toUpperCase() === 'LI') {
                 e.replaceWith(n);
                 e = n;
             } else {
@@ -462,7 +462,7 @@
             if (this.tail !== null && !this.inTail) {
                 this.scrollTail(false);
             } else {
-                this.scroll(((this.options.wrap == 'both' || this.options.wrap == 'last') && this.options.size !== null && this.last == this.options.size) ? 1 : this.first + this.options.scroll);
+                this.scroll(((this.options.wrap === 'both' || this.options.wrap === 'last') && this.options.size !== null && this.last === this.options.size) ? 1 : this.first + this.options.scroll);
             }
         },
 
@@ -476,7 +476,7 @@
             if (this.tail !== null && this.inTail) {
                 this.scrollTail(true);
             } else {
-                this.scroll(((this.options.wrap == 'both' || this.options.wrap == 'first') && this.options.size !== null && this.first == 1) ? this.options.size : this.first - this.options.scroll);
+                this.scroll(((this.options.wrap === 'both' || this.options.wrap === 'first') && this.options.size !== null && this.first === 1) ? this.options.size : this.first - this.options.scroll);
             }
         },
 
@@ -538,7 +538,7 @@
                 return pos;
             }
 
-            if (this.options.wrap != 'circular') {
+            if (this.options.wrap !== 'circular') {
                 i = i < 1 ? 1 : (this.options.size && i > this.options.size ? this.options.size : i);
             }
 
@@ -546,7 +546,7 @@
 
             // Create placeholders, new list width/height
             // and new list position
-            var f = this.options.wrap != 'circular' && this.first <= 1 ? 1 : this.first;
+            var f = this.options.wrap !== 'circular' && this.first <= 1 ? 1 : this.first;
             var c = back ? this.get(f) : this.get(this.last);
             var j = back ? f : f - 1;
             var e = null, l = 0, p = false, d = 0, g;
@@ -558,7 +558,7 @@
                     e = this.create(j).addClass(this.className('jcarousel-item-placeholder'));
                     c[back ? 'before' : 'after' ](e);
 
-                    if (this.first !== null && this.options.wrap == 'circular' && this.options.size !== null && (j <= 0 || j > this.options.size)) {
+                    if (this.first !== null && this.options.wrap === 'circular' && this.options.size !== null && (j <= 0 || j > this.options.size)) {
                         g = this.get(this.index(j));
                         if (g.length) {
                             e = this.add(j, g.clone(true));
@@ -573,7 +573,7 @@
                     l += d;
                 }
 
-                if (this.first !== null && (this.options.wrap == 'circular' || (j >= 1 && (this.options.size === null || j <= this.options.size)))) {
+                if (this.first !== null && (this.options.wrap === 'circular' || (j >= 1 && (this.options.size === null || j <= this.options.size)))) {
                     pos = back ? pos + d : pos - d;
                 }
             }
@@ -595,7 +595,7 @@
                         c[back ? 'before' : 'after' ](e);
                     }
 
-                    if (this.first !== null && this.options.wrap == 'circular' && this.options.size !== null && (j <= 0 || j > this.options.size)) {
+                    if (this.first !== null && this.options.wrap === 'circular' && this.options.size !== null && (j <= 0 || j > this.options.size)) {
                         g = this.get(this.index(j));
                         if (g.length) {
                             e = this.add(j, g.clone(true));
@@ -609,7 +609,7 @@
                     throw new Error('jCarousel: No width/height set for items. This will cause an infinite loop. Aborting...');
                 }
 
-                if (this.options.wrap != 'circular' && this.options.size !== null && j > this.options.size) {
+                if (this.options.wrap !== 'circular' && this.options.size !== null && j > this.options.size) {
                     cache.push(e);
                 } else if (p) {
                     l += d;
@@ -641,7 +641,7 @@
 
             // Calculate first and last item
             var last = i + visible - 1;
-            if (this.options.wrap != 'circular' && this.options.size && last > this.options.size) {
+            if (this.options.wrap !== 'circular' && this.options.size && last > this.options.size) {
                 last = this.options.size;
             }
 
@@ -662,7 +662,7 @@
             }
 
             var first = last - visible + 1;
-            if (this.options.wrap != 'circular' && first < 1) {
+            if (this.options.wrap !== 'circular' && first < 1) {
                 first = 1;
             }
 
@@ -672,7 +672,7 @@
             }
 
             this.tail = null;
-            if (this.options.wrap != 'circular' && last == this.options.size && (last - visible + 1) >= 1) {
+            if (this.options.wrap !== 'circular' && last === this.options.size && (last - visible + 1) >= 1) {
                 var m = $jc.intval(this.get(last).css(!this.options.vertical ? 'marginRight' : 'marginBottom'));
                 if ((v - m) > clipping) {
                     this.tail = v - clipping - m;
@@ -721,7 +721,7 @@
                     self.list.css(self.lt,  0);
                 }
 
-                if (!self.autoStopped && (self.options.wrap == 'circular' || self.options.wrap == 'both' || self.options.wrap == 'last' || self.options.size === null || self.last < self.options.size || (self.last == self.options.size && self.tail !== null && !self.inTail))) {
+                if (!self.autoStopped && (self.options.wrap === 'circular' || self.options.wrap === 'both' || self.options.wrap === 'last' || self.options.size === null || self.last < self.options.size || (self.last === self.options.size && self.tail !== null && !self.inTail))) {
                     self.startAuto();
                 }
 
@@ -730,7 +730,7 @@
 
                 // This function removes items which are appended automatically for circulation.
                 // This prevents the list from growing infinitely.
-                if (self.options.wrap == 'circular' && self.options.size !== null) {
+                if (self.options.wrap === 'circular' && self.options.size !== null) {
                     for (var i = self.prevFirst; i <= self.prevLast; i++) {
                         if (i !== null && !(i >= self.first && i <= self.last) && (i < 1 || i > self.options.size)) {
                             self.remove(i);
@@ -822,15 +822,15 @@
          */
         buttons: function(n, p) {
             if (n == null) {
-                n = !this.locked && this.options.size !== 0 && ((this.options.wrap && this.options.wrap != 'first') || this.options.size === null || this.last < this.options.size);
-                if (!this.locked && (!this.options.wrap || this.options.wrap == 'first') && this.options.size !== null && this.last >= this.options.size) {
+                n = !this.locked && this.options.size !== 0 && ((this.options.wrap && this.options.wrap !== 'first') || this.options.size === null || this.last < this.options.size);
+                if (!this.locked && (!this.options.wrap || this.options.wrap === 'first') && this.options.size !== null && this.last >= this.options.size) {
                     n = this.tail !== null && !this.inTail;
                 }
             }
 
             if (p == null) {
-                p = !this.locked && this.options.size !== 0 && ((this.options.wrap && this.options.wrap != 'last') || this.first > 1);
-                if (!this.locked && (!this.options.wrap || this.options.wrap == 'last') && this.options.size !== null && this.first == 1) {
+                p = !this.locked && this.options.size !== 0 && ((this.options.wrap && this.options.wrap !== 'last') || this.first > 1);
+                if (!this.locked && (!this.options.wrap || this.options.wrap === 'last') && this.options.size !== null && this.first === 1) {
                     p = this.tail !== null && this.inTail;
                 }
             }
@@ -846,11 +846,11 @@
 
                 this.buttonNext[n ? 'removeClass' : 'addClass'](this.className('jcarousel-next-disabled')).attr('disabled', n ? false : true);
 
-                if (this.options.buttonNextCallback !== null && this.buttonNext.data('jcarouselstate') != n) {
+                if (this.options.buttonNextCallback !== null && this.buttonNext.data('jcarouselstate') !== n) {
                     this.buttonNext.each(function() { self.options.buttonNextCallback(self, this, n); }).data('jcarouselstate', n);
                 }
             } else {
-                if (this.options.buttonNextCallback !== null && this.buttonNextState != n) {
+                if (this.options.buttonNextCallback !== null && this.buttonNextState !== n) {
                     this.options.buttonNextCallback(self, null, n);
                 }
             }
@@ -864,11 +864,11 @@
 
                 this.buttonPrev[p ? 'removeClass' : 'addClass'](this.className('jcarousel-prev-disabled')).attr('disabled', p ? false : true);
 
-                if (this.options.buttonPrevCallback !== null && this.buttonPrev.data('jcarouselstate') != p) {
+                if (this.options.buttonPrevCallback !== null && this.buttonPrev.data('jcarouselstate') !== p) {
                     this.buttonPrev.each(function() { self.options.buttonPrevCallback(self, this, p); }).data('jcarouselstate', p);
                 }
             } else {
-                if (this.options.buttonPrevCallback !== null && this.buttonPrevState != p) {
+                if (this.options.buttonPrevCallback !== null && this.buttonPrevState !== p) {
                     this.options.buttonPrevCallback(self, null, p);
                 }
             }
@@ -905,7 +905,7 @@
         },
 
         callback: function(cb, evt, state, i1, i2, i3, i4) {
-            if (this.options[cb] == null || (typeof this.options[cb] != 'object' && evt != 'onAfterAnimation')) {
+            if (this.options[cb] == null || (typeof this.options[cb] != 'object' && evt !== 'onAfterAnimation')) {
                 return;
             }
 
@@ -941,7 +941,7 @@
             e = $(e);
             var split = e.get(0).className.split(' ');
             for (var j = 0; j < split.length; j++) {
-                if (split[j].indexOf('jcarousel-') != -1) {
+                if (split[j].indexOf('jcarousel-') !== -1) {
                     e.removeClass(split[j]);
                 }
             }

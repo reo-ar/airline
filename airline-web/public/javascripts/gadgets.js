@@ -43,7 +43,7 @@ function generateImageBarWithRowSize(imageEmpty, imageFill, count, containerDiv,
 		containerDiv.append(image)
 		images.push(image)
 		
-		if ((i + 1) % rowSize == 0) {
+		if ((i + 1) % rowSize === 0) {
 			containerDiv.append("<br/>")
 		}
 	}
@@ -185,7 +185,7 @@ function getCountryFlagImg(countryCode) {
 function getCountryFlagUrl(countryCode) {
 	if (!countryCode) {
 		return '';
-	} if ($.inArray(countryCode, noFlags) != -1) {
+	} if ($.inArray(countryCode, noFlags) !== -1) {
 		return '';
 	} else {
 		return "assets/images/flags/" + countryCode + ".png"
@@ -202,16 +202,16 @@ function getUserLevelImg(level) {
 	} 
 	var levelTitle
 	var levelIcon
-	if (level == 1) {
+	if (level === 1) {
 		levelIcon = "assets/images/icons/medal-bronze-premium.png"
 		levelTitle = "Patreon : Bronze"
-	} else if (level == 2) {
+	} else if (level === 2) {
 		levelIcon = "assets/images/icons/medal-silver-premium.png"
 		levelTitle = "Patreon : Silver"
-	} else if (level == 3) {
+	} else if (level === 3) {
 		levelIcon = "assets/images/icons/medal-red-premium.png"
 		levelTitle = "Patreon : Gold"
-	} else if (level == 10 || 20) {
+	} else if (level === 10 || 20) {
 		levelIcon = "assets/images/icons/star.png"
         levelTitle = "Game Admin"
 	}
@@ -226,13 +226,13 @@ function getUserLevelImg(level) {
 function getRankingImg(ranking) {
 	var rankingIcon
 	var rankingTitle
-	if (ranking == 1) {
+	if (ranking === 1) {
 		rankingIcon = "assets/images/icons/crown.png"
 		rankingTitle = "1st place"
-	} else if (ranking == 2) {
+	} else if (ranking === 2) {
 		rankingIcon = "assets/images/icons/crown-silver.png"
 		rankingTitle = "2nd place"
-	} else if (ranking == 3) {
+	} else if (ranking === 3) {
 		rankingIcon = "assets/images/icons/crown-bronze.png"
     	rankingTitle = "3rd place"
 	} else if (ranking <= 10) {
@@ -289,7 +289,7 @@ function getOpennessSpan(openness) {
 }
 
 function sortPreserveOrder(array, property, ascending) {
-	if (ascending == undefined) {
+	if (ascending === undefined) {
 		ascending = true
 	}
     var sortOrder = 1;
@@ -310,7 +310,7 @@ function sortPreserveOrder(array, property, ascending) {
     		bVal = bVal.length
     	}
     	var result = (aVal < bVal) ? -1 : (aVal > bVal) ? 1 : 0;
-    	if (result == 0) {
+    	if (result === 0) {
     		return a.idx - b.idx
     	} else {
     		return result * sortOrder;
@@ -325,7 +325,7 @@ function sortPreserveOrder(array, property, ascending) {
 }
 
 function sortByProperty(property, ascending) {
-	if (ascending == undefined) {
+	if (ascending === undefined) {
 		ascending = true
 	}
     var sortOrder = 1;
@@ -369,7 +369,7 @@ function getAirportSpan(airport) {
 
 function setActiveDiv(activeDiv, callback) {
 	var existingActiveDiv = activeDiv.siblings(":visible").filter(function (index) {
-		return $(this).css("clear") != "both"
+		return $(this).css("clear") !== "both"
 	})
 	if (!callback && activeDiv.data("initCallback")) {
         callback = activeDiv.data("initCallback")

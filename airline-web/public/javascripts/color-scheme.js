@@ -30,7 +30,7 @@ function switchTheme() {
 
 $( document ).ready(function() {
     //pre-check the dark-theme checkbox if dark-theme is set
-    if (document.documentElement.getAttribute("data-theme") == "dark") {
+    if (document.documentElement.getAttribute("data-theme") === "dark") {
         $("#switchDark").prop('checked', true)
     } else {
         $("#switchLight").prop('checked', true)

@@ -76,7 +76,7 @@ function updateCampaignSummary() {
 
                 $campaignSummary.append(row)
             });
-            if (result.length == 0) {
+            if (result.length === 0) {
                 $campaignSummary.append("<div class='table-row'><div class='cell'>-</div><div class='cell'>-</div></div>")
             }
         },
@@ -116,18 +116,18 @@ function updateAirlineBases() {
                     } else {
                         $capacityDiv = $("<div class='cell'>" + capacityInfo.currentStaffRequired + "</div>").appendTo(row)
                     }
-                    if (capacityInfo.currentStaffRequired != capacityInfo.futureStaffRequired) {
+                    if (capacityInfo.currentStaffRequired !== capacityInfo.futureStaffRequired) {
                         $capacityDiv.append("<span>(future : " + capacityInfo.futureStaffRequired + ")</span>")
                     }
 
                     var $overtimeCompensationDiv
-                    if (capacityInfo.currentOvertimeCompensation == 0) {
+                    if (capacityInfo.currentOvertimeCompensation === 0) {
                         $overtimeCompensationDiv = $("<div class='cell'>-</div>").appendTo(row)
                      } else {
                         $overtimeCompensationDiv = $("<div class='cell'>$" + commaSeparateNumber(capacityInfo.currentOvertimeCompensation) + "</div>").appendTo(row)
                      }
 
-                     if (capacityInfo.currentOvertimeCompensation != capacityInfo.futureOvertimeCompensation) {
+                     if (capacityInfo.currentOvertimeCompensation !== capacityInfo.futureOvertimeCompensation) {
                         $overtimeCompensationDiv.append("<span>(future : $" + capacityInfo.futureOvertimeCompensation + ")</span>")
                      }
 
@@ -137,7 +137,7 @@ function updateAirlineBases() {
                        $('#officeCanvas .bases').append(row)
                     }
                 })
-                if (!activeAirline.baseAirports || activeAirline.baseAirports.length == 0) {
+                if (!activeAirline.baseAirports || activeAirline.baseAirports.length === 0) {
                     $('#officeCanvas .bases').append("<div class='table-row'><div class='cell'></div></div>")
                 }
     	    },
@@ -289,12 +289,12 @@ function updateIncomeSheet(airlineIncome) {
 	if (airlineIncome) {
 		var periodCount
 		var inProgress
-		if (airlineIncome.period == "WEEKLY") {
+		if (airlineIncome.period === "WEEKLY") {
 			periodCount= airlineIncome.cycle
-		} else if (airlineIncome.period == "MONTHLY") {
+		} else if (airlineIncome.period === "MONTHLY") {
 			periodCount = Math.ceil(airlineIncome.cycle / 4)
 			inProgress = (airlineIncome.cycle + 1) % 4
-		} else if (airlineIncome.period == "YEARLY") {
+		} else if (airlineIncome.period === "YEARLY") {
 			periodCount = Math.ceil(airlineIncome.cycle / 52)
 			inProgress = (airlineIncome.cycle + 1) % 52
 		}
@@ -353,12 +353,12 @@ function updateCashFlowSheet(airlineCashFlow) {
 	if (airlineCashFlow) {
 		var periodCount
 		var inProgress
-		if (airlineCashFlow.period == "WEEKLY") {
+		if (airlineCashFlow.period === "WEEKLY") {
 			periodCount= airlineCashFlow.cycle
-		} else if (airlineCashFlow.period == "MONTHLY") {
+		} else if (airlineCashFlow.period === "MONTHLY") {
 			periodCount = Math.ceil(airlineCashFlow.cycle / 4)
 			inProgress = (airlineCashFlow.cycle + 1) % 4
-		} else if (airlineCashFlow.period == "YEARLY") {
+		} else if (airlineCashFlow.period === "YEARLY") {
 			periodCount = Math.ceil(airlineCashFlow.cycle / 52)
 			inProgress = (airlineCashFlow.cycle + 1) % 52
 		}
@@ -454,7 +454,7 @@ function editAirlineCode() {
 }
 
 function validateAirlineCode(airlineCode) {
-	if (/[^a-zA-Z]/.test(airlineCode) || airlineCode.length != 2) {
+	if (/[^a-zA-Z]/.test(airlineCode) || airlineCode.length !== 2) {
 		$('#airlineCodeInputSpan .warning').show()
 	} else {
 		$('#airlineCodeInputSpan .warning').hide()
@@ -692,7 +692,7 @@ function updateChampionedCountriesDetails() {
 
     	    	populateNavigation($('#championedCountriesList'))
 
-    	    	if ($(championedCountries).length == 0) {
+    	    	if ($(championedCountries).length === 0) {
     	    		var row = $("<div class='table-row'></div>")
     	    		row.append("<div class='cell'>-</div>")
     	    		row.append("<div class='cell'>-</div>")
@@ -727,7 +727,7 @@ function updateChampionedAirportsDetails() {
 
 	    	populateNavigation($('#championedAirportsList'))
 	    	
-	    	if ($(championedAirports).length == 0) {
+	    	if ($(championedAirports).length === 0) {
 	    		var row = $("<div class='table-row'></div>")
 	    		row.append("<div class='cell'>-</div>")
 	    		row.append("<div class='cell'>-</div>")

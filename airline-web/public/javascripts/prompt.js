@@ -155,7 +155,7 @@ function showPrompt() {
     }
 
 
-    if (promptQueue.length == 0 && tutorialQueue.length == 0) {
+    if (promptQueue.length === 0 && tutorialQueue.length === 0) {
         clearInterval(promptInterval)
         promptInterval = undefined
     }
@@ -210,29 +210,29 @@ function checkTutorial(flowId) {
             } else if ($.isEmptyObject(flightPaths)) {
                 queueTutorial("tutorialSetupLink1")
             }
-        } else if (flowId == "airport") {
+        } else if (flowId === "airport") {
             queueTutorial("tutorialAirportDetails")
             if (!activeAirline.headquarterAirport) {
                 queueTutorial("tutorialBuildHq")
             }
-        } else if (flowId == "office") {
+        } else if (flowId === "office") {
             queueTutorial("tutorialOffice1")
             queueTutorial("tutorialOffice2")
             queueTutorial("tutorialOffice3")
-        } else if (flowId == "oil") {
+        } else if (flowId === "oil") {
             queueTutorial("tutorialOilIntro1")
             queueTutorial("tutorialOilIntro2")
             queueTutorial("tutorialOilIntro3")
-        } else if (flowId == "planLink") {
+        } else if (flowId === "planLink") {
             queueTutorial("tutorialSetupLink2")
             queueTutorial("tutorialSetupLink3")
-        } else if (flowId == "negotiation") {
+        } else if (flowId === "negotiation") {
             queueTutorial("tutorialNegotiation1")
             queueTutorial("tutorialNegotiation2")
             queueTutorial("tutorialNegotiation3")
             queueTutorial("tutorialNegotiation4")
             queueTutorial("tutorialNegotiation5")
-        } else if (flowId == "search") {
+        } else if (flowId === "search") {
             queueTutorial("tutorialSearch1")
             queueTutorial("tutorialSearch2")
         }

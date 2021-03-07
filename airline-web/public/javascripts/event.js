@@ -37,7 +37,7 @@ function updateOlympicTable(sortProperty, sortOrder) {
 	olympicsTable.children("div.table-row").remove()
 	
 	//sort the list
-	loadedOlympicsEvents.sort(sortByProperty(sortProperty, sortOrder == "ascending"))
+	loadedOlympicsEvents.sort(sortByProperty(sortProperty, sortOrder === "ascending"))
 	
 	$.each(loadedOlympicsEvents, function(index, event) {
 		var row = $("<div class='table-row clickable'></div>")
@@ -57,7 +57,7 @@ function updateOlympicTable(sortProperty, sortOrder) {
 		olympicsTable.append(row)
 	});
 
-	if (loadedOlympicsEvents.length == 0) {
+	if (loadedOlympicsEvents.length === 0) {
 	    olympicsTable.append("<div class='table-row'><div class='cell'>-</div><div class='cell'>-</div><div class='cell'>-</div></div>")
 	}
 }
@@ -104,7 +104,7 @@ function loadOlympicsDetails(row, event) {
                             var row = $("<div class='table-row'><div class='cell'>" + (index + 1) + "</div></div>")
                             $.each(votingRoundColumns, function(columnIndex, airportId) {
                                 if (votes[airportId] !== undefined) {
-                                    if (votingRound.eliminatedAirport.id == airportId) {
+                                    if (votingRound.eliminatedAirport.id === airportId) {
                                         row.append($("<div class='cell warning'>" + votes[airportId] + "</div>"))
                                     } else {
                                         row.append($("<div class='cell'>" + votes[airportId] + "</div>"))
@@ -160,7 +160,7 @@ function loadOlympicsDetails(row, event) {
                                 var votedAirport = votes.votedAirport
                                 $("#olympicsDetails .votedCity").html(getCountryFlagImg(votedAirport.countryCode) + votedAirport.city)
                                 if (event.currentYear) { //still active
-                                    if (details.selectedAirport && details.selectedAirport.id == votedAirport.id && !votes.claimedVoteReward) { //yay
+                                    if (details.selectedAirport && details.selectedAirport.id === votedAirport.id && !votes.claimedVoteReward) { //yay
                                         $("#olympicsDetails .button.votedCityReward").data("eventId", eventId)
                                         $("#olympicsDetails .button.votedCityReward").show()
                                     }
@@ -303,7 +303,7 @@ function refreshCityVoteModalButtons() {
     } else {
         $("#olympicsVoteModal .revert").show()
         if ($("#olympicsCityVoteTable").data("weight") > 0) {
-            if (currentVotePrecedence > candidateCount || currentVotePrecedence == 1) {
+            if (currentVotePrecedence > candidateCount || currentVotePrecedence === 1) {
                 enableButton($("#olympicsVoteModal .confirm"))
                 enableButton($("#olympicsVoteModal .revert"))
             } else {
@@ -446,7 +446,7 @@ function initOlympicsVoteMaps(mapDivs) { //only called once, see https://stackov
 
 
 function toggleTableSortOrder(sortHeader, updateTableFunction) {
-	if (sortHeader.data("sort-order") == "ascending") {
+	if (sortHeader.data("sort-order") === "ascending") {
 		sortHeader.data("sort-order", "descending")
 	} else {
 		sortHeader.data("sort-order", "ascending")

@@ -134,9 +134,9 @@ function searchFlight(fromAirportId, toAirportId) {
                         previousLink = link
                     })
                     var stopDescription
-                    if (entry.route.length == 1) {
+                    if (entry.route.length === 1) {
                         stopDescription = "Direct Flight"
-                    } else if (entry.route.length == 2) {
+                    } else if (entry.route.length === 2) {
                         stopDescription = "1 Stop"
                     } else {
                         stopDescription = (entry.route.length - 1) + " Stops"
@@ -145,10 +145,10 @@ function searchFlight(fromAirportId, toAirportId) {
                     var priceTextDiv = priceDiv.find('div.price')
 
                     $.each(entry.remarks, function(index, remark) {
-                        if (remark == 'BEST_SELLER') {
+                        if (remark === 'BEST_SELLER') {
                             priceTextDiv.css("color", "darkgreen")
                             priceTextDiv.after("<div style='display:inline-block;' class='remark'>BEST SELLER</div>")
-                        } else if (remark == 'BEST_DEAL') {
+                        } else if (remark === 'BEST_DEAL') {
                             priceTextDiv.css("color", "darkgreen")
                             priceTextDiv.after("<div style='display:inline-block;' class='remark'>BEST DEAL</div>")
                         }
@@ -165,7 +165,7 @@ function searchFlight(fromAirportId, toAirportId) {
 
 
 
-                if (searchResult.length == 0) {
+                if (searchResult.length === 0) {
                     $("#routeSearchResult").append("<div class='ticketTitle'>Sorry, no flights available.</div>")
                 }
             },
@@ -268,7 +268,7 @@ function updateLinkHistoryTable(sortProperty, sortOrder) {
     var loadedData = linkHistoryTable.data('entries')
 	//sort the list
 	//loadedLinks.sort(sortByProperty(sortProperty, sortOrder == "ascending"))
-	loadedData = sortPreserveOrder(loadedData, sortProperty, sortOrder == "ascending")
+	loadedData = sortPreserveOrder(loadedData, sortProperty, sortOrder === "ascending")
 
 
 	$.each(loadedData, function(index, link) {
@@ -287,7 +287,7 @@ function updateLinkHistoryTable(sortProperty, sortOrder) {
 		linkHistoryTable.append(row)
 	});
 
-	if (loadedData.length == 0) {
+	if (loadedData.length === 0) {
 		var row = $("<div class='table-row'><div class='cell'>-</div><div class='cell'>-</div><div class='cell'>-</div><div class='cell'>-</div><div class='cell'>-</div><div class='cell'>-</div><div class='cell'>-</div><div class='cell'>-</div></div>")
 		linkHistoryTable.append(row)
 	}
@@ -296,7 +296,7 @@ function updateLinkHistoryTable(sortProperty, sortOrder) {
 function getCycleDeltaText(cycleDelta) {
     if (cycleDelta >= 0) {
         return "This wk"
-    } else if (cycleDelta == 1) {
+    } else if (cycleDelta === 1) {
         return "Last wk"
     } else {
         return (cycleDelta * -1) + " wk ago"
@@ -366,7 +366,7 @@ function getPriceDeltaSpan(priceDelta) {
 }
 
 function toggleTableSortOrder(sortHeader, updateTableFunction) {
-	if (sortHeader.data("sort-order") == "ascending") {
+	if (sortHeader.data("sort-order") === "ascending") {
 		sortHeader.data("sort-order", "descending")
 	} else {
 		sortHeader.data("sort-order", "ascending")
@@ -499,14 +499,14 @@ function resetSearchInput(button) {
 }
 
 function searchButtonKeyPress(event, button) {
-    if (event.keyCode == 13) { //enter
+    if (event.keyCode === 13) { //enter
         button.click()
     }
 }
 
 
 function searchKeyDown(event, input) {
-    if (event.keyCode == 9) { //tab, has to do it here otherwise input field would lose focus
+    if (event.keyCode === 9) { //tab, has to do it here otherwise input field would lose focus
         confirmSelection(input)
     }
 }
@@ -518,11 +518,11 @@ function searchChange(input) {
 
 function searchKeyUp(event, input) {
     var resultContainer = input.closest('div.searchInput').siblings('div.searchResult')
-    if (event.keyCode == 38) {
+    if (event.keyCode === 38) {
         changeSelection(-1, resultContainer)
-    } else if (event.keyCode == 40) {
+    } else if (event.keyCode === 40) {
         changeSelection(1, resultContainer)
-    } else if (event.keyCode == 13) { //enter
+    } else if (event.keyCode === 13) { //enter
         confirmSelection(input)
     }
 }
@@ -654,7 +654,7 @@ function search(event, input, retry) {
                     var searchResultDiv = $("<div class='searchResultEntry' onmousedown='clickSelection($(this))'>" + text + "</div>")
                     searchResultDiv.data(searchType, entry)
                     resultContainer.append(searchResultDiv)
-                    if (index == 0) {
+                    if (index === 0) {
                         searchResultDiv.addClass("selected")
                     }
                 })

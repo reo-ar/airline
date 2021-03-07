@@ -175,7 +175,7 @@ function loadUser(isLogin) {
 			  showUserSpecificElements();
 			  updateChatTabs()
 			  
-			  if (window.location.hostname != 'localhost') {
+			  if (window.location.hostname !== 'localhost') {
 				  FS.identify(user.id, {
 					  displayName: user.userName,
 					  email: user.email
@@ -194,7 +194,7 @@ function loadUser(isLogin) {
 		  
 	  },
 	    error: function(jqXHR, textStatus, errorThrown) {
-	    	if (jqXHR.status == 401) {
+	    	if (jqXHR.status === 401) {
 	    		showFloatMessage("Incorrect username or password")
 	    	} else {
 	            console.log(JSON.stringify(jqXHR));
@@ -450,7 +450,7 @@ function updateTime(cycle, fraction, cycleDurationEstimation) {
 			    var minutesLeft = Math.round(durationTillNextTick / 1000 / 60)
 			    if (minutesLeft <= 0) {
 			        $(".nextTickEstimation").text("Very soon")
-			    } else if (minutesLeft == 1) {
+			    } else if (minutesLeft === 1) {
 			        $(".nextTickEstimation").text("1 minute")
 			    } else {
 			        $(".nextTickEstimation").text(minutesLeft + " minutes")
@@ -522,7 +522,7 @@ function showWorldMap() {
 function switchMap() {
     var mapCanvas = $('#worldMapCanvas')
     var existingActiveDiv = mapCanvas.siblings(":visible").filter(function (index) {
-		return $(this).css("clear") != "both"
+		return $(this).css("clear") !== "both"
 	})
     if (existingActiveDiv.length > 0) {
         existingActiveDiv.fadeOut(200, function() {
@@ -631,7 +631,7 @@ function populateNavigation(parent) { //change all the tabs to do fake url
 
     parent.find('[data-link]').each(function() {
         var onclickFunction = $(this).attr("onclick")
-        var path = $(this).data("link") != "/" ? ("nav-" + $(this).data("link")) : "/"
+        var path = $(this).data("link") !== "/" ? ("nav-" + $(this).data("link")) : "/"
         //console.log(path + " " + onclickFunction)
 
         $(this).click(function() {
@@ -694,7 +694,7 @@ function initTabGroup() {
             endY = contact[0].pageY,
             distanceX = endX - startX;
             distanceY = endY - startY
-            if (Math.abs(distanceX) > Math.abs(distanceY) && distanceX > 30 && $('#main')[0].scrollLeft == 0) {
+            if (Math.abs(distanceX) > Math.abs(distanceY) && distanceX > 30 && $('#main')[0].scrollLeft === 0) {
                 showTabGroup()
                 hideTabGroup(5000)
             }

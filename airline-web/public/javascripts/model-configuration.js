@@ -91,7 +91,7 @@ function showAirplaneModelConfigurationsModal(modelConfigurationInfo) {
 
     for (i = 0 ; i < modelConfigurationInfo.maxConfigurationCount - modelConfigurationInfo.configurations.length; i ++) { //pad the rest with empty div
         var configurationDiv = $("<div style='width : 95%; min-height : 130px; position: relative;' class='section config'></div>")
-        var promptDiv = ("<div style='position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);'><span class='button' onclick='toggleNewConfiguration(selectedModel, " + (modelConfigurationInfo.configurations.length == 0 ? "true" : "false") + ")'><img src='assets/images/icons/24px/plus.png' title='Add new configuration'><div style='float:right'><h3>Add New Configuration</h3></div></span></div>")
+        var promptDiv = ("<div style='position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);'><span class='button' onclick='toggleNewConfiguration(selectedModel, " + (modelConfigurationInfo.configurations.length === 0 ? "true" : "false") + ")'><img src='assets/images/icons/24px/plus.png' title='Add new configuration'><div style='float:right'><h3>Add New Configuration</h3></div></span></div>")
 
 
         configurationDiv.append(promptDiv)
@@ -117,7 +117,7 @@ function addAirplaneInventoryDivByConfiguration(configurationDiv, modelId) {
 
     var allAirplanes = $.merge($.merge($.merge([], info.assignedAirplanes), info.availableAirplanes), info.constructingAirplanes)
     $.each(allAirplanes, function( key, airplane ) {
-        if (airplane.configurationId == configurationId) {
+        if (airplane.configurationId === configurationId) {
             var airplaneId = airplane.id
             var li = $("<div style='float: left;' class='clickable' onclick='loadOwnedAirplaneDetails(" + airplaneId + ", $(this), refreshConfigurationAfterAirplaneUpdate)'></div>").appendTo(airplanesDiv)
             var airplaneIcon = getAirplaneIcon(airplane, info.badConditionThreshold)
@@ -133,7 +133,7 @@ function addAirplaneInventoryDivByConfiguration(configurationDiv, modelId) {
 
 function toggleInputLock(configurationDiv, newLockedClass) {
     var existingLockedClass = configurationDiv.data("locked-class")
-    if (existingLockedClass != newLockedClass) {
+    if (existingLockedClass !== newLockedClass) {
         if (existingLockedClass) {
             configurationDiv.find('.manual-inputs .' + existingLockedClass + ' img').attr("src", "assets/images/icons/lock-unlock.png") //unlock this
             configurationDiv.find('.manual-inputs .' + existingLockedClass + ' input').prop("disabled", false)
@@ -268,9 +268,9 @@ function computeConfiguration(existingConfiguration, model, spaceMultipliers, lo
     }
 
     $.each(linkClasses, function(index, linkClass){
-        if (linkClass != changedClass) {
+        if (linkClass !== changedClass) {
             var existingValue = existingConfiguration[linkClass]
-            if (linkClass != lockedClass) { //then we can adjust
+            if (linkClass !== lockedClass) { //then we can adjust
                 var newValue = Math.floor(remainingSpace / spaceMultipliers[linkClass])
                 newConfig[linkClass] = newValue
                 remainingSpace -= newValue * spaceMultipliers[linkClass]

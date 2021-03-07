@@ -88,7 +88,7 @@
 .departure-board span.flap {
 	display: block;
 	position: absolute;
-	top: 0em;
+	top: 0;
 	width: 1em;
 	height: .65em;
 	margin: 0;

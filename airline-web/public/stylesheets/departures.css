@@ -22,7 +22,7 @@
 .departures div.table-row {
 	color: #ddd;
 	opacity: 0.8;
-	text-shadow: 0px 0px 5px rgba(30,30,255,1.0);
+	text-shadow: 0 0 5px rgba(30,30,255,1.0);
 	height: 18px;
 }
 

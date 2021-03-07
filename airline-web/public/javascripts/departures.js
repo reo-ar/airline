@@ -54,7 +54,7 @@ function updateDepartures(allDepartures) {
 			//row.append("<div class='cell' style='overflow:hidden; float:left; text-overflow: clip; white-space: nowrap; height: 100%;'>" + departure.destination + "</div>")
 			var statusDiv = $("<div class='cell' style='vertical-align:middle;'><span>" + departure.statusText + "" +
 					"</span></div>")
-			if (departure.statusCode == 'FINAL_CALL') {
+			if (departure.statusCode === 'FINAL_CALL') {
 				 statusDiv.children('span').addClass('blink')
 			}
 			row.append(statusDiv) 

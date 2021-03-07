@@ -1068,19 +1068,19 @@ let currentFinaleCount = 0;
 function startSequence() {
     if (fireworkLevel <= 1) {
         return seqRandomShell();
-    } else if (fireworkLevel == 2) {
+    } else if (fireworkLevel === 2) {
         return seqRandomFastShell();
-    } else if (fireworkLevel == 3) {
+    } else if (fireworkLevel === 3) {
         return seqTwoRandom();
-    } else if (fireworkLevel == 4) {
+    } else if (fireworkLevel === 4) {
         return seqTriple();
-    } else if (fireworkLevel == 5) {
+    } else if (fireworkLevel === 5) {
         return seqSmallBarrage();
-    } else if (fireworkLevel == 6) {
+    } else if (fireworkLevel === 6) {
         seqRandomFastShell();
         seqRandomFastShell();
         return seqSmallBarrage();
-    } else if (fireworkLevel == 7) {
+    } else if (fireworkLevel === 7) {
         seqRandomFastShell();
         seqRandomFastShell();
         seqTwoRandom();

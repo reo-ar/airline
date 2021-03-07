@@ -547,6 +547,7 @@ function isArraylike( obj ) {
 		return true;
 	}
 
+	// noinspection JSIncompatibleTypesComparison
 	return type === "array" || length === 0 ||
 		typeof length === "number" && length > 0 && ( length - 1 ) in obj;
 }
@@ -686,13 +687,13 @@ var i,
 	rinputs = /^(?:input|select|textarea|button)$/i,
 	rheader = /^h\d$/i,
 
-	rnative = /^[^{]+\{\s*\[native \w/,
+	rnative = /^[^{]+{\s*\[native \w/,
 
 	// Easily-parseable/retrievable ID or TAG or CLASS selectors
 	rquickExpr = /^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,
 
 	rsibling = /[+~]/,
-	rescape = /'|\\/g,
+	rescape = /['\\]/g,
 
 	// CSS escapes http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
 	runescape = new RegExp( "\\\\([\\da-f]{1,6}" + whitespace + "?|(" + whitespace + ")|.)", "ig" ),
@@ -2628,7 +2629,7 @@ var rsingleTag = (/^<(\w+)\s*\/?>(?:<\/\1>|)$/);
 
 
 
-var risSimple = /^.[^:#\[\.,]*$/;
+var risSimple = /^.[^:#\[.,]*$/;
 
 // Implement the identical functionality for filter and not
 function winnow( elements, qualifier, not ) {
@@ -3720,7 +3721,7 @@ var data_user = new Data();
 //	5. Avoid exposing implementation details on user objects (eg. expando properties)
 //	6. Provide a clear path for implementation upgrade to WeakMap in 2014
 
-var rbrace = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,
+var rbrace = /^(?:{[\w\W]*}|\[[\w\W]*])$/,
 	rmultiDash = /([A-Z])/g;
 
 function dataAttr( elem, key, data ) {
@@ -4919,7 +4920,7 @@ var
 	rchecked = /checked\s*(?:[^=]|=\s*.checked.)/i,
 	rscriptType = /^$|\/(?:java|ecma)script/i,
 	rscriptTypeMasked = /^true\/(.*)/,
-	rcleanScript = /^\s*<!(?:\[CDATA\[|--)|(?:\]\]|--)>\s*$/g,
+	rcleanScript = /^\s*<!(?:\[CDATA\[|--)|(?:]]|--)>\s*$/g,
 
 	// We have to close these tags to support XHTML (#13200)
 	wrapMap = {
@@ -8415,7 +8416,7 @@ jQuery.expr.filters.visible = function( elem ) {
 
 
 var r20 = /%20/g,
-	rbracket = /\[\]$/,
+	rbracket = /\[]$/,
 	rCRLF = /\r?\n/g,
 	rsubmitterTypes = /^(?:submit|button|image|reset|file)$/i,
 	rsubmittable = /^(?:input|select|textarea|keygen)/i;

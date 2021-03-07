@@ -59,7 +59,7 @@ function loadCurrentAirlineMemberDetails() {
     			$('#currentAirlineMemberDetails .allianceRanking').text('-')
     		}
     		
-    		if (alliance.status == 'Forming') {
+    		if (alliance.status === 'Forming') {
 				$("#currentAirlineMemberDetails .allianceStatus").text(alliance.status + " - need 3 approved members")
 			} else {
 				$("#currentAirlineMemberDetails .allianceStatus").text(alliance.status)
@@ -147,7 +147,7 @@ function updateAllianceTable(sortProperty, sortOrder) {
 	allianceTable.children("div.table-row").remove()
 	
 	//sort the list
-	loadedAlliances.sort(sortByProperty(sortProperty, sortOrder == "ascending"))
+	loadedAlliances.sort(sortByProperty(sortProperty, sortOrder === "ascending"))
 	
 	$.each(loadedAlliances, function(index, alliance) {
 		var row = $("<div class='table-row clickable' data-alliance-id='" + alliance.id + "' onclick=\"selectAlliance($(this), '" + alliance.id + "')\"></div>")
@@ -169,7 +169,7 @@ function updateAllianceTable(sortProperty, sortOrder) {
 			row.append("<div class='cell' align='right'>-</div>")
 		}
 		
-		if (selectedAlliance && selectedAlliance.id == alliance.id) {
+		if (selectedAlliance && selectedAlliance.id === alliance.id) {
 			row.addClass("selected")
 		}
 		
@@ -178,7 +178,7 @@ function updateAllianceTable(sortProperty, sortOrder) {
 }
 
 function toggleAllianceTableSortOrder(sortHeader) {
-	if (sortHeader.data("sort-order") == "ascending") {
+	if (sortHeader.data("sort-order") === "ascending") {
 		sortHeader.data("sort-order", "descending")
 	} else {
 		sortHeader.data("sort-order", "ascending")
@@ -210,7 +210,7 @@ function updateAllianceBasicsDetails(allianceId) {
 	var alliance = loadedAlliancesById[allianceId]
 	selectedAlliance = alliance
 	$("#allianceDetails .allianceName").text(alliance.name)
-	if (alliance.status == 'Forming') {
+	if (alliance.status === 'Forming') {
 		$("#allianceDetails .allianceStatus").text(alliance.status + " - need 3 approved members")
 	} else {
 		$("#allianceDetails .allianceStatus").text(alliance.status)
@@ -232,16 +232,16 @@ function updateAllianceBasicsDetails(allianceId) {
 		var row = $("<div class='table-row clickable' style='height: 20px;' onclick='showAllianceMemberDetails($(this).data(\"member\"))'></div>")
 		row.data("member", member)
 		row.append("<div class='cell' style='vertical-align: middle;'>" + getAirlineLogoImg(member.airlineId) + member.airlineName + "</div>")
-		if (member.allianceRole == "Applicant") {
+		if (member.allianceRole === "Applicant") {
 			row.append("<div class='cell warning' style='vertical-align: middle;'>" + member.allianceRole + "</div>")
 		} else {
 			row.append("<div class='cell' style='vertical-align: middle;'>" + member.allianceRole + "</div>")
 		}
 		if (activeAirline) {
-			if (member.airlineId == activeAirline.id) {
+			if (member.airlineId === activeAirline.id) {
 				row.append("<div class='cell' style='vertical-align: middle;'><img src='assets/images/icons/cross.png' class='button' title='Leave Alliance' onclick='promptConfirm(\"Leave Alliance?\", removeAllianceMember, " + activeAirline.id + ")'></div>")
-			} else if (alliance.leader.id == activeAirline.id) {
-				if (member.allianceRole == "Applicant") {
+			} else if (alliance.leader.id === activeAirline.id) {
+				if (member.allianceRole === "Applicant") {
 					var acceptQuestion = "Accept application from " + member.airlineName + "?"
 					var rejectQuestion = "Reject application from " + member.airlineName + "?"
 					row.append("<div class='cell' style='vertical-align: middle;'><img src='assets/images/icons/tick.png' class='button' title='Accept Member' onclick='promptConfirm(\"" + acceptQuestion + "\", acceptAllianceMember, " + member.airlineId + ")'><img src='assets/images/icons/cross.png' class='button' title='Remove Member' onclick='promptConfirm(\"" + rejectQuestion + "\", removeAllianceMember, " + member.airlineId + ")'></div>")
@@ -292,7 +292,7 @@ function updateAllianceBasicsDetails(allianceId) {
 function updateAllianceBonus(allianceId) {
 	var alliance = loadedAlliancesById[allianceId]
 	
-	if (alliance.status == "Forming") {
+	if (alliance.status === "Forming") {
 		$('#allianceCodeShareBonus').hide();
 		$('#allianceMaxFrequencyBonus').hide();
 		$('#allianceReputationBonus').hide();
@@ -350,7 +350,7 @@ function updateAllianceAirportChampions(allianceId) {
 
 	    	populateNavigation($('#allianceChampionAirportList'))
 	    	
-	    	if ($(approvedMembersChampions).length == 0 && $(applicantChampions).length == 0) {
+	    	if ($(approvedMembersChampions).length === 0 && $(applicantChampions).length === 0) {
 	    		var row = $("<div class='table-row'></div>")
 	    		row.append("<div class='cell'>-</div>")
 	    		row.append("<div class='cell'>-</div>")
@@ -389,7 +389,7 @@ function updateAllianceCountryChampions(allianceId) {
 
             populateNavigation($('#allianceChampionCountryList'))
 
-            if ($(championedCountries).length == 0) {
+            if ($(championedCountries).length === 0) {
 	    		var row = $("<div class='table-row'></div>")
 	    		row.append("<div class='cell'>-</div>")
 	    		row.append("<div class='cell'>-</div>")
@@ -456,7 +456,7 @@ function removeAllianceMember(removeAirlineId) {
 	    dataType: 'json',
 	    success: function(result) {
 	    	showAllianceCanvas()
-	    	if (activeAirline.id == removeAirlineId) { //leaving alliance
+	    	if (activeAirline.id === removeAirlineId) { //leaving alliance
 	    	    activeUser.allianceId = undefined
 	    	    activeUser.allianceName = undefined
 	    	    updateChatTabs()

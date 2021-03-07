@@ -61,14 +61,14 @@
          /* <3   */ heart: /<3|&lt;3/g,
          /* </3  */ broken_heart: /<\/3|&lt;&#x2F;3/g,
          /* :+1: */ thumbsup: /:\+1:/g,
-         /* :-1: */ thumbsdown: /:\-1:/g
+         /* :-1: */ thumbsdown: /:-1:/g
                 };
 
                 if (defaultConfig.ignore_emoticons) {
                     emoticons = {
              /* :..: */ named: /:([a-z0-9A-Z_-]+):/,
              /* :+1: */ thumbsup: /:\+1:/g,
-             /* :-1: */ thumbsdown: /:\-1:/g
+             /* :-1: */ thumbsdown: /:-1:/g
                     };
                 }
 

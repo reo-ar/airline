@@ -49,7 +49,7 @@ function updateSantaClausModal() {
                  exhaustedDiv.hide()
                  guessButton.hide()
 
-                 var flipped = santaFound != result.found
+                 var flipped = santaFound !== result.found
                  santaFound = result.found
                  if ($("#santaClausModal").is(":visible") && flipped) { //a flip of result, and current modal is visible, apply confetti/snowflake
                     refreshBackgroundAnimation()

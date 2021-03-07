@@ -47,7 +47,7 @@ function updateFacilityIcons(airport) {
 	    	if (facilityDetails.lounge) { //lounge
 	    		var imageUrl
 	    		var imageTitle
-    			if (facilityDetails.lounge.status == 'ACTIVE') {
+    			if (facilityDetails.lounge.status === 'ACTIVE') {
     				imageUrl = 'assets/images/icons/sofa.png'
 					imageTitle = 'Active Lounge Level ' + facilityDetails.lounge.level + " - " + facilityDetails.lounge.name 	
     			} else if (facilityDetails.lounge > 0) {
@@ -126,7 +126,7 @@ function showFacilityModal(currentFacility) {
 	    		$('#facilityModal .upgradeUpkeep').text('-')
 	    	}
 	    	
-	    	if (currentFacility.level == 0) {
+	    	if (currentFacility.level === 0) {
 	    		$('#facilityModal .facilityNameInput').val('')
 	    		if (facilityConsideration.upgrade.rejection) {
 	    			$('#facilityModal .facilityName').text('-')
@@ -144,7 +144,7 @@ function showFacilityModal(currentFacility) {
 			}
 	    	
 	    	if (!facilityConsideration.upgrade.rejection) {
-	    		if (currentFacility.level == 0) {
+	    		if (currentFacility.level === 0) {
 	    			$('#facilityModal .buildButton').show()
 	    			$('#facilityModal .upgradeButton').hide()
 	    		} else {
