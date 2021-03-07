@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7f1932c6-0fcd-4a40-80a0-e636de647e46" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/airline-data/src/main/scala/com/patson/MainSimulation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/airline-data/src/main/scala/com/patson/MainSimulation.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/airline-web/app/models/NewUser.scala" beforeDir="false" afterPath="$PROJECT_DIR$/airline-web/app/models/NewUser.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/airline-web/app/views/index.scala.html" beforeDir="false" afterPath="$PROJECT_DIR$/airline-web/app/views/index.scala.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/airline-web/app/views/signup.scala.html" beforeDir="false" afterPath="$PROJECT_DIR$/airline-web/app/views/signup.scala.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/airline-web/public/javascripts/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/airline-web/public/javascripts/signup.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1pPrrJLoL12wnkir3HfuKRqKBl5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7f1932c6-0fcd-4a40-80a0-e636de647e46" name="Default Changelist" comment="" />
+      <created>1615095895119</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615095895119</updated>
+      <workItem from="1615096079437" duration="2645000" />
+      <workItem from="1615099911036" duration="578000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
